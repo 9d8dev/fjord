@@ -1,3 +1,4 @@
+import BackButton from "@/components/global/back-button";
 import settings from "@/fjord.json";
 import { notFound } from "next/navigation";
 
@@ -63,6 +64,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div>
+      <BackButton />
       <h1>{post.title.rendered}</h1>
       <p>{date.toDateString()}</p>
       {author && <p>{author.name}</p>}
