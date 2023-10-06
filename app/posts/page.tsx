@@ -25,29 +25,20 @@ type Post = {
   };
 };
 
+async function getPosts() {
+  const res = await fetch(
+    `https://${settings.url}/wp-json/wp/v2/posts?_embed&per_page=${settings.limit}`
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
 export default async function Posts() {
-  async function getPosts() {
-    const res = await fetch(
-      `https://${settings.url}/wp-json/wp/v2/posts?_embed&per_page=${settings.limit}`
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    return res.json();
-  }
-
-  let data;
-  try {
-    data = await getPosts();
-  } catch (error) {
-    console.error(error);
-  }
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+  const data = await getPosts();
 
   return (
     <main className="p-12">
