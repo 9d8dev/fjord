@@ -1,6 +1,5 @@
-import settings from "@/config/settings.json";
+import settings from "@/fjord.json";
 import Link from "next/link";
-import Image from "next/image";
 
 type Post = {
   id: number;
@@ -23,6 +22,7 @@ type Post = {
       };
     }>;
   };
+  tags: Array<string>;
 };
 
 async function getPosts() {
@@ -34,11 +34,18 @@ async function getPosts() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  const posts = await res.json();
+  // Sort posts by date
+  posts.sort(
+    (a: Post, b: Post) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  return posts;
 }
 
 export default async function Posts() {
   const data = await getPosts();
+  const date = new Date(data[0].date);
 
   return (
     <main className="p-12">
@@ -56,19 +63,27 @@ export default async function Posts() {
                 post._embedded["wp:featuredmedia"][0].media_details.sizes.medium
                   .source_url
               }
-              width={1080}
-              height={400}
               alt="Post image"
             />
             <h3 className="mb-2 text-lg font-semibold">
-              title: {post.title.rendered}
+              {post.title.rendered}
             </h3>
-            <p>date: {new Date(post.date).toLocaleDateString()}</p>
+            <p>{date.toDateString()}</p>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.excerpt.rendered.split(".")[0],
               }}
             />
+            {post.tags && post.tags.length > 0 && (
+              <div>
+                <h4>Tags:</h4>
+                <ul>
+                  {post.tags.map((tag, index) => (
+                    <li key={index}>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Link>
         ))}
       </div>
