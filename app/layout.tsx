@@ -1,17 +1,17 @@
 // Styles
-import './globals.css';
+import "./globals.css";
 
 // Site Configuration
-import config from '@/fjord.json';
-import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import config from "@/fjord.json";
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 
 // Components
-import Nav from '@/components/global/nav';
-import Footer from '@/components/global/footer';
-import Main from '@/components/global/main'
+import Nav from "@/components/global/nav";
+import Footer from "@/components/global/footer";
+import Main from "@/components/global/main";
 
-const manrope = Manrope({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: config.site_name,
@@ -37,9 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className={`${manrope.className} bg-slate-100`}>
         <Nav />
-        <Main>
-          {children}
-        </Main>
+        <Main>{children}</Main>
         <Footer />
       </body>
     </html>

@@ -1,4 +1,5 @@
 import BackButton from "@/components/global/back-button";
+import Article from "@/components/content/article";
 import settings from "@/fjord.json";
 import { notFound } from "next/navigation";
 
@@ -16,15 +17,17 @@ type Post = {
     rendered: string;
   };
   _embedded: {
-    "wp:featuredmedia"?: Array<{
-      media_details: {
-        sizes: {
-          full: {
-            source_url: string;
+    "wp:featuredmedia"?: [
+      {
+        media_details: {
+          sizes: {
+            full: {
+              source_url: string;
+            };
           };
         };
-      };
-    }>;
+      }
+    ];
     author: Array<{
       name: string;
     }>;
@@ -65,24 +68,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <BackButton />
-      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
-      <p>{date.toDateString()}</p>
-      {author && <p>{author.name}</p>}
-      {post._embedded?.["wp:featuredmedia"] &&
-        post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
-          ?.source_url && (
-          <img
-            src={
-              post._embedded["wp:featuredmedia"][0].media_details.sizes.full
-                .source_url
-            }
-            alt="Post image"
-          />
-        )}
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      ></div>
+      <Article post={post} date={date} author={author} />
     </div>
   );
 }
