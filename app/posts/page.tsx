@@ -22,8 +22,24 @@ type Post = {
       };
     }>;
   };
-  tags: Array<string>;
+  tags: Array<number>;
 };
+
+type Tag = {
+  id: number;
+  name: string;
+};
+
+async function getTags() {
+  const res = await fetch(`https://${settings.url}/wp-json/wp/v2/tags`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch tags");
+  }
+
+  const tags: Tag[] = await res.json();
+  return tags;
+}
 
 async function getPosts() {
   const res = await fetch(
@@ -34,7 +50,7 @@ async function getPosts() {
     throw new Error("Failed to fetch data");
   }
 
-  const posts = await res.json();
+  const posts: Post[] = await res.json();
   // Sort posts by date
   posts.sort(
     (a: Post, b: Post) =>
@@ -45,7 +61,8 @@ async function getPosts() {
 
 export default async function Posts() {
   const data = await getPosts();
-  const date = new Date(data[0].date);
+  const tags = await getTags();
+  const date = new Date(data[0]?.date);
 
   return (
     <main>
@@ -58,16 +75,20 @@ export default async function Posts() {
             className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
             key={post.id}
           >
-            <img
-              src={
-                post._embedded["wp:featuredmedia"][0].media_details.sizes.medium
-                  .source_url
-              }
-              alt="Post image"
-            />
-            <h3 className="mb-2 text-lg font-semibold">
-              {post.title.rendered}
-            </h3>
+            {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
+              ?.medium?.source_url && (
+              <img
+                src={
+                  post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                    ?.medium?.source_url
+                }
+                alt="Post image"
+              />
+            )}
+            <h3
+              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+              className="mb-2 text-lg font-semibold"
+            ></h3>
             <p>{date.toDateString()}</p>
             <div
               dangerouslySetInnerHTML={{
@@ -78,9 +99,10 @@ export default async function Posts() {
               <div>
                 <h4>Tags:</h4>
                 <ul>
-                  {post.tags.map((tag, index) => (
-                    <li key={index}>{tag}</li>
-                  ))}
+                  {post.tags.map((tagId, index) => {
+                    const tag = tags.find((t) => t.id === tagId);
+                    return <li key={index}>{tag?.name}</li>;
+                  })}
                 </ul>
               </div>
             )}
