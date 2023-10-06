@@ -12,7 +12,9 @@ const Nav = () => {
   return (
     <nav>
       <div className="container flex justify-between m-auto p-6 bg-slate-200">
-        <Image className="w-24" src={Logo} alt="logo"></Image>
+        <Link href="/">
+          <Image className="w-16" src={Logo} alt="logo"></Image>
+        </Link>
         <ul className="flex gap-2">
           {links.map((link, index) => (
             <li key={index}>
