@@ -65,7 +65,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <BackButton />
-      <h1>{post.title.rendered}</h1>
+      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
       <p>{date.toDateString()}</p>
       {author && <p>{author.name}</p>}
       {post._embedded?.["wp:featuredmedia"] &&

@@ -77,14 +77,14 @@ export default async function Posts() {
           >
             {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
               ?.medium?.source_url && (
-              <img
-                src={
-                  post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                    ?.medium?.source_url
-                }
-                alt="Post image"
-              />
-            )}
+                <img
+                  src={
+                    post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                      ?.medium?.source_url
+                  }
+                  alt="Post image"
+                />
+              )}
             <h3
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               className="mb-2 text-lg font-semibold"
