@@ -45,7 +45,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
           />
         )}
       <div
-        className="prose"
+        className="prose prose-slate lg:prose-lg"
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
       ></div>
     </article>
