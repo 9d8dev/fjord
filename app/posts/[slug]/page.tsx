@@ -1,5 +1,4 @@
 import settings from "@/fjord.json";
-import { parse } from "node-html-parser";
 
 type Post = {
   id: number;
@@ -58,15 +57,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const date = new Date(post.date);
   const author = post._embedded?.author[0];
 
-  console.log(author?.name);
-
-  // Parse the HTML content of the post
-  const root = parse(post.content.rendered);
-  // Extract all image URLs
-  const imageUrls = root
-    .querySelectorAll("img")
-    .map((img) => img.getAttribute("src"));
-
   return (
     <div>
       <h1>{post.title.rendered}</h1>
@@ -83,9 +73,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
             alt="Post image"
           />
         )}
-      {imageUrls.map((url, index) => (
-        <img key={index} src={url} alt={`Post content image ${index}`} />
-      ))}
       <div
         className="prose"
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
