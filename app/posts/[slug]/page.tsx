@@ -1,4 +1,5 @@
 import settings from "@/fjord.json";
+import { notFound } from "next/navigation";
 
 type Post = {
   id: number;
@@ -54,6 +55,9 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const post: Post = await getPost(params?.slug);
+  if (!post) {
+    return notFound();
+  }
   const date = new Date(post.date);
   const author = post._embedded?.author[0];
 
