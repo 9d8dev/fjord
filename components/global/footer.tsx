@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="container flex justify-between m-auto p-6 bg-slate-200">
+      <div className="container grid grid-cols-3 justify-between m-auto p-6 bg-slate-200">
         <Link href="/">
           <Image className="w-16" src={Logo} alt="logo"></Image>
         </Link>
