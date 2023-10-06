@@ -48,7 +48,7 @@ export default async function Posts() {
   const date = new Date(data[0].date);
 
   return (
-    <main className="p-12">
+    <main>
       <h1 className="mb-12">Posts</h1>
 
       <div className="grid grid-cols-3 gap-6">

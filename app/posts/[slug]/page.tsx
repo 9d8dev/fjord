@@ -57,9 +57,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post: Post = await getPost(params?.slug);
   const date = new Date(post.date);
   const author = post._embedded?.author[0];
-
-  console.log(author?.name);
-
   // Parse the HTML content of the post
   const root = parse(post.content.rendered);
   // Extract all image URLs
