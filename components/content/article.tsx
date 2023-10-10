@@ -28,8 +28,8 @@ interface ArticleProps {
 
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
-    <article>
-      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
+    <article className="grid gap-6">
+      <h1 className="text-4xl" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
       <p>{date.toDateString()}</p>
       {author && <p>{author.name}</p>}
       {post._embedded?.["wp:featuredmedia"] &&
@@ -37,6 +37,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
           ?.source_url && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
+            className="my-8"
             src={
               post._embedded["wp:featuredmedia"][0].media_details.sizes.full
                 .source_url

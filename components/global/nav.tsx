@@ -16,7 +16,7 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 py-4 text-sm">
+    <nav className="sticky top-0 p-4 text-sm">
       <div className="container rounded-xl bg-opacity-75 border-2 backdrop-blur-md flex justify-between items-center m-auto p-4 bg-slate-200">
         <Link
           className="flex gap-2 items-center hover:opacity-75 transition-all"
@@ -29,11 +29,10 @@ const Nav = () => {
           {links.map((link, index) => (
             <li key={index}>
               <Link
-                className={`hover:underline underline-offset-4 transition-all ${
-                  pathname === link.href
-                    ? "opacity-50 hover:no-underline cursor-default"
-                    : ""
-                }`}
+                className={`hover:underline underline-offset-4 transition-all ${pathname === link.href
+                  ? "opacity-50 hover:no-underline cursor-default"
+                  : ""
+                  }`}
                 href={link.href}
               >
                 {link.text}

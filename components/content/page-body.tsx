@@ -28,8 +28,8 @@ interface PageBodyProps {
 
 const PageBody = ({ page, date, author }: PageBodyProps) => {
   return (
-    <>
-      <h1 dangerouslySetInnerHTML={{ __html: page.title.rendered }}></h1>
+    <section className="grid gap-6">
+      <h1 className="text-4xl" dangerouslySetInnerHTML={{ __html: page.title.rendered }}></h1>
       <p>{date.toDateString()}</p>
       {author && <p>{author.name}</p>}
       {page._embedded?.["wp:featuredmedia"] &&
@@ -48,7 +48,7 @@ const PageBody = ({ page, date, author }: PageBodyProps) => {
         className="prose prose-slate lg:prose-lg"
         dangerouslySetInnerHTML={{ __html: page.content.rendered }}
       ></div>
-    </>
+    </section>
   );
 };
 
