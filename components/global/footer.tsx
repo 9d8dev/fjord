@@ -10,21 +10,27 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-4">
-      <div className=" container rounded-xl bg-opacity-75 border-2 backdrop-blur-sm items-center m-auto p-4 bg-slate-200 grid grid-cols-3 justify-between">
+    <footer className="py-4 text-sm">
+      <div className="container rounded-xl bg-opacity-75 border-2 backdrop-blur-sm m-auto p-4 bg-slate-200 grid grid-cols-3 justify-between">
         <Link href="/">
           <Image className="w-16" src={Logo} alt="logo"></Image>
         </Link>
-        <ul className="">
+        <ul className="space-y-1">
           {links.map((link, index) => (
-            <li key={index}>
+            <li
+              className="hover:underline underline-offset-4 w-fit transition-all"
+              key={index}
+            >
               <Link href={link.href}>{link.text}</Link>
             </li>
           ))}
         </ul>
-        <ul className="">
+        <ul className="space-y-1">
           {links.map((link, index) => (
-            <li key={index}>
+            <li
+              className="hover:underline underline-offset-4 w-fit transition-all"
+              key={index}
+            >
               <Link href={link.href}>{link.text}</Link>
             </li>
           ))}
