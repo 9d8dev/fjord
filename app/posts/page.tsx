@@ -1,5 +1,5 @@
 import settings from "@/fjord.json";
-import Link from "next/link";
+import PostCard from "@/components/content/post-card";
 
 type Post = {
   id: number;
@@ -62,59 +62,15 @@ async function getPosts() {
 export default async function Posts() {
   const data = await getPosts();
   const tags = await getTags();
-  const date = new Date(data[0]?.date);
 
   return (
-    <main>
-      <h1 className="mb-12">Posts</h1>
+    <main className="grid gap-6">
+      <h1 className="text-4xl">All Posts</h1>
+      <h2 className="text-2xl">All posts from {settings.site_name}. These are all the posts from your WordPress site.</h2>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
         {data.map((post: Post) => (
-          <Link
-            href={`posts/${post.slug}`}
-            className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
-            key={post.id}
-          >
-            {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full
-              ?.source_url && (
-              <img
-                src={
-                  post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                    ?.full?.source_url
-                }
-                alt="Post image"
-              />
-            )}
-            <h3
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              className="mb-2 text-lg font-semibold"
-            ></h3>
-            <p>{date.toDateString()}</p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.excerpt.rendered.split(".")[0],
-              }}
-            />
-            {post.tags && post.tags.length > 0 && (
-              <div>
-                <ul>
-                  {post.tags.map((tagId, index) => {
-                    const tag = tags.find((t) => t.id === tagId);
-                    return (
-                      <li key={index}>
-                        <Link
-                          className="px-2 py-1 bg-slate-200 w-fit rounded-md text-sm"
-                          href="/"
-                        >
-                          {tag?.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            )}
-          </Link>
+          <PostCard key={post.id} post={post} tags={tags} />
         ))}
       </div>
     </main>
