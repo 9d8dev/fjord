@@ -69,8 +69,9 @@ export default async function Posts({ tagId }: { tagId: number }) {
               height={400}
               alt="Post image"
             />
-            <h3 className="mb-2 text-lg font-semibold">
-              title: {post.title.rendered}
+            <h3 className="mb-2 text-lg font-semibold" dangerouslySetInnerHTML={{
+              __html: post.title.rendered,
+            }}>
             </h3>
             <p>date: {new Date(post.date).toLocaleDateString()}</p>
             <div

@@ -60,8 +60,9 @@ export default async function Pages() {
             className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
             key={page.id}
           >
-            <h3 className="mb-2 text-lg font-semibold">
-              title: {page.title.rendered}
+            <h3 className="mb-2 text-lg font-semibold" dangerouslySetInnerHTML={{
+              __html: page.title.rendered,
+            }}>
             </h3>
             <p>date: {new Date(page.date).toLocaleDateString()}</p>
             <div

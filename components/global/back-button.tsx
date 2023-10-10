@@ -10,7 +10,7 @@ const BackButton = () => {
   }
 
   return (
-    <button onClick={handleBackButtonClick}>Go Back</button>
+    <button className='' onClick={handleBackButtonClick}>Go Back</button>
   )
 }
 
