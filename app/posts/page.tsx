@@ -15,7 +15,7 @@ type Post = {
     "wp:featuredmedia": Array<{
       media_details: {
         sizes: {
-          medium: {
+          full: {
             source_url: string;
           };
         };
@@ -75,16 +75,16 @@ export default async function Posts() {
             className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
             key={post.id}
           >
-            {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
-              ?.medium?.source_url && (
-                <img
-                  src={
-                    post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                      ?.medium?.source_url
-                  }
-                  alt="Post image"
-                />
-              )}
+            {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full
+              ?.source_url && (
+              <img
+                src={
+                  post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                    ?.full?.source_url
+                }
+                alt="Post image"
+              />
+            )}
             <h3
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               className="mb-2 text-lg font-semibold"
@@ -97,11 +97,19 @@ export default async function Posts() {
             />
             {post.tags && post.tags.length > 0 && (
               <div>
-                <h4>Tags:</h4>
                 <ul>
                   {post.tags.map((tagId, index) => {
                     const tag = tags.find((t) => t.id === tagId);
-                    return <li key={index}>{tag?.name}</li>;
+                    return (
+                      <li key={index}>
+                        <Link
+                          className="px-2 py-1 bg-slate-200 w-fit rounded-md text-sm"
+                          href="/"
+                        >
+                          {tag?.name}
+                        </Link>
+                      </li>
+                    );
                   })}
                 </ul>
               </div>

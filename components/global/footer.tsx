@@ -10,8 +10,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
-      <div className="container grid grid-cols-3 justify-between m-auto p-6 bg-slate-200">
+    <footer className="py-4">
+      <div className=" container rounded-xl bg-opacity-75 border-2 backdrop-blur-sm items-center m-auto p-4 bg-slate-200 grid grid-cols-3 justify-between">
         <Link href="/">
           <Image className="w-16" src={Logo} alt="logo"></Image>
         </Link>

@@ -1,4 +1,4 @@
-import settings from "@/config/settings.json";
+import settings from "@/fjord.json";
 import Link from "next/link";
 import Image from "next/image";
 
