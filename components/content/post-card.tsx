@@ -47,6 +47,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags }) => {
       {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full
         ?.source_url && (
           <div className="h-40 relative mb-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full?.source_url}
               alt="Post image"

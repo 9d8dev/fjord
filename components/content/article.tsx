@@ -30,8 +30,10 @@ const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <article className="grid gap-6">
       <h1 className="text-4xl" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
-      <p>{date.toDateString()}</p>
-      {author && <p>{author.name}</p>}
+      <div className="flex gap-2">
+        <p>{date.toDateString()}</p> |
+        {author && <p>{author.name}</p>}
+      </div>
       {post._embedded?.["wp:featuredmedia"] &&
         post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
           ?.source_url && (
