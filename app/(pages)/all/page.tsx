@@ -50,9 +50,9 @@ export default async function Pages() {
   }
 
   return (
-    <main className="p-12">
-      <h1 className="mb-12">Pages</h1>
-
+    <main className="grid gap-6">
+      <h1 className="text-4xl">All Pages for {settings.site_name}</h1>
+      <h2 className="text-2xl">These are all the pages from WordPress for the website. When you create a new page in WordPress you will see it appear here.</h2>
       <div className="grid grid-cols-3 gap-6">
         {data.map((page: Page) => (
           <Link
