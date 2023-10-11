@@ -62,7 +62,10 @@ const Nav = () => {
 
       {/* Mobile Nav Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed top-0 h-screen w-screen inset-0 bg-gray-100 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg">
+        <div className={
+          `fixed top-0 h-screen w-screen inset-0 bg-gray-100 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
+          transform ${isMobileMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'} transition-all duration-300`
+        }>
           <button className="absolute top-4 right-4" onClick={handleMobileMenuToggle}><X /></button>
           <ul className="flex flex-col space-y-4 mt-12">
             {links.map((link, index) => (

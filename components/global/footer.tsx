@@ -26,7 +26,7 @@ const Footer = () => {
           <Link href="/">
             <Image className="w-16 mb-4" src={Logo} alt="logo"></Image>
           </Link>
-          <p className="text-sm text-gray-500 w-3/4">
+          <p className="text-sm text-gray-500 md:w-3/4">
             {settings.site_description}
           </p>
         </div>
@@ -44,7 +44,7 @@ const Footer = () => {
           <SubscribeForm />
         </div>
       </div>
-      <div className="px-6 max-w-7xl xl:px-0 gap-6 flex justify-between w-full m-auto">
+      <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
         <p>© {new Date().getFullYear()}{" "} | {settings.site_name}</p>
         <ul className="flex gap-4">
           {otherLinks.map((link, index) => (
