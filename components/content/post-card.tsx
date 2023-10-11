@@ -46,21 +46,21 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
     >
       {post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full
         ?.source_url && (
-        <div className="h-40 relative mb-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={
-              post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                ?.full?.source_url
-            }
-            alt="Post image"
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-lg border"
-          />
-          <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 rounded-md bg-slate-200 bg-opacity-75 backdrop-blur-md">
-            <p className="sr-only">Read More</p> <ArrowUpRight className="" />
+          <div className="h-48 relative mb-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={
+                post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                  ?.full?.source_url
+              }
+              alt="Post image"
+              className="absolute top-0 left-0 w-full h-full object-cover rounded-lg border"
+            />
+            <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 rounded-md bg-slate-200 bg-opacity-75 backdrop-blur-md">
+              <p className="sr-only">Read More</p> <ArrowUpRight className="" />
+            </div>
           </div>
-        </div>
-      )}
+        )}
       <p className="text-xs text-slate-500 flex items-center gap-1">
         <Calendar className="w-4" />
         {date.toDateString()}
