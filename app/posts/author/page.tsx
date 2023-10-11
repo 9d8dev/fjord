@@ -48,47 +48,30 @@ export default async function AuthorPosts() {
     data = await getAuthorPosts();
   } catch (error) {
     console.error(error);
+    return <div>Error: Failed to fetch data</div>;
   }
 
   if (!data) {
     return <div>Loading...</div>;
   }
 
+  if (!Array.isArray(data)) {
+    console.error("Invalid data format");
+    return <div>Error: Invalid data format</div>;
+  }
+
   return (
     <main className="p-12">
       <h1 className="mb-12">Author Posts</h1>
-
-      <div className="grid grid-cols-3 gap-6">
-        {data.map((author: Author) =>
-          author.posts.map((post: Post) => (
-            <Link
-              href={`posts/${post.slug}`}
-              className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
-              key={post.id}
-            >
-              <img
-                src={
-                  post._embedded["wp:featuredmedia"][0].media_details.sizes
-                    .medium.source_url
-                }
-                width={1080}
-                height={400}
-                alt="Post image"
-              />
-              <h3 className="mb-2 text-lg font-semibold" dangerouslySetInnerHTML={{
-                __html: post.title.rendered,
-              }}>
-              </h3>
-              <p>date: {new Date(post.date).toLocaleDateString()}</p>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: post.excerpt.rendered.split(".")[0],
-                }}
-              />
+      <ul>
+        {data.map((author: Author) => (
+          <li key={author.id}>
+            <Link href={`/author/${author.id}`}>
+              <p>{author.name}</p>
             </Link>
-          ))
-        )}
-      </div>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

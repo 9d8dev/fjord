@@ -66,7 +66,9 @@ export default async function Posts() {
   return (
     <main className="grid gap-6">
       <h1 className="text-4xl">All Posts</h1>
-      <h2 className="text-2xl">All posts from {settings.site_name}. These are all the posts from your WordPress site.</h2>
+      <h2 className="text-2xl">
+        All posts from {settings.site_name}. These are all the posts from your WordPress site.
+      </h2>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
         {data.map((post: Post) => (

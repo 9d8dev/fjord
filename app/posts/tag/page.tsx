@@ -1,4 +1,4 @@
-import settings from "@/config/settings.json";
+import settings from "@/fjord.json";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -25,6 +25,12 @@ type Post = {
   };
 };
 
+type Tag = {
+  id: number;
+  name: string;
+  slug: string;
+};
+
 export default async function Posts({ tagId }: { tagId: number }) {
   async function getPostsByTag() {
     const res = await fetch(
@@ -38,50 +44,41 @@ export default async function Posts({ tagId }: { tagId: number }) {
     return res.json();
   }
 
+  async function getAllTags() {
+    const res = await fetch(`https://${settings.url}/wp-json/wp/v2/tags`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
   let data;
+  let tags;
   try {
     data = await getPostsByTag();
+    tags = await getAllTags();
   } catch (error) {
     console.error(error);
   }
 
-  if (!data) {
+  if (!data || !tags) {
     return <div>Loading...</div>;
   }
 
   return (
     <main className="p-12">
-      <h1 className="mb-12">Posts</h1>
-
-      <div className="grid grid-cols-3 gap-6">
-        {data.map((post: Post) => (
-          <Link
-            href={`posts/${post.slug}`}
-            className="p-6 border hover:bg-slate-200 flex flex-col gap-4"
-            key={post.id}
-          >
-            <img
-              src={
-                post._embedded["wp:featuredmedia"][0].media_details.sizes.medium
-                  .source_url
-              }
-              width={1080}
-              height={400}
-              alt="Post image"
-            />
-            <h3 className="mb-2 text-lg font-semibold" dangerouslySetInnerHTML={{
-              __html: post.title.rendered,
-            }}>
-            </h3>
-            <p>date: {new Date(post.date).toLocaleDateString()}</p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.excerpt.rendered.split(".")[0],
-              }}
-            />
-          </Link>
+      <h1 className="mb-12">Tags</h1>
+      <ul>
+        {tags.map((tag: Tag) => (
+          <li key={tag.id}>
+            <Link href={`/posts/tag/${tag.slug}`}>
+              <a>{tag.name}</a>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </main>
   );
 }

@@ -22,17 +22,18 @@ const Nav = () => {
           className="flex gap-2 items-center hover:opacity-75 transition-all"
           href="/"
         >
-          <Image className="w-16" src={Logo} alt="logo"></Image>
+          <Image priority className="w-16" src={Logo} alt="logo"></Image>
           <p className="sr-only">{settings.site_name}</p>
         </Link>
         <ul className="flex gap-4">
           {links.map((link, index) => (
             <li key={index}>
               <Link
-                className={`hover:underline underline-offset-4 transition-all ${pathname === link.href
-                  ? "opacity-50 hover:no-underline cursor-default"
-                  : ""
-                  }`}
+                className={`hover:underline underline-offset-4 transition-all ${
+                  pathname === link.href
+                    ? "opacity-50 hover:no-underline cursor-default"
+                    : ""
+                }`}
                 href={link.href}
               >
                 {link.text}
