@@ -1,6 +1,6 @@
 import settings from "@/fjord.json";
 import Link from "next/link";
-import ContentHeader from "@/components/content/content-header";
+import SecondaryHero from "@/components/sections/secondary-hero";
 
 type Page = {
   id: number;
@@ -50,14 +50,13 @@ export default async function Pages() {
   }
 
   return (
-    <main className="grid gap-6">
-      <ContentHeader
-        title={`All Pages for ${settings.site_name}`}
-        subtitle="These are all the pages from WordPress for the website. When you create
-        a new page in WordPress you will see it appear here."
-      />
+    <main className="grid gap-6 max-w-7xl m-auto">
+      <SecondaryHero title="All Pages" subtitle={`${settings.site_name} blog`}>
+        All pages from {settings.site_name}. These are all the pages from your
+        WordPress site.
+      </SecondaryHero>
 
-      <div className="grid gap-6">
+      <div className="grid gap-6 p-6 max-w-7xl m-auto">
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}

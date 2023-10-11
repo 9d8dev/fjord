@@ -49,7 +49,11 @@ async function getPosts() {
   return posts;
 }
 
-export default async function RecentPosts() {
+export default async function RecentPosts({
+  className,
+}: {
+  className?: string;
+}) {
   const data = await getPosts();
 
   if (!data) {
@@ -57,7 +61,7 @@ export default async function RecentPosts() {
   }
 
   return (
-    <main className="px-6 py-24 max-w-7xl m-auto">
+    <main className={`px-6 py-24 max-w-7xl m-auto ${className}`}>
       <div className="mx-auto max-w-2xl lg:text-center mb-24">
         <h2 className="text-base font-semibold leading-7 text-slate-600">
           Most Recent Posts

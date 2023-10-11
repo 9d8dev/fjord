@@ -1,10 +1,12 @@
-import Image from "next/image";
-import Hero from "@/components/sections/hero";
+import SecondaryHero from "@/components/sections/secondary-hero";
 
 export default function Page() {
   return (
     <>
-      <Hero />
+      <SecondaryHero
+        title="Contact Us"
+        subtitle="Fill out the form to contact us."
+      />
     </>
   );
 }

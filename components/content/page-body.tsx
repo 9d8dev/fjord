@@ -1,3 +1,5 @@
+import BackButton from "../global/back-button";
+
 interface PageBodyProps {
   page: {
     title: {
@@ -28,8 +30,12 @@ interface PageBodyProps {
 
 const PageBody = ({ page, date, author }: PageBodyProps) => {
   return (
-    <section className="grid gap-6">
-      <h1 className="text-4xl" dangerouslySetInnerHTML={{ __html: page.title.rendered }}></h1>
+    <section className="grid gap-6 max-w-7xl m-auto p-6">
+      <BackButton />
+      <h1
+        className="text-4xl"
+        dangerouslySetInnerHTML={{ __html: page.title.rendered }}
+      ></h1>
       <p>{date.toDateString()}</p>
       {author && <p>{author.name}</p>}
       {page._embedded?.["wp:featuredmedia"] &&

@@ -1,4 +1,3 @@
-import BackButton from "@/components/global/back-button";
 import PageBody from "@/components/content/page-body";
 import settings from "@/fjord.json";
 import { notFound } from "next/navigation";
@@ -67,7 +66,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div>
-      <BackButton />
       <PageBody page={page} date={date} author={author} />
     </div>
   );
