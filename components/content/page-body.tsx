@@ -30,14 +30,15 @@ interface PageBodyProps {
 
 const PageBody = ({ page, date, author }: PageBodyProps) => {
   return (
-    <section className="grid gap-6 max-w-7xl m-auto p-6">
+    <section className="grid gap-6 pb-24 max-w-7xl m-auto">
       <BackButton />
       <h1
-        className="text-4xl"
+        className="text-4xl mb-6"
         dangerouslySetInnerHTML={{ __html: page.title.rendered }}
       ></h1>
-      <p>{date.toDateString()}</p>
-      {author && <p>{author.name}</p>}
+      <div className="flex gap-2">
+        <p>{date.toDateString()}</p> |{author && <p>{author.name}</p>}
+      </div>
       {page._embedded?.["wp:featuredmedia"] &&
         page._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
           ?.source_url && (
@@ -51,7 +52,7 @@ const PageBody = ({ page, date, author }: PageBodyProps) => {
           />
         )}
       <div
-        className="prose prose-slate lg:prose-lg"
+        className="prose prose-slate prose-headings:font-normal lg:prose-lg"
         dangerouslySetInnerHTML={{ __html: page.content.rendered }}
       ></div>
     </section>

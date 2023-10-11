@@ -1,6 +1,7 @@
 import settings from "@/fjord.json";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
+import CTA from "@/components/sections/cta";
 
 type Page = {
   id: number;
@@ -50,7 +51,7 @@ export default async function Pages() {
   }
 
   return (
-    <main className="grid gap-6 max-w-7xl m-auto">
+    <main className="grid gap-6 m-auto">
       <SecondaryHero title="All Pages" subtitle={`${settings.site_name} blog`}>
         All pages from {settings.site_name}. These are all the pages from your
         WordPress site.
@@ -80,6 +81,7 @@ export default async function Pages() {
           </Link>
         ))}
       </div>
+      <CTA />
     </main>
   );
 }

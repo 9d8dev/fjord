@@ -23,7 +23,7 @@ export default function CTA() {
               href="#"
               className="text-sm font-semibold leading-6 text-slate-900"
             >
-              Learn more <span aria-hidden="true">→</span>
+              Learn more
             </a>
           </div>
         </div>

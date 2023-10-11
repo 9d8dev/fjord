@@ -32,11 +32,11 @@ interface ArticleProps {
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <>
-      <article className="grid gap-6 max-w-7xl m-auto">
+      <article className="grid gap-6 pb-24 max-w-7xl m-auto bg-white">
         <div className="p-6">
           <BackButton />
           <h1
-            className="text-4xl"
+            className="text-4xl mb-6"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           ></h1>
           <div className="flex gap-2">
@@ -58,12 +58,12 @@ const Article = ({ post, date, author }: ArticleProps) => {
               </div>
             )}
           <div
-            className="prose prose-slate lg:prose-lg"
+            className="prose prose-slate prose-headings:font-normal lg:prose-lg"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
         </div>
       </article>
-      <RecentPosts className="bg-slate-200 mt-12" />
+      <RecentPosts className="bg-slate-200" />
     </>
   );
 };

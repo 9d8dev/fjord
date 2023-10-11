@@ -65,7 +65,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const author = page._embedded?.author[0];
 
   return (
-    <div>
+    <div className="p-6">
       <PageBody page={page} date={date} author={author} />
     </div>
   );
