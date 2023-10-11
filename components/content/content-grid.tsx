@@ -10,7 +10,7 @@ const ContentGrid = ({ children, className, ...rest }: ContentGridProps) => {
     "div",
     Object.assign(
       {
-        className: `grid sm:grid-cols-2 md:grid-cols-3 gap-6 my-8 ${className}`,
+        className: `grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 my-8 ${className}`,
       },
       rest
     ),
