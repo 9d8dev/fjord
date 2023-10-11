@@ -45,14 +45,16 @@ const Article = ({ post, date, author }: ArticleProps) => {
           post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
             ?.source_url && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img
-              className="my-8"
-              src={
-                post._embedded["wp:featuredmedia"][0].media_details.sizes.full
-                  .source_url
-              }
-              alt="Post image"
-            />
+            <div className="w-full h-96 relative my-12">
+              <img
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                src={
+                  post._embedded["wp:featuredmedia"][0].media_details.sizes.full
+                    .source_url
+                }
+                alt="Post image"
+              />
+            </div>
           )}
         <div
           className="prose prose-slate lg:prose-lg"
