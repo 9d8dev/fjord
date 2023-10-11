@@ -17,7 +17,7 @@ const Nav = () => {
 
   return (
     <nav className="sticky top-0 z-50 p-4 text-sm bg-opacity-75 backdrop-blur-md items-center m-auto bg-slate-100">
-      <div className="container flex justify-between m-auto">
+      <div className="flex max-w-7xl justify-between m-auto">
         <Link
           className="flex gap-2 px-6 xl:px-0 items-center hover:opacity-75 transition-all"
           href="/"

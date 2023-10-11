@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="px-4 py-24 mt-12 text-sm bg-opacity-75 border-2 backdrop-blur-md items-center m-auto bg-slate-200">
-      <div className="container px-6 xl:px-0 grid grid-cols-3 justify-between m-auto">
+      <div className="px-6 max-w-7xl xl:px-0 grid grid-cols-3 justify-between m-auto">
         <Link href="/">
           <Image className="w-16" src={Logo} alt="logo"></Image>
         </Link>
