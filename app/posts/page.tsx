@@ -1,5 +1,7 @@
 import settings from "@/fjord.json";
 import PostCard from "@/components/content/post-card";
+import ContentHeader from "@/components/content/content-header";
+import ContentGrid from "@/components/content/content-grid";
 
 type Post = {
   id: number;
@@ -65,17 +67,17 @@ export default async function Posts() {
 
   return (
     <main className="grid gap-6">
-      <h1 className="text-4xl">All Posts</h1>
-      <h2 className="text-2xl">
-        All posts from {settings.site_name}. These are all the posts from your
-        WordPress site.
-      </h2>
+      <ContentHeader
+        title="All Posts"
+        subtitle={`All posts from ${settings.site_name}. These are all the posts from your
+        WordPress site.`}
+      />
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
+      <ContentGrid>
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} tags={tags} />
         ))}
-      </div>
+      </ContentGrid>
     </main>
   );
 }
