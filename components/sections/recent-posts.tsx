@@ -61,8 +61,8 @@ export default async function RecentPosts({
   }
 
   return (
-    <main className={`px-6 py-24 max-w-7xl m-auto ${className}`}>
-      <div className="mx-auto max-w-2xl lg:text-center mb-24">
+    <main className={`px-6 py-24 m-auto ${className}`}>
+      <div className="mx-auto max-w-7xl lg:text-center mb-24">
         <h2 className="text-base font-semibold leading-7 text-slate-600">
           Most Recent Posts
         </h2>

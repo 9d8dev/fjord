@@ -34,7 +34,7 @@ export default function FAQ() {
               Can’t find the answer you’re looking for? Reach out to our{" "}
               <a
                 href="#"
-                className="font-semibold text-indigo-600 hover:text-indigo-500"
+                className="font-semibold text-slate-600 hover:text-slate-500"
               >
                 customer support
               </a>{" "}
