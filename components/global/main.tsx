@@ -3,7 +3,7 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ children }) => {
-  return <main className="p-6 container m-auto max-w-screen-lg">{children}</main>;
+  return <main className="p-6 container m-auto">{children}</main>;
 };
 
 export default Main;
