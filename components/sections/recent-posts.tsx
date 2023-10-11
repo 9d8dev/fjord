@@ -70,11 +70,11 @@ export default async function RecentPosts({
           Read the Latest from blog.
         </p>
       </div>
-      <ContentGrid className="xl:grid-cols-3 2xl:grid-cols-3">
+      <div className="grid max-w-7xl m-auto sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} />
         ))}
-      </ContentGrid>
+      </div>
     </main>
   );
 }
