@@ -1,6 +1,6 @@
 import settings from "@/fjord.json";
 import Link from "next/link";
-import Image from "next/image";
+import ContentHeader from "@/components/content/content-header";
 
 type Page = {
   id: number;
@@ -51,8 +51,12 @@ export default async function Pages() {
 
   return (
     <main className="grid gap-6">
-      <h1 className="text-4xl">All Pages for {settings.site_name}</h1>
-      <h2 className="text-2xl">These are all the pages from WordPress for the website. When you create a new page in WordPress you will see it appear here.</h2>
+      <ContentHeader
+        title={`All Pages for ${settings.site_name}`}
+        subtitle="These are all the pages from WordPress for the website. When you create
+        a new page in WordPress you will see it appear here."
+      />
+
       <div className="grid gap-6">
         {data.map((page: Page) => (
           <Link
@@ -61,10 +65,12 @@ export default async function Pages() {
             key={page.id}
           >
             <div className="flex items-baseline gap-2">
-              <h3 className="mb-2 text-lg underline underline-offset-4 font-semibold" dangerouslySetInnerHTML={{
-                __html: page.title.rendered,
-              }}>
-              </h3>
+              <h3
+                className="mb-2 text-lg underline underline-offset-4 font-semibold"
+                dangerouslySetInnerHTML={{
+                  __html: page.title.rendered,
+                }}
+              ></h3>
               <p>date: {new Date(page.date).toLocaleDateString()}</p>
             </div>
             <div

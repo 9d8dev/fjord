@@ -62,7 +62,7 @@ export default async function AuthorPosts() {
 
   return (
     <main className="p-12">
-      <h1 className="mb-12">Author Posts</h1>
+      <h1 className="mb-12">Authors</h1>
       <ul>
         {data.map((author: Author) => (
           <li key={author.id}>

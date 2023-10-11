@@ -9,9 +9,9 @@ const ContentHeader: React.FC<ContentHeaderProps> = ({
   subtitle,
   children,
 }) => (
-  <header className="mb-12">
-    <h1 className="text-4xl font-bold mb-2">{title}</h1>
-    {subtitle && <p className="text-lg text-gray-600 mb-6">{subtitle}</p>}
+  <header className="mt-12 flex flex-col gap-4 max-w-2xl">
+    <h1 className="text-4xl">{title}</h1>
+    {subtitle && <h2 className="text-lg text-gray-600">{subtitle}</h2>}
     {children}
   </header>
 );
