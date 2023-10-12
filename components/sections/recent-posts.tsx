@@ -38,7 +38,7 @@ type Tag = {
 
 async function getPosts() {
   const res = await fetch(
-    `https://${settings.url}/wp-json/wp/v2/posts?_embed&per_page=3`
+    `${settings.url}/wp-json/wp/v2/posts?_embed&per_page=3`
   );
 
   if (!res.ok) {

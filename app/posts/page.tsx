@@ -34,7 +34,7 @@ type Tag = {
 };
 
 async function getTags() {
-  const res = await fetch(`https://${settings.url}/wp-json/wp/v2/tags`);
+  const res = await fetch(`${settings.url}/wp-json/wp/v2/tags`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tags");
@@ -46,7 +46,7 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `https://${settings.url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`
+    `${settings.url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`
   );
 
   if (!res.ok) {
@@ -54,7 +54,7 @@ async function getPosts(perPage: number, offset: number) {
   }
 
   const data: Post[] = await res.json();
-  const totalPosts = Number(res.headers.get('X-WP-Total'));
+  const totalPosts = Number(res.headers.get("X-WP-Total"));
 
   // Sort posts by date
   data.sort(
@@ -95,7 +95,10 @@ export default async function Posts({
       <section className="flex justify-between items-center max-w-7xl m-auto w-full p-6 border-t">
         <p className="text-sm text-gray-700">
           Showing{" "}
-          <span className="font-semibold">{(page - 1) * settings.perPage + 1}</span> to{" "}
+          <span className="font-semibold">
+            {(page - 1) * settings.perPage + 1}
+          </span>{" "}
+          to{" "}
           <span className="font-semibold">
             {Math.min(page * settings.perPage, totalPosts)}
           </span>{" "}
@@ -108,7 +111,9 @@ export default async function Posts({
             </button>
           ) : (
             <Link
-              href={page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"}
+              href={
+                page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"
+              }
               className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
             >
               Previous
@@ -132,7 +137,6 @@ export default async function Posts({
           )}
         </div>
       </section>
-
-    </main >
+    </main>
   );
 }

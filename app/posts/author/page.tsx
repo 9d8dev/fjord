@@ -33,7 +33,7 @@ type Post = {
 export default async function AuthorPosts() {
   async function getAuthorPosts() {
     const res = await fetch(
-      `https://${settings.url}/wp-json/wp/v2/users?_embed&per_page=${settings.perPage}`
+      `${settings.url}/wp-json/wp/v2/users?_embed&per_page=${settings.perPage}`
     );
 
     if (!res.ok) {
