@@ -73,9 +73,9 @@ export default async function Posts({
     typeof searchParams.page === "string" && +searchParams.page > 1
       ? +searchParams.page
       : 1;
-  const offset = (page - 1) * settings.perPage;
-  const { data, totalPosts } = await getPosts(settings.perPage, offset);
-  const lastPage = Math.ceil(totalPosts / settings.perPage);
+  const offset = (page - 1) * settings.per_page;
+  const { data, totalPosts } = await getPosts(settings.per_page, offset);
+  const lastPage = Math.ceil(totalPosts / settings.per_page);
   const tags = await getTags();
 
   return (
@@ -96,11 +96,11 @@ export default async function Posts({
         <p className="text-sm text-gray-700">
           Showing{" "}
           <span className="font-semibold">
-            {(page - 1) * settings.perPage + 1}
+            {(page - 1) * settings.per_page + 1}
           </span>{" "}
           to{" "}
           <span className="font-semibold">
-            {Math.min(page * settings.perPage, totalPosts)}
+            {Math.min(page * settings.per_page, totalPosts)}
           </span>{" "}
           of <span className="font-semibold">{totalPosts}</span> posts
         </p>
