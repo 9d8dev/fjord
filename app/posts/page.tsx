@@ -89,45 +89,50 @@ export default async function Posts({
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} tags={tags} />
         ))}
+        {/* Pagination */}
       </ContentGrid>
-      <p className="text-sm text-gray-700">
-        Showing{" "}
-        <span className="font-semibold">{(page - 1) * settings.perPage + 1}</span> to{" "}
-        <span className="font-semibold">
-          {Math.min(page * settings.perPage, totalPosts)}
-        </span>{" "}
-        of <span className="font-semibold">{totalPosts}</span> posts
-      </p>
-      <div className="space-x-2">
-        {page === 1 ? (
-          <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-3 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
-            Previous
-          </button>
-        ) : (
-          <Link
-            href={page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"}
-            className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-3 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
-          >
-            Previous
-          </Link>
-        )}
-        {page < lastPage ? (
-          <Link
-            href={
-              page < lastPage
-                ? `/posts/?page=${page + 1}#posts`
-                : `/posts/?page=${page}#posts`
-            }
-            className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-3 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
-          >
-            Next
-          </Link>
-        ) : (
-          <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-3 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
-            Next
-          </button>
-        )}
-      </div>
-    </main>
+
+      <section className="flex justify-between items-center max-w-7xl m-auto w-full p-6 border-t">
+        <p className="text-sm text-gray-700">
+          Showing{" "}
+          <span className="font-semibold">{(page - 1) * settings.perPage + 1}</span> to{" "}
+          <span className="font-semibold">
+            {Math.min(page * settings.perPage, totalPosts)}
+          </span>{" "}
+          of <span className="font-semibold">{totalPosts}</span> posts
+        </p>
+        <div className="space-x-2 ">
+          {page === 1 ? (
+            <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
+              Previous
+            </button>
+          ) : (
+            <Link
+              href={page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"}
+              className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
+            >
+              Previous
+            </Link>
+          )}
+          {page < lastPage ? (
+            <Link
+              href={
+                page < lastPage
+                  ? `/posts/?page=${page + 1}#posts`
+                  : `/posts/?page=${page}#posts`
+              }
+              className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
+            >
+              Next
+            </Link>
+          ) : (
+            <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
+              Next
+            </button>
+          )}
+        </div>
+      </section>
+
+    </main >
   );
 }
