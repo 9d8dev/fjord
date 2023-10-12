@@ -2,6 +2,11 @@ import settings from "@/fjord.json";
 import PostCard from "@/components/content/post-card";
 import ContentGrid from "@/components/content/content-grid";
 
+const content = {
+  description: "Most Recent Posts",
+  title: "Read the latest from our blog.",
+};
+
 type Post = {
   id: number;
   title: {
@@ -64,10 +69,10 @@ export default async function RecentPosts({
     <main className={`px-6 py-24 m-auto ${className}`}>
       <div className="mx-auto max-w-7xl lg:text-center mb-24">
         <h2 className="text-base font-semibold leading-7 text-slate-600">
-          Most Recent Posts
+          {content.description}
         </h2>
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Read the Latest from blog.
+          {content.title}
         </p>
       </div>
       <div className="grid max-w-7xl m-auto sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">

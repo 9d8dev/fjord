@@ -21,6 +21,13 @@ const faqs = [
   },
 ];
 
+const content = {
+  title: "Frequently asked questions",
+  description: "Can’t find the answer you’re looking for? Reach out to our",
+  linkText: "customer support",
+  linkUrl: "#",
+};
+
 export default function FAQ() {
   return (
     <div className="bg-slate-100">
@@ -28,15 +35,15 @@ export default function FAQ() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
-              Frequently asked questions
+              {content.title}
             </h2>
             <p className="mt-4 text-base leading-7 text-gray-600">
-              Can’t find the answer you’re looking for? Reach out to our{" "}
+              {content.description}{" "}
               <a
-                href="#"
+                href={content.linkUrl}
                 className="font-semibold text-slate-600 hover:text-slate-500"
               >
-                customer support
+                {content.linkText}
               </a>{" "}
               team.
             </p>
