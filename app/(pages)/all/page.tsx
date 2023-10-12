@@ -29,7 +29,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `https://${settings.url}/wp-json/wp/v2/pages?_embed&per_page=${settings.limit}`
+      `https://${settings.url}/wp-json/wp/v2/pages?_embed&per_page=${settings.perPage}`
     );
 
     if (!res.ok) {
