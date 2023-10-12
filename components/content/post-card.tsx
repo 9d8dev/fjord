@@ -71,7 +71,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
       ></h3>
 
       <div
-        className="text-slate-500 text-sm"
+        className="text-gray-700 text-sm"
         dangerouslySetInnerHTML={{
           __html: post.excerpt.rendered.split(".")[0] + ".",
         }}
