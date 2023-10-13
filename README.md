@@ -2,7 +2,7 @@
 
 ## **Next.js App Router Template for Headless Wordpress**
 
-## How to use:
+## How to use
 
 1. Clone this repository
 2. Run `npm install` within the directory
@@ -24,5 +24,21 @@
    > - `site_description`: The meta description for your site
    > - `per_page`: The number of posts you want to show per page for pagination
    > - `url`: The URL of your Wordpress API endpoint
+
+## Site Structure
+
+- `/`: Homepage
+- `/contact`: Contact page
+- `/about`: About page
+- `/posts`: Blog index
+- `/posts/[slug]`: Blog post
+- `/all`: Wordpress pages index
+- `/[slug]`: Wordpress page
+- `/categories`: Wordpress category index
+- `/categories/[slug]`: Wordpress category
+- `/tags`: Wordpress tag index
+- `/tags/[slug]`: Wordpress tag
+- `/authors`: Wordpress author index
+- `/authors/[slug]`: Wordpress author
 
 Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)
