@@ -1,8 +1,8 @@
-import settings from "@/fjord.json"
+import settings from "@/fjord.json";
 import Logo from "@/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import SubscribeForm from "@/components/global/subscribe-form"
+import SubscribeForm from "@/components/global/subscribe-form";
 
 const Footer = () => {
   const links = [
@@ -20,7 +20,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 py-24 text-sm items-center m-auto bg-slate-300 grid gap-12">
+    <footer
+      suppressHydrationWarning
+      className="px-4 py-24 text-sm items-center m-auto bg-slate-300 grid gap-12"
+    >
       <div className="px-6 max-w-7xl xl:px-0 grid md:grid-cols-3 gap-6 justify-between w-full m-auto">
         <div>
           <Link href="/">
@@ -45,7 +48,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
-        <p>© {new Date().getFullYear()}{" "} | {settings.site_name}</p>
+        <p>
+          © {new Date().getFullYear()} | {settings.site_name}
+        </p>
         <ul className="flex gap-4">
           {otherLinks.map((link, index) => (
             <li
