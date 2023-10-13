@@ -1,6 +1,5 @@
 import settings from "@/fjord.json";
 import PostCard from "@/components/content/post-card";
-import ContentGrid from "@/components/content/content-grid";
 
 const content = {
   description: "Most Recent Posts",
