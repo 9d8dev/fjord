@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 const content = {
   title: "Data to enrich your online business",
   subtitle: "Anim aute id magna aliqua ad ad non deserunt sunt.",
@@ -28,21 +30,21 @@ export default function Hero() {
   return (
     <div className="relative bg-white">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 pb-12 pt-8 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
+        <div className="px-6 pb-12 pt-8 lg:col-span-7 lg:px-0 lg:py-24 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <div className="hidden sm:mt-32 sm:flex lg:mt-16">
+            <div className="hidden sm:flex">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 {content.subtitle}{" "}
                 <a
                   href={content.readMore.link}
                   className="whitespace-nowrap font-semibold text-slate-600"
                 >
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  {content.readMore.text} <span aria-hidden="true">&rarr;</span>
+                  <span className="absolute inset-0 flex gap-2 items-center" aria-hidden="true" />
+                  {content.readMore.text} <ArrowRight className="w-4 inline -mt-px" />
                 </a>
               </div>
             </div>
-            <h1 className="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">
+            <h1 className="mt-8 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               {content.title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
