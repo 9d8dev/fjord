@@ -63,7 +63,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
           ></div>
         </div>
       </article>
-      <RecentPosts className="bg-slate-200" />
+      <RecentPosts className="bg-gray-200" />
     </>
   );
 };
