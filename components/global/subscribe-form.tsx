@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState, useEffect } from "react";
 
 function SubscribeForm() {
-  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
   const [subscribed, setSubscribed] = useState<boolean>(false);
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -18,6 +18,10 @@ function SubscribeForm() {
     setSubscribed(true);
   };
 
+  useEffect(() => {
+    setSubscribed(false);
+  }, []);
+
   return (
     <div>
       {subscribed ? (
@@ -25,8 +29,11 @@ function SubscribeForm() {
           <p className="text-2xl font-semibold">Thank you for subscribing!</p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className='grid gap-2 -mt-2'>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        <form onSubmit={handleSubmit} className="grid gap-2 -mt-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
             Subscribe to the latest from our blog
           </label>
           <div>

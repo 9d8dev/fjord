@@ -3,7 +3,11 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ children }) => {
-  return <main className="m-auto">{children}</main>;
+  return (
+    <main suppressHydrationWarning className="m-auto">
+      {children}
+    </main>
+  );
 };
 
 export default Main;
