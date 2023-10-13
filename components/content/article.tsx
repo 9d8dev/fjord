@@ -45,13 +45,13 @@ const Article = ({ post, date, author }: ArticleProps) => {
           {post._embedded?.["wp:featuredmedia"] &&
             post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
               ?.source_url && (
-              <div className="w-full h-96 relative my-12">
+              <div className="w-full h-96 md:h-[500px] relative my-12">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  className="absolute top-0 left-0 w-full rounded-lg h-full object-cover"
                   src={
-                    post._embedded["wp:featuredmedia"][0].media_details.sizes.full
-                      .source_url
+                    post._embedded["wp:featuredmedia"][0].media_details.sizes
+                      .full.source_url
                   }
                   alt="Post image"
                 />
