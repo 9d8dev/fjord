@@ -67,7 +67,7 @@ export default function Feature() {
                       href={feature.href}
                       className="text-sm font-semibold leading-6 text-slate-600"
                     >
-                      Learn more
+                      Learn more -{'>'}
                     </a>
                   </p>
                 </dd>
