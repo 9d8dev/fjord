@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
         <p>
-          © {new Date().getFullYear()} | {settings.site_name}
+          © {new Date().getFullYear()} | {settings.site_name} | <a href="https://cameronyoungblood.com">Created</a> <a href="https://bridger.to">by</a> <a href="https://alpinecodex.com">Alpine Codex</a>
         </p>
         <ul className="flex gap-4">
           {otherLinks.map((link, index) => (
