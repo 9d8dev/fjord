@@ -40,7 +40,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
   const date = new Date(post.date);
   return (
     <Link
-      href={`posts/${post.slug}`}
+      href={`/posts/${post.slug}`}
       className="flex flex-col gap-2 group transition-all hover:mb-1 hover:-mt-1"
       key={post.id}
     >
