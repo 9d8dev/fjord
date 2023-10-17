@@ -9,15 +9,15 @@
 3. Configure the Wordpress REST API in your Wordpress instance
 4. Edit `fjord.json` to customize the configuration:
 
-   > ```
-   > {
-   >   "site_name": "fjord.dev",
-   >   "site_title": "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
-   >   "site_description": "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
-   >   "per_page": 6,
-   >   "url": "https://windpress.wpenginepowered.com"
-   > }
-   > ```
+    ```
+    {
+      "site_name": "fjord.dev",
+      "site_title": "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
+      "site_description": "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
+      "per_page": 6,
+      "url": "https://windpress.wpenginepowered.com"
+   }
+   ```
    
    - `site_name`: The meta name for your site
    - `site_title`: The meta title for your site
