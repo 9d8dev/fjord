@@ -25,6 +25,9 @@
    > - `per_page`: The number of posts you want to show per page for pagination
    > - `url`: The URL of your Wordpress API endpoint
 
+5. Replace `logo.svg` in the `/public` folder with your logo
+6. Replace `favicon.ico` in the `/app` folder with your favicon.ico
+
 ## Site Structure
 
 - `/`: Homepage
