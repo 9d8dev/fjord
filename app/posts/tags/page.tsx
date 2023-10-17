@@ -10,7 +10,7 @@ type Tag = {
 export default async function TagPosts() {
   async function getTagPosts() {
     const res = await fetch(
-      `${settings.url}/wp-json/wp/v2/tags?_embed&per_page=${settings.per_page}`
+      `${settings.wp_url}/wp-json/wp/v2/tags?_embed&per_page=${settings.per_page}`
     );
 
     if (!res.ok) {

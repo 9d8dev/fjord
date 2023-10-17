@@ -29,7 +29,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${settings.url}/wp-json/wp/v2/pages?_embed&per_page=${settings.per_page}`
+      `${settings.wp_url}/wp-json/wp/v2/pages?_embed&per_page=${settings.per_page}`
     );
 
     if (!res.ok) {
@@ -61,7 +61,7 @@ export default async function Pages() {
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}
-            className="hover:bg-slate-50 transition-all rounded-r-md flex flex-col gap-2 p-4 border-l-2"
+            className="hover:bg-primary-50 transition-all rounded-r-md flex flex-col gap-2 p-4 border-l-2"
             key={page.id}
           >
             <div className="flex items-baseline gap-2">

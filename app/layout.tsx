@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="twitter:image:width" content="<generated>" />
         <meta name="twitter:image:height" content="<generated>" />
       </head>
-      <body className={`${manrope.className} text-gray-950 bg-slate-100`}>
+      <body className={`${manrope.className} text-secondary-950 bg-primary-100`}>
         <Nav />
         <Main>{children}</Main>
         <Footer />

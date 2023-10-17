@@ -56,22 +56,22 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
               alt="Post image"
               className="absolute top-0 left-0 w-full h-full object-cover rounded-lg border"
             />
-            <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 rounded-md bg-slate-200 bg-opacity-75 backdrop-blur-md">
+            <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 rounded-md bg-primary-200 bg-opacity-75 backdrop-blur-md">
               <p className="sr-only">Read More</p> <ArrowUpRight className="" />
             </div>
           </div>
         )}
-      <p className="text-xs text-slate-500 flex items-center gap-1">
+      <p className="text-xs text-primary-500 flex items-center gap-1">
         <Calendar className="w-4" />
         {date.toDateString()}
       </p>
       <h3
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        className="mb-2 text-slate-600 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
+        className="mb-2 text-primary-600 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
       ></h3>
 
       <div
-        className="text-gray-700 text-sm"
+        className="text-secondary-700 text-sm"
         dangerouslySetInnerHTML={{
           __html: post.excerpt.rendered.split(".")[0] + ".",
         }}
@@ -85,7 +85,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
               return (
                 <li key={index}>
                   <Link
-                    className="px-2 py-1 bg-slate-200 w-fit rounded-md text-sm"
+                    className="px-2 py-1 bg-primary-200 w-fit rounded-md text-sm"
                     href="/"
                   >
                     {tag?.name}

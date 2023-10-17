@@ -23,7 +23,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="sticky top-0 px-6 z-50 p-4 text-sm bg-opacity-75 backdrop-blur-md m-auto bg-slate-100">
+    <nav className="sticky top-0 px-6 z-50 p-4 text-sm bg-opacity-75 backdrop-blur-md m-auto bg-primary-100">
       <div className="flex max-w-7xl justify-between m-auto">
         <Link
           className="flex gap-2 items-center hover:opacity-75 transition-all"
@@ -52,7 +52,7 @@ const Nav = () => {
             ))}
           </ul>
           <Link
-            className="px-3 py-2 rounded-lg bg-slate-600 text-white hover:mb-px hover:-mt-px transition-all"
+            className="px-3 py-2 rounded-lg bg-primary-600 text-white hover:mb-px hover:-mt-px transition-all"
             href="/"
           >
             Get Started
@@ -63,7 +63,7 @@ const Nav = () => {
       {/* Mobile Nav Menu */}
       {isMobileMenuOpen && (
         <div className={
-          `fixed top-0 h-screen w-screen inset-0 bg-gray-100 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
+          `fixed top-0 h-screen w-screen inset-0 bg-secondary-100 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
           transform ${isMobileMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'} transition-all duration-300`
         }>
           <button className="absolute top-4 right-4" onClick={handleMobileMenuToggle}><X /></button>
@@ -78,7 +78,7 @@ const Nav = () => {
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.text} <ArrowRight className='text-slate-500' />
+                  {link.text} <ArrowRight className='text-primary-500' />
                 </Link>
               </li>
             ))}

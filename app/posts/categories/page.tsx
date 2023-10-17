@@ -10,7 +10,7 @@ type Category = {
 export default async function CategoryPosts() {
   async function getCategoryPosts() {
     const res = await fetch(
-      `${settings.url}/wp-json/wp/v2/categories?_embed&per_page=${settings.per_page}`
+      `${settings.wp_url}/wp-json/wp/v2/categories?_embed&per_page=${settings.per_page}`
     );
 
     if (!res.ok) {

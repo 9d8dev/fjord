@@ -32,7 +32,7 @@ function SubscribeForm() {
         <form onSubmit={handleSubmit} className="grid gap-2 -mt-2">
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-secondary-700"
           >
             Subscribe to the latest from our blog
           </label>
@@ -40,7 +40,7 @@ function SubscribeForm() {
             <input
               type="email"
               id="email"
-              className="block w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:ring focus:ring-slate-200 focus:outline-none focus:border-slate-400"
+              className="block w-full px-4 py-2 border border-primary-200 rounded-lg shadow-sm focus:ring focus:ring-primary-200 focus:outline-none focus:border-primary-400"
               placeholder="Your email"
               value={email}
               onChange={handleEmailChange}
@@ -50,7 +50,7 @@ function SubscribeForm() {
           <div>
             <button
               type="submit"
-              className="block w-full px-4 py-2 bg-slate-600 text-white font-semibold rounded-lg hover:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-200"
+              className="block w-full px-4 py-2 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 focus:outline-none focus:ring focus:ring-primary-200"
             >
               Subscribe
             </button>

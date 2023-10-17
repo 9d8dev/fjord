@@ -21,7 +21,7 @@ const testimonialsData = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-slate-900 py-24 sm:py-32">
+    <section className="bg-primary-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           {testimonialsData.map((testimonial, index) => (
@@ -36,7 +36,7 @@ export default function Testimonials() {
                 </blockquote>
                 <figcaption className="mt-10 flex items-center gap-x-6">
                   <img
-                    className="h-14 w-14 rounded-full bg-slate-800"
+                    className="h-14 w-14 rounded-full bg-primary-800"
                     src={testimonial.image}
                     alt=""
                   />
@@ -44,7 +44,7 @@ export default function Testimonials() {
                     <div className="font-semibold text-white">
                       {testimonial.name}
                     </div>
-                    <div className="mt-1 text-slate-400">
+                    <div className="mt-1 text-primary-400">
                       {testimonial.position}
                     </div>
                   </div>

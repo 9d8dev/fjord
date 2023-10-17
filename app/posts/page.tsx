@@ -34,7 +34,7 @@ type Tag = {
 };
 
 async function getTags() {
-  const res = await fetch(`${settings.url}/wp-json/wp/v2/tags`);
+  const res = await fetch(`${settings.wp_url}/wp-json/wp/v2/tags`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tags");
@@ -46,7 +46,7 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `${settings.url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`
+    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`
   );
 
   if (!res.ok) {
@@ -93,7 +93,7 @@ export default async function Posts({
       </ContentGrid>
 
       <section className="flex justify-between items-center max-w-7xl m-auto w-full p-6 border-t">
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-secondary-700">
           Showing{" "}
           <span className="font-semibold">
             {(page - 1) * settings.per_page + 1}
@@ -106,7 +106,7 @@ export default async function Posts({
         </p>
         <div className="space-x-2 ">
           {page === 1 ? (
-            <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
+            <button className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md opacity-50 pointer-events-none">
               Previous
             </button>
           ) : (
@@ -114,7 +114,7 @@ export default async function Posts({
               href={
                 page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"
               }
-              className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
+              className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md"
             >
               Previous
             </Link>
@@ -126,12 +126,12 @@ export default async function Posts({
                   ? `/posts/?page=${page + 1}#posts`
                   : `/posts/?page=${page}#posts`
               }
-              className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md"
+              className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md"
             >
               Next
             </Link>
           ) : (
-            <button className="bg-white hover:bg-gray-50 border-gray-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-gray-900 font-semibold rounded-md opacity-50 pointer-events-none">
+            <button className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md opacity-50 pointer-events-none">
               Next
             </button>
           )}

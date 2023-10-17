@@ -37,7 +37,7 @@ type Tag = {
 
 async function getPosts() {
   const res = await fetch(
-    `${settings.url}/wp-json/wp/v2/posts?_embed&per_page=3`
+    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=3`
   );
 
   if (!res.ok) {
@@ -67,10 +67,10 @@ export default async function RecentPosts({
   return (
     <main className={`px-6 py-24 m-auto ${className}`}>
       <div className="mx-auto max-w-7xl lg:text-center mb-24">
-        <h2 className="text-base font-semibold leading-7 text-slate-600">
+        <h2 className="text-base font-semibold leading-7 text-primary-600">
           {content.description}
         </h2>
-        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <p className="mt-2 text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
           {content.title}
         </p>
       </div>
