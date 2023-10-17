@@ -9,12 +9,14 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const links = [
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
     { href: "/posts", text: "Blog" },
     { href: "/contact", text: "Contact" },
   ];
+
   const pathname = usePathname();
 
   const handleMobileMenuToggle = () => {
