@@ -6,6 +6,7 @@
   "wp_url": "https://windpress.wpenginepowered.com",
   "theme": {
     "primary": "slate",
-    "secondary": "gray"
+    "secondary": "gray",
+    "logo": "/logo.svg"
   }
 }

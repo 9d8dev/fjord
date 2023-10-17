@@ -1,5 +1,4 @@
 import settings from "@/fjord.json";
-import Logo from "@/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import SubscribeForm from "@/components/global/subscribe-form";
@@ -27,7 +26,7 @@ const Footer = () => {
       <div className="px-6 max-w-7xl xl:px-0 grid md:grid-cols-3 gap-6 justify-between w-full m-auto">
         <div>
           <Link href="/">
-            <Image className="w-16 mb-4" src={Logo} alt="logo"></Image>
+            <Image className="w-16 mb-4" width={200} height={200} src={settings.theme.logo} alt="logo"></Image>
           </Link>
           <p className="text-sm text-secondary-500 md:w-3/4">
             {settings.site_description}

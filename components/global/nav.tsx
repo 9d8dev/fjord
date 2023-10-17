@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from "@/public/logo.svg";
 import settings from "@/fjord.json";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from 'lucide-react';
@@ -29,7 +28,7 @@ const Nav = () => {
           className="flex gap-2 items-center hover:opacity-75 transition-all"
           href="/"
         >
-          <Image priority className="w-16" src={Logo} alt="logo"></Image>
+          <Image priority className="w-16" width={200} height={200} src={settings.theme.logo} alt="logo"></Image>
           <p className="sr-only">{settings.site_name}</p>
         </Link>
         <div className="flex gap-4 items-center lg:hidden">
