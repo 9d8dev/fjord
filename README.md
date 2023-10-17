@@ -18,12 +18,12 @@
    >   "url": "https://windpress.wpenginepowered.com"
    > }
    > ```
-   >
-   > - `site_name`: The meta name for your site
-   > - `site_title`: The meta title for your site
-   > - `site_description`: The meta description for your site
-   > - `per_page`: The number of posts you want to show per page for pagination
-   > - `url`: The URL of your Wordpress API endpoint
+   
+   - `site_name`: The meta name for your site
+   - `site_title`: The meta title for your site
+   - `site_description`: The meta description for your site
+   - `per_page`: The number of posts you want to show per page for pagination
+   - `url`: The URL of your Wordpress API endpoint
 
 5. Replace `logo.svg` in the `/public` folder with your logo
 6. Replace `favicon.ico` in the `/app` folder with your favicon.ico
