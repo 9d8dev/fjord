@@ -1,4 +1,4 @@
-# **FJORD**
+<|START|# **FJORD**
 
 ## **Next.js App Router Template for Headless Wordpress**
 
@@ -15,15 +15,28 @@
       "site_title": "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
       "site_description": "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
       "per_page": 6,
-      "url": "https://windpress.wpenginepowered.com"
-   }
-   ```
+      "wp_url": "https://windpress.wpenginepowered.com",
+      "google_analytics_id": "G-7VM8KZENP7",
+      "theme": {
+        "primary": "slate",
+        "secondary": "gray",
+        "logo": "/logo.svg",
+        "font": "change the font using next/font in `layout.tsx` in the app directory."
+      }
+    }
+    ```
 
    - `site_name`: The meta name for your site
    - `site_title`: The meta title for your site
    - `site_description`: The meta description for your site
    - `per_page`: The number of posts you want to show per page for pagination
-   - `url`: The URL of your Wordpress API endpoint
+   - `wp_url`: The URL of your Wordpress API endpoint
+   - `google_analytics_id`: Your Google Analytics ID
+   - `theme`: Object with theme customization options
+       - `primary`: Primary theme color (headings, buttons, sections, etc.) -- Select a color from the [Tailwind CSS Color Schemes](https://tailwindcss.com/docs/customizing-colors)
+       - `secondary`: Secondary theme color (fonts, backgrounds, etc.) -- Select a color from the [Tailwind CSS Color Schemes](https://tailwindcss.com/docs/customizing-colors)
+       - `logo`: Path to your logo
+       - `font`: Use `next/font` at `layout.tsx` in the app directory to update the font to any Google Font
 
 5. Replace `logo.svg` in the `/public` folder with your logo
 6. Replace `favicon.ico` in the `/app` folder with your favicon.ico
@@ -44,4 +57,4 @@
 - `/authors`: Wordpress author index
 - `/authors/[slug]`: Wordpress author
 
-Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)
+Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)|END|>

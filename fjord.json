@@ -8,6 +8,7 @@
   "theme": {
     "primary": "slate",
     "secondary": "gray",
-    "logo": "/logo.svg"
+    "logo": "/logo.svg",
+    "font": "change the font using next/font in `layout.tsx` in the app directory."
   }
 }
