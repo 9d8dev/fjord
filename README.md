@@ -1,4 +1,4 @@
-<|START|# **FJORD**
+# **FJORD**
 
 ## **Next.js App Router Template for Headless Wordpress**
 
@@ -57,4 +57,4 @@
 - `/authors`: Wordpress author index
 - `/authors/[slug]`: Wordpress author
 
-Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)|END|>
+Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)
