@@ -10,6 +10,7 @@ import { Manrope } from "next/font/google";
 import Nav from "@/components/global/nav";
 import Footer from "@/components/global/footer";
 import Main from "@/components/global/main";
+import Script from "next/script";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -34,6 +35,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="twitter:image:type" content="<generated>" />
         <meta name="twitter:image:width" content="<generated>" />
         <meta name="twitter:image:height" content="<generated>" />
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.google_analytics_id}`}
+          async
+        />
+        <Script
+          id="google_analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', ${config.google_analytics_id});
+                    `,
+          }}
+        />
       </head>
       <body className={`${manrope.className} text-secondary-950 bg-primary-100`}>
         <Nav />
