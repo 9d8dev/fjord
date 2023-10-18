@@ -71,7 +71,7 @@ export default async function Pages() {
                   __html: page.title.rendered,
                 }}
               ></h3>
-              <p>date: {new Date(page.date).toLocaleDateString()}</p>
+              <p suppressHydrationWarning>date: {new Date(page.date).toLocaleDateString()}</p>
             </div>
             <div
               dangerouslySetInnerHTML={{

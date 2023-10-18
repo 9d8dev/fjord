@@ -18,7 +18,7 @@
       "url": "https://windpress.wpenginepowered.com"
    }
    ```
-   
+
    - `site_name`: The meta name for your site
    - `site_title`: The meta title for your site
    - `site_description`: The meta description for your site

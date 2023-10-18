@@ -37,7 +37,7 @@ const PageBody = ({ page, date, author }: PageBodyProps) => {
         dangerouslySetInnerHTML={{ __html: page.title.rendered }}
       ></h1>
       <div className="flex gap-2">
-        <p>{date.toDateString()}</p> |{author && <p>{author.name}</p>}
+        <p suppressHydrationWarning>{date.toDateString()}</p> |{author && <p>{author.name}</p>}
       </div>
       {page._embedded?.["wp:featuredmedia"] &&
         page._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full

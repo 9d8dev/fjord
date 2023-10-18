@@ -4,7 +4,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children }) => {
   return (
-    <main suppressHydrationWarning className="m-auto">
+    <main className="m-auto">
       {children}
     </main>
   );

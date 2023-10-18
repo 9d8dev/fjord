@@ -62,7 +62,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
           </div>
         )}
       <p className="text-xs text-primary-500 flex items-center gap-1">
-        <Calendar className="w-4" />
+        <Calendar suppressHydrationWarning className="w-4" />
         {date.toDateString()}
       </p>
       <h3
