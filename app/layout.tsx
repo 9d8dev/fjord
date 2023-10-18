@@ -36,23 +36,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="twitter:image:width" content="<generated>" />
         <meta name="twitter:image:height" content="<generated>" />
         {/* Google Analytics */}
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${config.google_analytics_id}`}
-          async
-        />
-        <Script
-          id="google_analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', ${config.google_analytics_id});
-                    `,
-          }}
-        />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${config.google_analytics_id}`} />
+        <Script id="google-analytics">
+          {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', '${config.google_analytics_id}');
+                `}
+        </Script>
       </head>
       <body className={`${manrope.className} text-secondary-950 bg-primary-100`}>
         <Nav />
