@@ -46,7 +46,10 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`
+    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
+    {
+      next: { revalidate: 3600 },
+    }
   );
 
   if (!res.ok) {
