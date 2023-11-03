@@ -25,7 +25,7 @@ type Page = {
             };
           };
         };
-      }
+      },
     ];
     author: Array<{
       name: string;
@@ -35,7 +35,7 @@ type Page = {
 
 async function getPage(slug: string) {
   const res = await fetch(
-    `${settings.wp_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`
+    `${settings.wp_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
   );
 
   if (!res.ok) {
