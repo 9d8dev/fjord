@@ -14,30 +14,30 @@ const content = {
   scrollText: "Scroll to See More ",
 };
 
-const One = () => {
+const Hero = () => {
   return (
-    <section className="grid h-full max-h-[1080px] w-full max-w-full gap-12 bg-neutral-100 px-12 py-12 dark:bg-neutral-800 dark:text-white">
+    <section className="grid h-full w-full max-h-screen max-w-full gap-12 bg-primary-100 px-12 py-12 dark:bg-primary-800 dark:text-white">
       <div className="grid w-full grid-cols-3">
         <h1 className="text-6xl font-light uppercase">{content.title}</h1>
         <h2 className="text-2xl font-extralight">{content.subText}</h2>
         <div className="flex justify-end gap-4">
           <a
-            className="block h-fit w-fit bg-neutral-300 px-4 py-2 text-black transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-neutral-300"
+            className="block h-fit w-fit bg-primary-300 px-4 py-2 text-black transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-primary-300"
             href={content.getStartedLink}
           >
             Get Started
           </a>
           <a
-            className="flex h-fit w-fit items-center gap-2 bg-neutral-300 px-4 py-2 transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-neutral-500"
+            className="flex h-fit w-fit items-center gap-2 bg-primary-300 px-4 py-2 transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-primary-500"
             href={content.menuLink}
           >
             Menu <HamburgerMenuIcon />
           </a>
         </div>
       </div>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden h-full">
         <Image
-          objectFit="cover"
+          className="object-cover w-full h-full"
           src={content.mainImage}
           alt=""
           placeholder="blur"
@@ -51,4 +51,4 @@ const One = () => {
   );
 };
 
-export default One;
+export default Hero;
