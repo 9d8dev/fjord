@@ -19,14 +19,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 py-24 text-sm items-center m-auto bg-primary-300 grid gap-12"
-    >
+    <footer className="px-4 py-24 text-sm items-center m-auto bg-primary-300 dark:bg-primary-700 grid gap-12">
       <div className="px-6 max-w-7xl xl:px-0 grid md:grid-cols-3 gap-6 justify-between w-full m-auto">
         <div>
           <Link href="/">
-            <Image className="w-16 mb-4" width={200} height={200} src={settings.theme.logo} alt="logo"></Image>
+            <Image
+              className="w-16 mb-4"
+              width={200}
+              height={200}
+              src={settings.theme.logo}
+              alt="logo"
+            ></Image>
           </Link>
-          <p className="text-sm text-secondary-500 md:w-3/4">
+          <p className="text-sm text-secondary-400 md:w-3/4">
             {settings.site_description}
           </p>
         </div>
@@ -46,7 +51,10 @@ const Footer = () => {
       </div>
       <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
         <p suppressHydrationWarning>
-          © {new Date().getFullYear()} | {settings.site_name} | <a href="https://cameronyoungblood.com">Created</a> <a href="https://bridger.to">by</a> <a href="https://alpinecodex.com">Alpine Codex</a>
+          © {new Date().getFullYear()} | {settings.site_name} |{" "}
+          <a href="https://cameronyoungblood.com">Created</a>{" "}
+          <a href="https://bridger.to">by</a>{" "}
+          <a href="https://alpinecodex.com">Alpine Codex</a>
         </p>
         <ul className="flex gap-4">
           {otherLinks.map((link, index) => (

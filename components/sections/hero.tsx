@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
       <div className="overflow-hidden h-full">
         <Image
-          className="object-cover w-full h-full"
+          className="object-cover object-bottom w-full h-full"
           src={content.mainImage}
           alt=""
           placeholder="blur"
