@@ -1,6 +1,6 @@
 import colors from "tailwindcss/colors";
 import type { Config } from "tailwindcss";
-import fjord from "./fjord.config.js";
+import fjord from "./fjord.config";
 
 function getColorScheme(colorName: string) {
   switch (colorName) {
