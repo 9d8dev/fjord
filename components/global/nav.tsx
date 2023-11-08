@@ -32,10 +32,18 @@ const Nav = () => {
         >
           <Image
             priority
-            className="w-16"
+            className="w-16 dark:hidden"
             width={200}
             height={200}
-            src={fjord.theme.logo}
+            src={fjord.theme.primary_logo}
+            alt="logo"
+          ></Image>
+          <Image
+            priority
+            className="w-16 hidden dark:block"
+            width={200}
+            height={200}
+            src={fjord.theme.secondary_logo}
             alt="logo"
           ></Image>
           <p className="sr-only">{fjord.site_name}</p>

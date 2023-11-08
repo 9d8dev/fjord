@@ -10,6 +10,8 @@ type fjordTypes = {
     primary: string;
     secondary: string;
     logo: string;
+    primary_logo: string;
+    secondary_logo: string;
   };
 };
 
@@ -40,6 +42,10 @@ const fjord: fjordTypes = {
     primary: "slate",
     secondary: "gray",
     logo: "./logo.svg",
+    // Logo for Light Mode
+    primary_logo: "./dark_logo.svg",
+    // Logo for Dark Mode
+    secondary_logo: "./light_logo.svg",
     // change the font using `next/font` in `layout.tsx` in the app directory.
     // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
   },

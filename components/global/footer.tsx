@@ -24,10 +24,19 @@ const Footer = () => {
         <div>
           <Link href="/">
             <Image
-              className="w-16 mb-4"
+              priority
+              className="w-16 mb-4 dark:hidden"
               width={200}
               height={200}
-              src={fjord.theme.logo}
+              src={fjord.theme.primary_logo}
+              alt="logo"
+            ></Image>
+            <Image
+              priority
+              className="w-16 mb-4 hidden dark:block"
+              width={200}
+              height={200}
+              src={fjord.theme.secondary_logo}
               alt="logo"
             ></Image>
           </Link>
