@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -35,10 +35,10 @@ const Nav = () => {
             className="w-16"
             width={200}
             height={200}
-            src={settings.theme.logo}
+            src={fjord.theme.logo}
             alt="logo"
           ></Image>
-          <p className="sr-only">{settings.site_name}</p>
+          <p className="sr-only">{fjord.site_name}</p>
         </Link>
         <div className="flex gap-4 items-center lg:hidden">
           <button onClick={handleMobileMenuToggle}>

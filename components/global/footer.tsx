@@ -1,4 +1,4 @@
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import Image from "next/image";
 import Link from "next/link";
 import SubscribeForm from "@/components/global/subscribe-form";
@@ -27,12 +27,12 @@ const Footer = () => {
               className="w-16 mb-4"
               width={200}
               height={200}
-              src={settings.theme.logo}
+              src={fjord.theme.logo}
               alt="logo"
             ></Image>
           </Link>
           <p className="text-sm text-secondary-400 md:w-3/4">
-            {settings.site_description}
+            {fjord.site_description}
           </p>
         </div>
         <ul className="space-y-1">
@@ -51,7 +51,7 @@ const Footer = () => {
       </div>
       <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
         <p suppressHydrationWarning>
-          © {new Date().getFullYear()} | {settings.site_name} |{" "}
+          © {new Date().getFullYear()} | {fjord.site_name} |{" "}
           <a href="https://cameronyoungblood.com">Created</a>{" "}
           <a href="https://bridger.to">by</a>{" "}
           <a href="https://alpinecodex.com">Alpine Codex</a>

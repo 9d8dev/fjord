@@ -1,4 +1,4 @@
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
@@ -34,7 +34,7 @@ type Tag = {
 };
 
 async function getTags() {
-  const res = await fetch(`${settings.wp_url}/wp-json/wp/v2/tags`);
+  const res = await fetch(`${fjord.wp_url}/wp-json/wp/v2/tags`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tags");
@@ -46,7 +46,7 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
+    `${fjord.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
     {
       next: { revalidate: 3600 },
     }
@@ -76,15 +76,15 @@ export default async function Posts({
     typeof searchParams.page === "string" && +searchParams.page > 1
       ? +searchParams.page
       : 1;
-  const offset = (page - 1) * settings.per_page;
-  const { data, totalPosts } = await getPosts(settings.per_page, offset);
-  const lastPage = Math.ceil(totalPosts / settings.per_page);
+  const offset = (page - 1) * fjord.per_page;
+  const { data, totalPosts } = await getPosts(fjord.per_page, offset);
+  const lastPage = Math.ceil(totalPosts / fjord.per_page);
   const tags = await getTags();
 
   return (
     <main className="grid gap-6">
-      <SecondaryHero title="All Posts" subtitle={`${settings.site_name} blog`}>
-        All posts from {settings.site_name}. These are all the posts from your
+      <SecondaryHero title="All Posts" subtitle={`${fjord.site_name} blog`}>
+        All posts from {fjord.site_name}. These are all the posts from your
         WordPress site.
       </SecondaryHero>
 
@@ -99,11 +99,11 @@ export default async function Posts({
         <p className="text-sm text-secondary-700">
           Showing{" "}
           <span className="font-semibold">
-            {(page - 1) * settings.per_page + 1}
+            {(page - 1) * fjord.per_page + 1}
           </span>{" "}
           to{" "}
           <span className="font-semibold">
-            {Math.min(page * settings.per_page, totalPosts)}
+            {Math.min(page * fjord.per_page, totalPosts)}
           </span>{" "}
           of <span className="font-semibold">{totalPosts}</span> posts
         </p>
