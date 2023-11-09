@@ -1,4 +1,4 @@
-import settings from "@/fjord.json";
+import settings from "@/fjord.config";
 import PostCard from "@/components/content/post-card";
 
 const content = {

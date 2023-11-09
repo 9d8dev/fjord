@@ -1,5 +1,5 @@
 import PageBody from "@/components/content/page-body";
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import { notFound } from "next/navigation";
 
 type Page = {
@@ -35,7 +35,7 @@ type Page = {
 
 async function getPage(slug: string) {
   const res = await fetch(
-    `${settings.wp_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`
+    `${fjord.wp_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`
   );
 
   if (!res.ok) {
@@ -47,7 +47,7 @@ async function getPage(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${settings.wp_url}/wp-json/wp/v2/pages?_embed`);
+  const res = await fetch(`${fjord.wp_url}/wp-json/wp/v2/pages?_embed`);
 
   const data: Page[] = await res.json();
 

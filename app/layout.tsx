@@ -1,8 +1,8 @@
 // Styles
 import "./globals.css";
 
-// Site Configuration
-import config from "@/fjord.json";
+// Site fjorduration
+import fjord from "@/fjord.config";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
@@ -15,8 +15,8 @@ import Script from "next/script";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: config.site_name,
-  description: config.site_description,
+  title: fjord.site_name,
+  description: fjord.site_description,
 };
 
 interface RootLayoutProps {
@@ -36,18 +36,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="twitter:image:width" content="<generated>" />
         <meta name="twitter:image:height" content="<generated>" />
         {/* Google Analytics */}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${config.google_analytics_id}`} />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${fjord.google_analytics_id}`}
+        />
         <Script id="google-analytics">
           {`
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
 
-                  gtag('config', '${config.google_analytics_id}');
+                  gtag('fjord', '${fjord.google_analytics_id}');
                 `}
         </Script>
       </head>
-      <body className={`${manrope.className} text-secondary-950 bg-primary-100`}>
+      <body
+        className={`${manrope.className} text-secondary-950 dark:text-secondary-200 bg-primary-100`}
+      >
         <Nav />
         <Main>{children}</Main>
         <Footer />

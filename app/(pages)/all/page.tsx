@@ -1,4 +1,4 @@
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import CTA from "@/components/sections/cta";
@@ -29,7 +29,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${settings.wp_url}/wp-json/wp/v2/pages?_embed&per_page=${settings.per_page}`
+      `${fjord.wp_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.per_page}`
     );
 
     if (!res.ok) {
@@ -52,8 +52,8 @@ export default async function Pages() {
 
   return (
     <main className="grid gap-6 m-auto">
-      <SecondaryHero title="All Pages" subtitle={`${settings.site_name} blog`}>
-        All pages from {settings.site_name}. These are all the pages from your
+      <SecondaryHero title="All Pages" subtitle={`${fjord.site_name} blog`}>
+        All pages from {fjord.site_name}. These are all the pages from your
         WordPress site.
       </SecondaryHero>
 
@@ -71,7 +71,9 @@ export default async function Pages() {
                   __html: page.title.rendered,
                 }}
               ></h3>
-              <p suppressHydrationWarning>date: {new Date(page.date).toLocaleDateString()}</p>
+              <p suppressHydrationWarning>
+                date: {new Date(page.date).toLocaleDateString()}
+              </p>
             </div>
             <div
               dangerouslySetInnerHTML={{

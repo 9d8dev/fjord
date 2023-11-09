@@ -7,9 +7,9 @@
 1. Clone this repository
 2. Run `npm install` within the directory
 3. Configure the Wordpress REST API in your Wordpress instance
-4. Edit `fjord.json` to customize the configuration:
+4. Edit `fjord.config.ts` to customize the configuration:
 
-    ```
+    ```json
     {
       "site_name": "fjord.dev",
       "site_title": "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",

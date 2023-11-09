@@ -1,4 +1,4 @@
-import settings from "@/fjord.json";
+import fjord from "@/fjord.config";
 import Link from "next/link";
 
 type Tag = {
@@ -10,7 +10,7 @@ type Tag = {
 export default async function TagPosts() {
   async function getTagPosts() {
     const res = await fetch(
-      `${settings.wp_url}/wp-json/wp/v2/tags?_embed&per_page=${settings.per_page}`
+      `${fjord.wp_url}/wp-json/wp/v2/tags?_embed&per_page=${fjord.per_page}`
     );
 
     if (!res.ok) {

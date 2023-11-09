@@ -1,61 +1,57 @@
-const fs = require('fs');
-const colors = require('tailwindcss/colors')
-
-// Impport fjord settings
-const settings = JSON.parse(fs.readFileSync('./fjord.json', 'utf8'));
+import colors from "tailwindcss/colors";
+import type { Config } from "tailwindcss";
+import fjord from "./fjord.config";
 
 function getColorScheme(colorName: string) {
   switch (colorName) {
-    case 'slate':
+    case "slate":
       return colors.slate;
-    case 'gray':
+    case "gray":
       return colors.gray;
-    case 'zinc':
+    case "zinc":
       return colors.zinc;
-    case 'neutral':
+    case "neutral":
       return colors.neutral;
-    case 'stone':
+    case "stone":
       return colors.stone;
-    case 'red':
+    case "red":
       return colors.red;
-    case 'orange':
+    case "orange":
       return colors.orange;
-    case 'amber':
+    case "amber":
       return colors.amber;
-    case 'yellow':
+    case "yellow":
       return colors.yellow;
-    case 'lime':
+    case "lime":
       return colors.lime;
-    case 'green':
+    case "green":
       return colors.green;
-    case 'emerald':
+    case "emerald":
       return colors.emerald;
-    case 'teal':
+    case "teal":
       return colors.teal;
-    case 'cyan':
+    case "cyan":
       return colors.cyan;
-    case 'sky':
+    case "sky":
       return colors.sky;
-    case 'blue':
+    case "blue":
       return colors.blue;
-    case 'indigo':
+    case "indigo":
       return colors.indigo;
-    case 'violet':
+    case "violet":
       return colors.violet;
-    case 'purple':
+    case "purple":
       return colors.purple;
-    case 'fuchsia':
+    case "fuchsia":
       return colors.fuchsia;
-    case 'pink':
+    case "pink":
       return colors.pink;
-    case 'rose':
+    case "rose":
       return colors.rose;
     default:
       return colors.slate;
   }
 }
-
-import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -66,15 +62,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: getColorScheme(settings.theme.primary),
-        secondary: getColorScheme(settings.theme.secondary),
+        primary: getColorScheme(fjord.theme.primary),
+        secondary: getColorScheme(fjord.theme.secondary),
       },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
   corePlugins: {
     transform: true,
-  }
+  },
 };
 
 export default config;
