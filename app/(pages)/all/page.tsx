@@ -29,7 +29,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wp_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.per_page}`
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&posts_per_page=${fjord.posts_per_page}`,
     );
 
     if (!res.ok) {
@@ -51,22 +51,22 @@ export default async function Pages() {
   }
 
   return (
-    <main className="grid gap-6 m-auto">
+    <main className="m-auto grid gap-6">
       <SecondaryHero title="All Pages" subtitle={`${fjord.site_name} blog`}>
         All pages from {fjord.site_name}. These are all the pages from your
         WordPress site.
       </SecondaryHero>
 
-      <div className="grid gap-6 p-6 max-w-7xl m-auto">
+      <div className="m-auto grid max-w-7xl gap-6 p-6">
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}
-            className="hover:bg-primary-50 transition-all rounded-r-md flex flex-col gap-2 p-4 border-l-2"
+            className="hover:bg-primary-50 flex flex-col gap-2 rounded-r-md border-l-2 p-4 transition-all"
             key={page.id}
           >
             <div className="flex items-baseline gap-2">
               <h3
-                className="mb-2 text-lg underline underline-offset-4 font-semibold"
+                className="mb-2 text-lg font-semibold underline underline-offset-4"
                 dangerouslySetInnerHTML={{
                   __html: page.title.rendered,
                 }}

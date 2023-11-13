@@ -3,10 +3,10 @@ type fjordTypes = {
   site_name: string;
   site_title: string;
   site_description: string;
-  per_page: number;
-  wp_url: string;
+  posts_per_page: number;
+  wordpress_url: string;
   google_analytics_id: string;
-  link: {
+  links: {
     main_cta: string;
     privacy_policy: string;
     terms_of_service: string;
@@ -33,25 +33,18 @@ const fjord: fjordTypes = {
   site_description:
     "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
 
-  // number of posts to show per page from the Wordpress API
-  per_page: 6,
+  posts_per_page: 6,
 
-  // the URL of your Wordpress site
-  // make sure to enable the Rest API
-  wp_url: "https://windpress.wpenginepowered.com",
-
-  // Google Analytics ID
+  wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
 
-  // Links
-  link: {
+  links: {
     main_cta: "#",
     privacy_policy: "#",
     terms_of_service: "#",
     cookie_policy: "#",
   },
 
-  // theme colors and logo
   theme: {
     primary: "neutral",
     secondary: "zinc",

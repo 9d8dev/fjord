@@ -34,7 +34,7 @@ type Tag = {
 };
 
 async function getTags() {
-  const res = await fetch(`${fjord.wp_url}/wp-json/wp/v2/tags`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tags");
@@ -46,10 +46,10 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `${fjord.wp_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&posts_per_page=${perPage}&offset=${offset}&orderby=date`,
     {
       next: { revalidate: 3600 },
-    }
+    },
   );
 
   if (!res.ok) {
@@ -62,7 +62,7 @@ async function getPosts(perPage: number, offset: number) {
   // Sort posts by date
   data.sort(
     (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+      new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return { data, totalPosts };
 }
@@ -76,9 +76,9 @@ export default async function Posts({
     typeof searchParams.page === "string" && +searchParams.page > 1
       ? +searchParams.page
       : 1;
-  const offset = (page - 1) * fjord.per_page;
-  const { data, totalPosts } = await getPosts(fjord.per_page, offset);
-  const lastPage = Math.ceil(totalPosts / fjord.per_page);
+  const offset = (page - 1) * fjord.posts_per_page;
+  const { data, totalPosts } = await getPosts(fjord.posts_per_page, offset);
+  const lastPage = Math.ceil(totalPosts / fjord.posts_per_page);
   const tags = await getTags();
 
   return (
@@ -95,21 +95,21 @@ export default async function Posts({
         {/* Pagination */}
       </ContentGrid>
 
-      <section className="flex justify-between items-center max-w-7xl m-auto w-full p-6 border-t">
-        <p className="text-sm text-secondary-700">
+      <section className="m-auto flex w-full max-w-7xl items-center justify-between border-t p-6">
+        <p className="text-secondary-700 text-sm">
           Showing{" "}
           <span className="font-semibold">
-            {(page - 1) * fjord.per_page + 1}
+            {(page - 1) * fjord.posts_per_page + 1}
           </span>{" "}
           to{" "}
           <span className="font-semibold">
-            {Math.min(page * fjord.per_page, totalPosts)}
+            {Math.min(page * fjord.posts_per_page, totalPosts)}
           </span>{" "}
           of <span className="font-semibold">{totalPosts}</span> posts
         </p>
         <div className="space-x-2 ">
           {page === 1 ? (
-            <button className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md opacity-50 pointer-events-none">
+            <button className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 pointer-events-none inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold opacity-50">
               Previous
             </button>
           ) : (
@@ -117,7 +117,7 @@ export default async function Posts({
               href={
                 page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"
               }
-              className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md"
+              className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold"
             >
               Previous
             </Link>
@@ -129,12 +129,12 @@ export default async function Posts({
                   ? `/posts/?page=${page + 1}#posts`
                   : `/posts/?page=${page}#posts`
               }
-              className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md"
+              className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold"
             >
               Next
             </Link>
           ) : (
-            <button className="bg-white hover:bg-secondary-50 border-secondary-300 border px-3 py-2 inline-flex items-center justify-center text-sm text-secondary-900 font-semibold rounded-md opacity-50 pointer-events-none">
+            <button className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 pointer-events-none inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold opacity-50">
               Next
             </button>
           )}

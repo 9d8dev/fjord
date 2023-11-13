@@ -25,7 +25,7 @@ type Post = {
             };
           };
         };
-      }
+      },
     ];
     author: Array<{
       name: string;
@@ -35,7 +35,7 @@ type Post = {
 
 async function getPost(slug: string) {
   const res = await fetch(
-    `${fjord.wp_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`,
   );
 
   if (!res.ok) {
@@ -47,7 +47,7 @@ async function getPost(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${fjord.wp_url}/wp-json/wp/v2/posts?_embed`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed`);
 
   const data: Post[] = await res.json();
 

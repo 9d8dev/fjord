@@ -37,7 +37,7 @@ type Tag = {
 
 async function getPosts() {
   const res = await fetch(
-    `${settings.wp_url}/wp-json/wp/v2/posts?_embed&per_page=3`
+    `${settings.wordpress_url}/wp-json/wp/v2/posts?_embed&posts_per_page=3`,
   );
 
   if (!res.ok) {
@@ -48,7 +48,7 @@ async function getPosts() {
   // Sort posts by date
   posts.sort(
     (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+      new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return posts;
 }
@@ -65,16 +65,16 @@ export default async function RecentPosts({
   }
 
   return (
-    <main className={`px-6 py-24 m-auto ${className}`}>
-      <div className="mx-auto max-w-7xl lg:text-center mb-24">
-        <h2 className="text-base font-semibold leading-7 text-primary-600">
+    <main className={`m-auto px-6 py-24 ${className}`}>
+      <div className="mx-auto mb-24 max-w-7xl lg:text-center">
+        <h2 className="text-primary-600 text-base font-semibold leading-7">
           {content.description}
         </h2>
-        <p className="mt-2 text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+        <p className="text-secondary-900 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
           {content.title}
         </p>
       </div>
-      <div className="grid max-w-7xl m-auto sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
+      <div className="m-auto my-8 grid max-w-7xl gap-6 sm:grid-cols-2 md:grid-cols-3">
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} />
         ))}
