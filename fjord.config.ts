@@ -6,12 +6,18 @@ type fjordTypes = {
   per_page: number;
   wp_url: string;
   google_analytics_id: string;
+  link: {
+    main_cta: string;
+    privacy_policy: string;
+    terms_of_service: string;
+    cookie_policy: string;
+  };
   theme: {
     primary: string;
     secondary: string;
     logo: string;
     primary_logo: string;
-    secondary_logo: string;
+    dark_mode_logo: string;
   };
 };
 
@@ -37,15 +43,21 @@ const fjord: fjordTypes = {
   // Google Analytics ID
   google_analytics_id: "G-7VM8KZENP7",
 
+  // Links
+  link: {
+    main_cta: "#",
+    privacy_policy: "#",
+    terms_of_service: "#",
+    cookie_policy: "#",
+  },
+
   // theme colors and logo
   theme: {
-    primary: "slate",
-    secondary: "gray",
+    primary: "neutral",
+    secondary: "zinc",
     logo: "./logo.svg",
-    // Logo for Light Mode
     primary_logo: "./dark_logo.svg",
-    // Logo for Dark Mode
-    secondary_logo: "./light_logo.svg",
+    dark_mode_logo: "./light_logo.svg",
     // change the font using `next/font` in `layout.tsx` in the app directory.
     // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
   },

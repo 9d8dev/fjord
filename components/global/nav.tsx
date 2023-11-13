@@ -43,7 +43,7 @@ const Nav = () => {
             className="w-16 hidden dark:block"
             width={200}
             height={200}
-            src={fjord.theme.secondary_logo}
+            src={fjord.theme.dark_mode_logo}
             alt="logo"
           ></Image>
           <p className="sr-only">{fjord.site_name}</p>

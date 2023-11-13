@@ -36,7 +36,7 @@ const Footer = () => {
               className="w-16 mb-4 hidden dark:block"
               width={200}
               height={200}
-              src={fjord.theme.secondary_logo}
+              src={fjord.theme.dark_mode_logo}
               alt="logo"
             ></Image>
           </Link>
