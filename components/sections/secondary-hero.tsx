@@ -19,7 +19,9 @@ export default function SecondaryHero({
           <h2 className="mt-2 text-4xl font-bold tracking-tight text-secondary-900 sm:text-6xl">
             {title}
           </h2>
-          <p className="mt-6 text-lg leading-8 text-secondary-600">{children}</p>
+          <p className="mt-6 text-lg leading-8 text-secondary-600">
+            {children}
+          </p>
         </div>
       </div>
     </div>
