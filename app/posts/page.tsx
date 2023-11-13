@@ -46,10 +46,10 @@ async function getTags() {
 
 async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&posts_per_page=${perPage}&offset=${offset}&orderby=date`,
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
     {
       next: { revalidate: 3600 },
-    },
+    }
   );
 
   if (!res.ok) {
@@ -62,7 +62,7 @@ async function getPosts(perPage: number, offset: number) {
   // Sort posts by date
   data.sort(
     (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime(),
+      new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   return { data, totalPosts };
 }

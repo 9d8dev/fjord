@@ -22,19 +22,12 @@ type fjordTypes = {
 };
 
 const fjord: fjordTypes = {
-  // site name: used in the header and footer
-  site_name: "fjord.dev",
-
-  // site title: used in the <title> tag
+  site_name: "fjord.dev", // site name: used in the header and footer
   site_title:
     "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
-
-  // site description: used in the <meta name="description"> tag
   site_description:
     "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
-
   posts_per_page: 6,
-
   wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
 
