@@ -11,7 +11,7 @@ const Section = ({
   children,
   isAlt,
   className,
-  bgColor = "bg-secondary-300 dark:bg-secondary-800",
+  bgColor = "bg-secondary-300 dark:bg-secondary-900",
 }: SectionProps) => {
   const backgroundColor = isAlt
     ? "bg-secondary-200 dark:bg-secondary-700"
@@ -19,7 +19,7 @@ const Section = ({
 
   return (
     <section
-      className={`${className} p-6 md:p-12 text-sm items-center m-auto ${backgroundColor}`}
+      className={`${className} m-auto items-center p-6 text-sm md:p-12 ${backgroundColor}`}
     >
       {children}
     </section>

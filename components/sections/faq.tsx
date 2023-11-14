@@ -11,6 +11,12 @@ const FAQ = () => {
             here is some more example text. you can use this section to answer
             questions about your project.
           </h4>
+          <p className="font-light opacity-70 md:w-3/5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
         </div>
       </Container>
     </Section>

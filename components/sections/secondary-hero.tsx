@@ -17,7 +17,7 @@ export default function SecondaryHero({
     <Section isAlt={true}>
       <Container>
         <div className="mx-auto max-w-xl lg:mx-0">
-          <p className="flex gap-1 opacity-75 items-center mx-1">
+          <p className="mx-1 flex items-center gap-1 opacity-75">
             <InfoCircledIcon />
             {subtitle}
           </p>

@@ -74,7 +74,9 @@ const Nav = () => {
         </div>
         <div className="hidden items-center gap-4 lg:flex">
           <ul className="flex gap-4">{renderLinks(false)}</ul>
-          <ButtonLink href="/">{fjord.links.main_cta_text}</ButtonLink>
+          <ButtonLink href={fjord.links.main_cta}>
+            {fjord.links.main_cta_text}
+          </ButtonLink>
         </div>
       </div>
 

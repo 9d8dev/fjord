@@ -13,7 +13,9 @@ const CTA = () => {
             here is some more example text. you can use this section to call out
             a specific action you want the user to take.
           </h4>
-          <ButtonLink href="/">{fjord.links.main_cta_text}</ButtonLink>
+          <ButtonLink href={fjord.links.main_cta}>
+            {fjord.links.main_cta_text}
+          </ButtonLink>
         </div>
       </Container>
     </Section>

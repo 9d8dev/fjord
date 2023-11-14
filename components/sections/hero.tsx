@@ -11,12 +11,12 @@ const Hero = () => {
         <div className="flex flex-col gap-6">
           <h1 className="text-6xl">welcome to fjord</h1>
           <h2 className="text-3xl">
-            fjord is an opinionated Next JS and Wordpress starter. It's built to
-            be a solid foundation for your next project.
+            fjord is an opinionated Next JS and Wordpress starter. It&apos;s
+            built to be a solid foundation for your next project.
           </h2>
-          <div className="w-full h-96 md:h-[480px] overflow-hidden">
+          <div className="my-8 h-96 w-full overflow-hidden md:h-[480px]">
             <Image
-              className="h-full w-full object-bottom object-cover"
+              className="h-full w-full object-cover object-bottom"
               src={Placeholder}
               alt="hero image"
             />
