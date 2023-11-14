@@ -48,7 +48,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
               <div className="w-full h-96 md:h-[500px] relative my-12">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  className="absolute top-0 left-0 w-full rounded-lg h-full object-cover"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
                   src={
                     post._embedded["wp:featuredmedia"][0].media_details.sizes
                       .full.source_url
@@ -58,7 +58,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
               </div>
             )}
           <div
-            className="prose prose-headings:font-normal prose-strong:font-normal lg:prose-lg prose-headings:text-primary-700 prose-headings:dark:text-primary-300 text-secondary-900 dark:text-secondary-100 prose-a:text-secondary-900 prose-a:dark:text-secondary-100 prose-figure:text-secondary-900 prose-figure:dark:text-secondary-100 prose-code:text-secondary-900 prose-code:dark:text-secondary-200"
+            className="prose prose-p:font-light prose-headings:font-normal prose-strong:font-normal lg:prose-lg prose-headings:text-primary-700 prose-headings:dark:text-primary-300 text-secondary-900 dark:text-secondary-100 prose-a:text-secondary-900 prose-a:dark:text-secondary-100 prose-figure:text-secondary-900 prose-figure:dark:text-secondary-100 prose-code:text-secondary-900 prose-code:dark:text-secondary-200 prose-blockquote:text-secondary-900 prose-blockquote:dark:text-secondary-100"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
         </div>
