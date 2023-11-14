@@ -2,6 +2,7 @@ import fjord from "@/fjord.config";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import CTA from "@/components/sections/cta";
+import Main from "@/components/global/layout/main";
 
 type Page = {
   id: number;
@@ -29,7 +30,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`,
     );
 
     if (!res.ok) {
@@ -51,7 +52,7 @@ export default async function Pages() {
   }
 
   return (
-    <main className="m-auto grid gap-6">
+    <Main>
       <SecondaryHero title="All Pages" subtitle={`${fjord.site_name} blog`}>
         All pages from {fjord.site_name}. These are all the pages from your
         WordPress site.
@@ -61,7 +62,7 @@ export default async function Pages() {
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}
-            className="hover:bg-primary-50 flex flex-col gap-2 rounded-r-md border-l-2 p-4 transition-all"
+            className="hover:bg-primary-50 hover:dark:bg-primary-800 flex flex-col gap-2 rounded-r-md border-l-2 p-4 transition-all"
             key={page.id}
           >
             <div className="flex items-baseline gap-2">
@@ -83,7 +84,8 @@ export default async function Pages() {
           </Link>
         ))}
       </div>
+
       <CTA />
-    </main>
+    </Main>
   );
 }
