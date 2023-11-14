@@ -67,7 +67,7 @@ export default async function RecentPosts({
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">latest blog posts</h3>
           <p>read the latest from our blog.</p>
-          <div className="m-auto my-8 grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="m-auto grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
             {data.map((post: Post) => (
               <PostCard key={post.id} post={post} />
             ))}
