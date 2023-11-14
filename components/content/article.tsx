@@ -58,12 +58,12 @@ const Article = ({ post, date, author }: ArticleProps) => {
               </div>
             )}
           <div
-            className="prose prose-slate prose-headings:font-normal lg:prose-lg"
+            className="prose prose-headings:font-normal prose-strong:font-normal lg:prose-lg prose-headings:text-primary-700 prose-headings:dark:text-primary-300 text-secondary-900 dark:text-secondary-100 prose-a:text-secondary-900 prose-a:dark:text-secondary-100 prose-figure:text-secondary-900 prose-figure:dark:text-secondary-100 prose-code:text-secondary-900 prose-code:dark:text-secondary-200"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
         </div>
       </article>
-      <RecentPosts className="bg-secondary-200" />
+      <RecentPosts />
     </>
   );
 };
