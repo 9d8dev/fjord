@@ -14,9 +14,9 @@ const Hero = () => {
             fjord is an opinionated Next JS and Wordpress starter. It's built to
             be a solid foundation for your next project.
           </h2>
-          <div className="w-full h-96 md:h-[480px] overflow-hidden relative">
+          <div className="w-full h-96 md:h-[480px] overflow-hidden">
             <Image
-              className="absolute bottom-0 object-cover"
+              className="h-full w-full object-bottom object-cover"
               src={Placeholder}
               alt="hero image"
             />
