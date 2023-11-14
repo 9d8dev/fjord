@@ -8,9 +8,13 @@ type fjordTypes = {
   google_analytics_id: string;
   links: {
     main_cta: string;
+    main_cta_text: string;
     privacy_policy: string;
+    privacy_policy_text: string;
     terms_of_service: string;
+    terms_of_service_text: string;
     cookie_policy: string;
+    cookie_policy_text: string;
   };
   theme: {
     primary: string;
@@ -33,9 +37,13 @@ const fjord: fjordTypes = {
 
   links: {
     main_cta: "#",
+    main_cta_text: "use fjord",
     privacy_policy: "#",
+    privacy_policy_text: "privacy policy",
     terms_of_service: "#",
+    terms_of_service_text: "terms of service",
     cookie_policy: "#",
+    cookie_policy_text: "cookie policy",
   },
 
   theme: {

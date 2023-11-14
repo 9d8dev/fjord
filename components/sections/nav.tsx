@@ -46,7 +46,7 @@ const Nav = () => {
         <NavLink
           className={`${
             pathname === link.href
-              ? "opacity-75 hover:no-underline cursor-default"
+              ? "cursor-default opacity-75 hover:no-underline"
               : ""
           }`}
           href={link.href}
@@ -57,44 +57,44 @@ const Nav = () => {
     ));
 
   return (
-    <nav className="sticky top-0 p-6 md:px-12 z-50 text-sm bg-opacity-75 backdrop-blur-md m-auto bg-secondary-100 dark:bg-secondary-900">
-      <div className="flex max-w-6xl justify-between m-auto">
+    <nav className="bg-secondary-100 dark:bg-secondary-900 sticky top-0 z-50 m-auto bg-opacity-75 p-6 text-sm backdrop-blur-md md:px-12">
+      <div className="m-auto flex max-w-6xl justify-between">
         <Link
-          className="flex gap-2 items-center hover:opacity-75 transition-all"
+          className="flex items-center gap-2 transition-all hover:opacity-75"
           href="/"
         >
           {renderLogo("light")}
           {renderLogo("dark")}
           <p className="sr-only">{fjord.site_name}</p>
         </Link>
-        <div className="flex gap-4 items-center lg:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <button onClick={handleMobileMenuToggle}>
             <Menu />
           </button>
         </div>
-        <div className="hidden lg:flex gap-4 items-center">
+        <div className="hidden items-center gap-4 lg:flex">
           <ul className="flex gap-4">{renderLinks(false)}</ul>
-          <ButtonLink href="/">Get Started</ButtonLink>
+          <ButtonLink href="/">{fjord.links.main_cta_text}</ButtonLink>
         </div>
       </div>
 
       {/* Mobile Nav Menu */}
       {isMobileMenuOpen && (
         <div
-          className={`fixed top-0 h-screen w-screen inset-0 bg-secondary-100 dark:bg-secondary-900 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
-          transform ${
+          className={`bg-secondary-100 dark:bg-secondary-900 fixed inset-0 top-0 z-40 flex h-screen w-screen transform flex-col bg-opacity-95 p-6 text-lg backdrop-blur-md
+          lg:hidden ${
             isMobileMenuOpen
               ? "translate-x-0 ease-out"
               : "-translate-x-full ease-in"
           } transition-all duration-300`}
         >
           <button
-            className="absolute top-4 right-4"
+            className="absolute right-4 top-4"
             onClick={handleMobileMenuToggle}
           >
             <X />
           </button>
-          <ul className="flex flex-col space-y-4 mt-12">{renderLinks(true)}</ul>
+          <ul className="mt-12 flex flex-col space-y-4">{renderLinks(true)}</ul>
         </div>
       )}
     </nav>
