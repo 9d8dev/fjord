@@ -9,7 +9,7 @@ import { Manrope } from "next/font/google";
 // Components
 import Nav from "@/components/sections/nav";
 import Footer from "@/components/sections/footer";
-import Main from "@/components/global/elements/main";
+import Main from "@/components/global/layout/main";
 import Script from "next/script";
 
 const manrope = Manrope({ subsets: ["latin"] });
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Script>
       </head>
       <body
-        className={`${manrope.className} text-secondary-950 dark:text-secondary-200 bg-secondary-100`}
+        className={`${manrope.className} text-secondary-950 dark:text-secondary-200 bg-secondary-100 dark:bg-secondary-900`}
       >
         <Nav />
         <Main>{children}</Main>

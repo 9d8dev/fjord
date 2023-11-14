@@ -2,7 +2,10 @@ import fjord from "@/fjord.config";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
+import Main from "@/components/global/layout/main";
 import Link from "next/link";
+import Section from "@/components/global/layout/section";
+import Pagination from "@/components/content/pagination";
 
 type Post = {
   id: number;
@@ -82,9 +85,9 @@ export default async function Posts({
   const tags = await getTags();
 
   return (
-    <main className="grid gap-6">
-      <SecondaryHero title="All Posts" subtitle={`${fjord.site_name} blog`}>
-        All posts from {fjord.site_name}. These are all the posts from your
+    <Main>
+      <SecondaryHero title="all posts" subtitle={`${fjord.site_name} blog`}>
+        all posts from {fjord.site_name}. these are all the posts from your
         WordPress site.
       </SecondaryHero>
 
@@ -92,54 +95,9 @@ export default async function Posts({
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} tags={tags} />
         ))}
-        {/* Pagination */}
       </ContentGrid>
 
-      <section className="m-auto flex w-full max-w-6xl items-center justify-between border-t p-6">
-        <p className="text-secondary-700 text-sm">
-          Showing{" "}
-          <span className="font-semibold">
-            {(page - 1) * fjord.posts_per_page + 1}
-          </span>{" "}
-          to{" "}
-          <span className="font-semibold">
-            {Math.min(page * fjord.posts_per_page, totalPosts)}
-          </span>{" "}
-          of <span className="font-semibold">{totalPosts}</span> posts
-        </p>
-        <div className="space-x-2 ">
-          {page === 1 ? (
-            <button className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 pointer-events-none inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold opacity-50">
-              Previous
-            </button>
-          ) : (
-            <Link
-              href={
-                page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"
-              }
-              className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold"
-            >
-              Previous
-            </Link>
-          )}
-          {page < lastPage ? (
-            <Link
-              href={
-                page < lastPage
-                  ? `/posts/?page=${page + 1}#posts`
-                  : `/posts/?page=${page}#posts`
-              }
-              className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold"
-            >
-              Next
-            </Link>
-          ) : (
-            <button className="hover:bg-secondary-50 border-secondary-300 text-secondary-900 pointer-events-none inline-flex items-center justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold opacity-50">
-              Next
-            </button>
-          )}
-        </div>
-      </section>
-    </main>
+      <Pagination page={page} totalPosts={totalPosts} lastPage={lastPage} />
+    </Main>
   );
 }
