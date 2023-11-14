@@ -1,5 +1,5 @@
 import SecondaryHero from "@/components/sections/secondary-hero";
-import ContactForm from "@/components/sections/contact-form";
+import ContactForm from "@/components/global/forms/contact-form";
 
 export default function Page() {
   return (

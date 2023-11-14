@@ -1,5 +1,6 @@
 import Section from "@/components/global/layout/section";
 import Container from "@/components/global/layout/container";
+import ButtonLink from "@/components/global/elements/button-link";
 
 const CTA = () => {
   return (
@@ -11,6 +12,7 @@ const CTA = () => {
             here is some more example text. you can use this section to call out
             a specific action you want the user to take.
           </h4>
+          <ButtonLink href="/">Get Started</ButtonLink>
         </div>
       </Container>
     </Section>

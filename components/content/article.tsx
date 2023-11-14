@@ -1,5 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
-import RecentPosts from "@/components/sections/recent-posts";
+import RecentPosts from "@/components/content/recent-posts";
 
 interface ArticleProps {
   post: {

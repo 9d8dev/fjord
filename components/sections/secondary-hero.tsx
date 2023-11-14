@@ -1,3 +1,7 @@
+import Section from "../global/layout/section";
+import Container from "../global/layout/container";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
+
 export default function SecondaryHero({
   title,
   subtitle,
@@ -10,20 +14,17 @@ export default function SecondaryHero({
   className?: string;
 }) {
   return (
-    <div className={`bg-white py-12 sm:py-12 ${className}`}>
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <p className="text-base font-semibold leading-7 text-primary-600">
+    <Section isAlt={true}>
+      <Container>
+        <div className="mx-auto max-w-xl lg:mx-0">
+          <p className="flex gap-1 opacity-75 items-center mx-1">
+            <InfoCircledIcon />
             {subtitle}
           </p>
-          <h2 className="mt-2 text-4xl font-bold tracking-tight text-secondary-900 sm:text-6xl">
-            {title}
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-secondary-600">
-            {children}
-          </p>
+          <h2 className="mt-2 text-4xl tracking-tight sm:text-6xl">{title}</h2>
+          <p className="mt-6 text-lg leading-8">{children}</p>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 }

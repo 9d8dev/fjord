@@ -2,7 +2,7 @@ import Hero from "@/components/sections/hero";
 import Feature from "@/components/sections/feature";
 import FAQ from "@/components/sections/faq";
 import CTA from "@/components/sections/cta";
-import RecentPosts from "@/components/sections/recent-posts";
+import RecentPosts from "@/components/content/recent-posts";
 
 export default function Home() {
   return (
