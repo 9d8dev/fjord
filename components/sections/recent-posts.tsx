@@ -1,10 +1,7 @@
 import settings from "@/fjord.config";
+import Section from "../global/layout/section";
 import PostCard from "@/components/content/post-card";
-
-const content = {
-  description: "Most Recent Posts",
-  title: "Read the latest from our blog.",
-};
+import Container from "../global/layout/container";
 
 type Post = {
   id: number;
@@ -65,20 +62,18 @@ export default async function RecentPosts({
   }
 
   return (
-    <main className={`m-auto px-6 py-24 ${className}`}>
-      <div className="mx-auto mb-24 max-w-6xl lg:text-center">
-        <h2 className="text-primary-600 text-base font-semibold leading-7">
-          {content.description}
-        </h2>
-        <p className="text-secondary-900 mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          {content.title}
-        </p>
-      </div>
-      <div className="m-auto my-8 grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {data.map((post: Post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
-    </main>
+    <Section>
+      <Container>
+        <div className="flex flex-col gap-6">
+          <h3 className="text-4xl">latest blog posts</h3>
+          <p>read the latest from our blog.</p>
+          <div className="m-auto my-8 grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {data.map((post: Post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }
