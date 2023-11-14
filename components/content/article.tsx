@@ -1,4 +1,4 @@
-import BackButton from "@/components/global/back-button";
+import BackButton from "@/components/global/elements/back-button";
 import RecentPosts from "@/components/sections/recent-posts";
 
 interface ArticleProps {
@@ -32,7 +32,7 @@ interface ArticleProps {
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <>
-      <article className="grid gap-6 pb-24 max-w-7xl m-auto">
+      <article className="grid gap-6 pb-24 max-w-6xl m-auto">
         <div className="p-6">
           <BackButton />
           <h1

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import NavLink from "../global/elements/nav-link";
 import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -24,8 +25,8 @@ const Nav = () => {
   };
 
   return (
-    <nav className="sticky top-0 px-6 z-50 p-4 text-sm bg-opacity-75 backdrop-blur-md m-auto bg-primary-100 dark:bg-primary-900">
-      <div className="flex max-w-7xl justify-between m-auto">
+    <nav className="sticky top-0 p-6 md:px-12 z-50 text-sm bg-opacity-75 backdrop-blur-md m-auto bg-secondary-100 dark:bg-secondary-900">
+      <div className="flex max-w-6xl justify-between m-auto">
         <Link
           className="flex gap-2 items-center hover:opacity-75 transition-all"
           href="/"
@@ -57,8 +58,8 @@ const Nav = () => {
           <ul className="flex gap-4">
             {links.map((link, index) => (
               <li key={index}>
-                <Link
-                  className={`hover:underline underline-offset-4 transition-all ${
+                <NavLink
+                  className={`${
                     pathname === link.href
                       ? "opacity-75 hover:no-underline cursor-default"
                       : ""
@@ -66,7 +67,7 @@ const Nav = () => {
                   href={link.href}
                 >
                   {link.text}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -82,7 +83,7 @@ const Nav = () => {
       {/* Mobile Nav Menu */}
       {isMobileMenuOpen && (
         <div
-          className={`fixed top-0 h-screen w-screen inset-0 bg-secondary-100 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
+          className={`fixed top-0 h-screen w-screen inset-0 bg-secondary-100 dark:bg-secondary-900 backdrop-blur-md bg-opacity-95 z-40 flex flex-col p-6 lg:hidden text-lg
           transform ${
             isMobileMenuOpen
               ? "translate-x-0 ease-out"
@@ -99,7 +100,7 @@ const Nav = () => {
             {links.map((link, index) => (
               <li key={index}>
                 <Link
-                  className={`hover:underline border-b flex items-center justify-between underline-offset-4 transition-all ${
+                  className={`border-b flex items-center justify-between underline-offset-4 transition-all py-2 ${
                     pathname === link.href
                       ? "opacity-50 hover:no-underline cursor-default"
                       : ""

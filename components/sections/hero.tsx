@@ -1,53 +1,24 @@
-import Image from "next/image";
-import { HamburgerMenuIcon, ArrowDownIcon } from "@radix-ui/react-icons";
-
-// Import your hero image here
-import Placeholder from "@/public/placeholder.jpg";
-
-const content = {
-  title: "One",
-  subText:
-    "This is a marketing website component library using NextJS and Tailwind CSS.",
-  getStartedLink: "#",
-  menuLink: "#",
-  mainImage: Placeholder,
-  scrollText: "Scroll to See More ",
-};
+import Section from "@/components/global/layout/section";
+import Container from "@/components/global/layout/container";
+import InlineLink from "../global/elements/inline-link";
 
 const Hero = () => {
   return (
-    <section className="grid h-full w-full max-h-screen max-w-full gap-12 bg-primary-100 px-12 py-12 dark:bg-primary-800 dark:text-white">
-      <div className="grid w-full grid-cols-3">
-        <h1 className="text-6xl font-light uppercase">{content.title}</h1>
-        <h2 className="text-2xl font-extralight">{content.subText}</h2>
-        <div className="flex justify-end gap-4">
-          <a
-            className="block h-fit w-fit bg-primary-300 px-4 py-2 text-black transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-primary-300"
-            href={content.getStartedLink}
-          >
-            Get Started
-          </a>
-          <a
-            className="flex h-fit w-fit items-center gap-2 bg-primary-300 px-4 py-2 transition-all hover:-mt-1 hover:mb-1 focus:scale-105 dark:bg-primary-500"
-            href={content.menuLink}
-          >
-            Menu <HamburgerMenuIcon />
-          </a>
+    <Section>
+      <Container>
+        <div className="flex flex-col gap-6">
+          <h1 className="text-6xl">welcome to fjord</h1>
+          <h2 className="text-3xl">
+            fjord is an opinionated Next JS and Wordpress starter. It's built to
+            be a solid foundation for your next project.
+          </h2>
+          <p>
+            You can learn more about fjord by visiting{" "}
+            <InlineLink href="https://fjord.dev">fjord.dev</InlineLink>
+          </p>
         </div>
-      </div>
-      <div className="overflow-hidden h-full">
-        <Image
-          className="object-cover object-bottom w-full h-full"
-          src={content.mainImage}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div className="flex items-center gap-2">
-        <p>{content.scrollText}</p>
-        <ArrowDownIcon className="animate-pulse" />
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

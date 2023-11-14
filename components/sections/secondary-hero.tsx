@@ -11,7 +11,7 @@ export default function SecondaryHero({
 }) {
   return (
     <div className={`bg-white py-12 sm:py-12 ${className}`}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">
             {subtitle}

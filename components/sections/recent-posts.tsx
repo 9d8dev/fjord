@@ -66,7 +66,7 @@ export default async function RecentPosts({
 
   return (
     <main className={`m-auto px-6 py-24 ${className}`}>
-      <div className="mx-auto mb-24 max-w-7xl lg:text-center">
+      <div className="mx-auto mb-24 max-w-6xl lg:text-center">
         <h2 className="text-primary-600 text-base font-semibold leading-7">
           {content.description}
         </h2>
@@ -74,7 +74,7 @@ export default async function RecentPosts({
           {content.title}
         </p>
       </div>
-      <div className="m-auto my-8 grid max-w-7xl gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="m-auto my-8 grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} />
         ))}

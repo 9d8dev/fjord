@@ -1,4 +1,4 @@
-import BackButton from "../global/back-button";
+import BackButton from "@/components/global/elements/back-button";
 
 interface PageBodyProps {
   page: {
@@ -30,14 +30,15 @@ interface PageBodyProps {
 
 const PageBody = ({ page, date, author }: PageBodyProps) => {
   return (
-    <section className="grid gap-6 pb-24 max-w-7xl m-auto">
+    <section className="grid gap-6 pb-24 max-w-6xl m-auto">
       <BackButton />
       <h1
         className="text-4xl mb-6"
         dangerouslySetInnerHTML={{ __html: page.title.rendered }}
       ></h1>
       <div className="flex gap-2">
-        <p suppressHydrationWarning>{date.toDateString()}</p> |{author && <p>{author.name}</p>}
+        <p suppressHydrationWarning>{date.toDateString()}</p> |
+        {author && <p>{author.name}</p>}
       </div>
       {page._embedded?.["wp:featuredmedia"] &&
         page._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full

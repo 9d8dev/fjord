@@ -57,7 +57,7 @@ export default async function Pages() {
         WordPress site.
       </SecondaryHero>
 
-      <div className="m-auto grid max-w-7xl gap-6 p-6">
+      <div className="m-auto grid max-w-6xl gap-6 p-6">
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}

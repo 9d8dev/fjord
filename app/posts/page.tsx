@@ -95,7 +95,7 @@ export default async function Posts({
         {/* Pagination */}
       </ContentGrid>
 
-      <section className="m-auto flex w-full max-w-7xl items-center justify-between border-t p-6">
+      <section className="m-auto flex w-full max-w-6xl items-center justify-between border-t p-6">
         <p className="text-secondary-700 text-sm">
           Showing{" "}
           <span className="font-semibold">

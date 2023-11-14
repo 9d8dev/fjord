@@ -7,9 +7,9 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
 // Components
-import Nav from "@/components/global/nav";
-import Footer from "@/components/global/footer";
-import Main from "@/components/global/main";
+import Nav from "@/components/sections/nav";
+import Footer from "@/components/sections/footer";
+import Main from "@/components/global/elements/main";
 import Script from "next/script";
 
 const manrope = Manrope({ subsets: ["latin"] });
@@ -25,7 +25,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-secondary-100 dark:bg-secondary-900">
       <head>
         <meta property="og:image" content="<generated>" />
         <meta property="og:image:type" content="<generated>" />
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Script>
       </head>
       <body
-        className={`${manrope.className} text-secondary-950 dark:text-secondary-200 bg-primary-100`}
+        className={`${manrope.className} text-secondary-950 dark:text-secondary-200 bg-secondary-100`}
       >
         <Nav />
         <Main>{children}</Main>

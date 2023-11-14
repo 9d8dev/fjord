@@ -1,7 +1,7 @@
 import fjord from "@/fjord.config";
 import Image from "next/image";
 import Link from "next/link";
-import SubscribeForm from "@/components/global/subscribe-form";
+import SubscribeForm from "@/components/global/forms/subscribe-form";
 
 const Footer = () => {
   const links = [
@@ -19,8 +19,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 py-24 text-sm items-center m-auto bg-primary-300 dark:bg-primary-700 grid gap-12">
-      <div className="px-6 max-w-7xl xl:px-0 grid md:grid-cols-3 gap-6 justify-between w-full m-auto">
+    <footer className="p-6 md:p-12 text-sm items-center m-auto bg-secondary-100 dark:bg-secondary-700 grid gap-12">
+      <div className="max-w-6xl xl:px-0 grid md:grid-cols-3 gap-6 justify-between w-full m-auto">
         <div>
           <Link href="/">
             <Image
@@ -58,7 +58,7 @@ const Footer = () => {
           <SubscribeForm />
         </div>
       </div>
-      <div className="px-6 max-w-7xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
+      <div className="max-w-6xl xl:px-0 gap-6 flex-col-reverse md:flex-row flex justify-between w-full m-auto">
         <p suppressHydrationWarning>
           © {new Date().getFullYear()} | {fjord.site_name} |{" "}
           <a href="https://cameronyoungblood.com">Created</a>{" "}
