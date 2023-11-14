@@ -3,6 +3,8 @@ import fjord from "@/fjord.config";
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "../global/elements/nav-link";
+import Section from "../global/layout/section";
+import Container from "../global/layout/container";
 
 const Footer = () => {
   const links = [
@@ -26,9 +28,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary-100 dark:bg-secondary-700 m-auto grid items-center gap-12 p-6 text-sm md:p-12">
-      <div className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0">
-        <div>
+    <footer>
+      <Section
+        isAlt={true}
+        className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0"
+      >
+        <Container>
           <Link href="/">
             <Image
               priority
@@ -50,7 +55,7 @@ const Footer = () => {
           <p className="text-secondary-400 text-sm md:w-3/4">
             {fjord.site_description}
           </p>
-        </div>
+        </Container>
         <ul className="space-y-1">
           {links.map((link, index) => (
             <li
@@ -64,22 +69,26 @@ const Footer = () => {
         <div>
           <SubscribeForm />
         </div>
-      </div>
-      <div className="m-auto mt-8 flex w-full max-w-6xl flex-col-reverse justify-between gap-6 text-xs opacity-70 md:flex-row xl:px-0">
-        <p suppressHydrationWarning>
-          © {new Date().getFullYear()} | {fjord.site_name} |{" "}
-          <a href="https://cameronyoungblood.com">Created</a>{" "}
-          <a href="https://bridger.to">by</a>{" "}
-          <a href="https://alpinecodex.com">Alpine Codex</a>
-        </p>
-        <ul className="flex gap-4">
-          {otherLinks.map((link, index) => (
-            <li className="w-fit" key={index}>
-              <NavLink href={link.href}>{link.text}</NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+      </Section>
+      <Section>
+        <Container>
+          <div className="flex md:justify-between gap-6">
+            <p suppressHydrationWarning>
+              © {new Date().getFullYear()} | {fjord.site_name} |{" "}
+              <a href="https://cameronyoungblood.com">Created</a>{" "}
+              <a href="https://bridger.to">by</a>{" "}
+              <a href="https://alpinecodex.com">Alpine Codex</a>
+            </p>
+            <ul className="flex gap-4">
+              {otherLinks.map((link, index) => (
+                <li className="w-fit" key={index}>
+                  <NavLink href={link.href}>{link.text}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </Section>
     </footer>
   );
 };
