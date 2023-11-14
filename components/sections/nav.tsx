@@ -7,7 +7,7 @@ import NavLink from "../global/elements/nav-link";
 import ButtonLink from "../global/elements/button-link";
 import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

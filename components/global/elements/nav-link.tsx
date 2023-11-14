@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Link1Icon } from "@radix-ui/react-icons";
 
 type NavLinkProps = {
   href: string;
