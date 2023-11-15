@@ -10,8 +10,6 @@ const NavLink = ({ href, children, className }: NavLinkProps) => {
   return (
     <Link
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className={`${className} hover:opacity-75 transition-all`}
     >
       {children}
