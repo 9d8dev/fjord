@@ -29,46 +29,52 @@ const Footer = () => {
 
   return (
     <footer>
-      <Section
-        isAlt={true}
-        className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0"
-      >
-        <Container>
-          <Link href="/">
-            <Image
-              priority
-              className="mb-4 w-16 dark:hidden"
-              width={200}
-              height={200}
-              src={fjord.theme.primary_logo}
-              alt="logo"
-            ></Image>
-            <Image
-              priority
-              className="mb-4 hidden w-16 dark:block"
-              width={200}
-              height={200}
-              src={fjord.theme.dark_mode_logo}
-              alt="logo"
-            ></Image>
-          </Link>
-          <p className="text-secondary-400 text-sm md:w-3/4">
-            {fjord.site_description}
-          </p>
+      <Section isAlt={true}>
+        <Container className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0">
+          <div>
+            <Link href="/">
+              <Image
+                priority
+                className="mb-4 w-16 dark:hidden"
+                width={200}
+                height={200}
+                src={fjord.theme.primary_logo}
+                alt="logo"
+              ></Image>
+              <Image
+                priority
+                className="mb-4 hidden w-16 dark:block"
+                width={200}
+                height={200}
+                src={fjord.theme.dark_mode_logo}
+                alt="logo"
+              ></Image>
+            </Link>
+            <p className="text-secondary-400 text-sm md:w-3/4">
+              {fjord.site_description}
+            </p>
+          </div>
+          <ul className="space-y-1">
+            {links.map((link, index) => (
+              <li
+                className="w-fit underline-offset-4 transition-all hover:underline"
+                key={index}
+              >
+                <Link href={link.href}>{link.text}</Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="space-y-1">
+            {otherLinks.map((link, index) => (
+              <li
+                className="w-fit underline-offset-4 transition-all hover:underline"
+                key={index}
+              >
+                <Link href={link.href}>{link.text}</Link>
+              </li>
+            ))}
+          </ul>
         </Container>
-        <ul className="space-y-1">
-          {links.map((link, index) => (
-            <li
-              className="w-fit underline-offset-4 transition-all hover:underline"
-              key={index}
-            >
-              <Link href={link.href}>{link.text}</Link>
-            </li>
-          ))}
-        </ul>
-        <div>
-          <SubscribeForm />
-        </div>
       </Section>
       <Section>
         <Container>
