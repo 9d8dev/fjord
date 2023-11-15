@@ -19,6 +19,7 @@ const Hero = () => {
               className="h-full w-full object-cover object-bottom"
               src={Placeholder}
               alt="hero image"
+              placeholder="blur"
             />
           </div>
           <p>
