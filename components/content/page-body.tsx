@@ -1,4 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
+import Image from "next/image";
 
 interface PageBodyProps {
   page: {
@@ -43,8 +44,8 @@ const PageBody = ({ page, date, author }: PageBodyProps) => {
       {page._embedded?.["wp:featuredmedia"] &&
         page._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
           ?.source_url && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
+            placeholder="blur"
             src={
               page._embedded["wp:featuredmedia"][0].media_details.sizes.full
                 .source_url

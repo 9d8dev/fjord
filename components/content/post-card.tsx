@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { Calendar, ArrowUpRight } from "lucide-react";
 
 type Post = {
@@ -52,9 +53,10 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
       {featuredMedia && (
         <div className="h-56 relative mb-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={featuredMedia}
             alt="Post image"
+            placeholder="blur"
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
           <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 bg-primary-200 bg-opacity-75 backdrop-blur-md">

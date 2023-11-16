@@ -1,6 +1,6 @@
 import BackButton from "@/components/global/elements/back-button";
 import RecentPosts from "@/components/content/recent-posts";
-import Prose from "../global/elements/prose";
+import Image from "next/image";
 
 interface ArticleProps {
   post: {
@@ -48,7 +48,8 @@ const Article = ({ post, date, author }: ArticleProps) => {
               ?.source_url && (
               <div className="w-full h-96 md:h-[500px] relative my-12">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
+                  placeholder="blur"
                   className="absolute top-0 left-0 w-full h-full object-cover"
                   src={
                     post._embedded["wp:featuredmedia"][0].media_details.sizes
