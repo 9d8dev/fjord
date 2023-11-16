@@ -1,6 +1,7 @@
 // fjord type definition
 type fjordTypes = {
   site_name: string;
+  site_domain: string;
   site_title: string;
   site_description: string;
   posts_per_page: number;
@@ -27,6 +28,7 @@ type fjordTypes = {
 
 const fjord: fjordTypes = {
   site_name: "fjord.dev", // site name: used in the header and footer
+  site_domain: "https://fjord.dev", // site domain: used in the sitemap
   site_title:
     "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
   site_description:
