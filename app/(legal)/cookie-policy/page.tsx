@@ -1,19 +1,20 @@
 "use client";
 
+import Prose from "@/components/global/elements/prose";
 import Container from "@/components/global/layout/container";
 import Section from "@/components/global/layout/section";
-import Content from "@/content/cookie-policy.mdx";
+import Content from "@/content/terms-of-service.mdx";
 
-const Terms = () => {
+const Cookies = () => {
   return (
     <Section>
       <Container>
-        <div className="prose dark:prose-invert">
+        <Prose>
           <Content />
-        </div>
+        </Prose>
       </Container>
     </Section>
   );
 };
 
-export default Terms;
+export default Cookies;

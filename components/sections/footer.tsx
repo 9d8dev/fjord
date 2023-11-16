@@ -64,16 +64,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <ul className="space-y-1">
-            {otherLinks.map((link, index) => (
-              <li
-                className="w-fit underline-offset-4 transition-all hover:underline"
-                key={index}
-              >
-                <Link href={link.href}>{link.text}</Link>
-              </li>
-            ))}
-          </ul>
         </Container>
       </Section>
       <Section>
