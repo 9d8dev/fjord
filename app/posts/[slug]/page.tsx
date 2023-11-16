@@ -1,6 +1,7 @@
 import Article from "@/components/content/article";
 import fjord from "@/fjord.config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 async function getPost(slug: string) {
   const res = await fetch(
@@ -32,6 +33,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
   const date = new Date(post.date);
   const author = post._embedded?.author[0];
+
+  const metadata: Metadata = {
+    title: `${post.title.rendered} | ${fjord.site_name}`,
+    description: post.excerpt.rendered,
+  };
 
   return (
     <div>

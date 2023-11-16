@@ -1,6 +1,7 @@
 import PageBody from "@/components/content/page-body";
 import fjord from "@/fjord.config";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 type Page = {
   id: number;
@@ -25,7 +26,7 @@ type Page = {
             };
           };
         };
-      },
+      }
     ];
     author: Array<{
       name: string;
@@ -35,7 +36,7 @@ type Page = {
 
 async function getPage(slug: string) {
   const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
+    `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`
   );
 
   if (!res.ok) {
@@ -63,6 +64,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
   const date = new Date(page.date);
   const author = page._embedded?.author[0];
+  const metadata: Metadata = {
+    title: `${page.title.rendered} | ${fjord.site_name}`,
+    description: page.excerpt.rendered,
+  };
 
   return (
     <div className="p-6">

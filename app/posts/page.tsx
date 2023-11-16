@@ -3,9 +3,13 @@ import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import Main from "@/components/global/layout/main";
-import Link from "next/link";
-import Section from "@/components/global/layout/section";
 import Pagination from "@/components/content/pagination";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Blog | ${fjord.site_name}`,
+  description: `Read the ${fjord.site_name} blog. ${fjord.site_description}`,
+};
 
 type Post = {
   id: number;

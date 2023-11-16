@@ -3,6 +3,12 @@ import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import CTA from "@/components/sections/cta";
 import Main from "@/components/global/layout/main";
+import { Metadata } from "next";
+
+const metadata: Metadata = {
+  title: `All Pages | ${fjord.site_name}`,
+  description: `All pages from ${fjord.site_name}. ${fjord.site_description}`,
+};
 
 type Page = {
   id: number;
@@ -30,7 +36,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`,
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`
     );
 
     if (!res.ok) {

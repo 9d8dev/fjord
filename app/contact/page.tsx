@@ -2,6 +2,13 @@ import SecondaryHero from "@/components/sections/secondary-hero";
 import Main from "@/components/global/layout/main";
 import TallyForm from "@/components/global/forms/tally-form";
 import InlineLink from "@/components/global/elements/inline-link";
+import type { Metadata } from "next";
+import fjord from "@/fjord.config";
+
+export const metadata: Metadata = {
+  title: `Contact Us | ${fjord.site_name}`,
+  description: `Contact ${fjord.site_name} today. ${fjord.site_description}`,
+};
 
 export default function Page() {
   return (
