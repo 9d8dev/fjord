@@ -2,37 +2,6 @@ import Article from "@/components/content/article";
 import fjord from "@/fjord.config";
 import { notFound } from "next/navigation";
 
-type Post = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  content: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia"?: [
-      {
-        media_details: {
-          sizes: {
-            full: {
-              source_url: string;
-            };
-          };
-        };
-      }
-    ];
-    author: Array<{
-      name: string;
-    }>;
-  };
-};
-
 async function getPost(slug: string) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`
