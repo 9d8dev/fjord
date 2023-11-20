@@ -32,7 +32,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <>
       <article className="m-auto grid max-w-6xl gap-6 pb-24">
-        <div className="p-6">
+        <div className="p-6 md:p-8">
           <BackButton />
           <h1
             className="mb-6 text-4xl"
