@@ -25,7 +25,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="bg-secondary-100 dark:bg-secondary-900">
+    <html lang="en" className="bg-secondary-100 dark:bg-secondary-950">
       <head>
         <meta property="og:image" content="<generated>" />
         <meta property="og:image:type" content="<generated>" />

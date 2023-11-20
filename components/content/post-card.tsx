@@ -70,11 +70,11 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
       </p>
       <h3
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        className="text-primary-600 dark:text-primary-100 mb-2 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
+        className="text-secondary-600 dark:text-secondary-100 mb-2 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
       ></h3>
 
       <div
-        className="text-secondary-700 dark:text-primary-400 text-sm"
+        className="text-secondary-700 dark:text-secondary-400 text-sm"
         dangerouslySetInnerHTML={{
           __html: firstSentenceOfExcerpt,
         }}

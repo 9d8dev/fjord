@@ -50,8 +50,8 @@ const fjord: fjordTypes = {
   },
 
   theme: {
-    primary: "slate",
-    secondary: "gray",
+    primary: "blue",
+    secondary: "neutral",
     logo: "./logo.svg",
     primary_logo: "./dark_logo.svg",
     dark_mode_logo: "./light_logo.svg",
