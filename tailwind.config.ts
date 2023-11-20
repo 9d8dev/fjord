@@ -54,6 +54,8 @@ function getColorScheme(colorName: string) {
 }
 
 const config: Config = {
+  // toggle to 'media' to disable dark mode, see: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+  darkMode: "media",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
