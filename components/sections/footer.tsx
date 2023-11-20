@@ -1,7 +1,7 @@
 import SubscribeForm from "@/components/global/forms/subscribe-form";
 import fjord from "@/fjord.config";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import NavLink from "../global/elements/nav-link";
 import Section from "../global/layout/section";
 import Container from "../global/layout/container";
@@ -68,7 +68,7 @@ const Footer = () => {
       </Section>
       <Section>
         <Container>
-          <div className="flex md:justify-between gap-6">
+          <div className="flex gap-6 md:justify-between">
             <p suppressHydrationWarning>
               © {new Date().getFullYear()} | {fjord.site_name} |{" "}
               <a href="https://cameronyoungblood.com">Created</a>{" "}

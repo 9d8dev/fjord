@@ -1,7 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
 import RecentPosts from "@/components/content/recent-posts";
-import Image from "next/image";
-
 interface ArticleProps {
   post: {
     title: {
@@ -17,7 +15,7 @@ interface ArticleProps {
               };
             };
           };
-        }
+        },
       ];
     };
     content: {
@@ -33,11 +31,11 @@ interface ArticleProps {
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <>
-      <article className="grid gap-6 pb-24 max-w-6xl m-auto">
+      <article className="m-auto grid max-w-6xl gap-6 pb-24">
         <div className="p-6">
           <BackButton />
           <h1
-            className="text-4xl mb-6"
+            className="mb-6 text-4xl"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           ></h1>
           <div className="flex gap-2">
@@ -46,11 +44,11 @@ const Article = ({ post, date, author }: ArticleProps) => {
           {post._embedded?.["wp:featuredmedia"] &&
             post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
               ?.source_url && (
-              <div className="w-full h-96 md:h-[500px] relative my-12">
+              <div className="relative my-12 h-96 w-full md:h-[500px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <Image
+                <img
                   placeholder="blur"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  className="absolute left-0 top-0 h-full w-full object-cover"
                   src={
                     post._embedded["wp:featuredmedia"][0].media_details.sizes
                       .full.source_url

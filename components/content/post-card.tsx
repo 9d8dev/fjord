@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { Calendar, ArrowUpRight } from "lucide-react";
 
 type Post = {
@@ -47,31 +46,31 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
   return (
     <Link
       href={`/posts/${post.slug}`}
-      className="flex flex-col gap-2 group transition-all hover:mb-1 hover:-mt-1"
+      className="group flex flex-col gap-2 transition-all hover:-mt-1 hover:mb-1"
       key={post.id}
     >
       {featuredMedia && (
-        <div className="h-56 relative mb-2">
+        <div className="relative mb-2 h-56">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <Image
+          <img
             src={featuredMedia}
             alt="Post image"
             placeholder="blur"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute left-0 top-0 h-full w-full object-cover"
           />
-          <div className="hidden transition-all group-hover:flex text-sm items-center absolute bottom-2 right-2 bg-primary-200 bg-opacity-75 backdrop-blur-md">
+          <div className="bg-primary-200 absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex">
             <p className="sr-only">Read More</p>{" "}
             <ArrowUpRight className="dark:text-secondary-800" />
           </div>
         </div>
       )}
-      <p className="text-xs text-primary-500 dark:text-primary-300 flex items-center gap-1">
+      <p className="text-primary-500 dark:text-primary-300 flex items-center gap-1 text-xs">
         <Calendar suppressHydrationWarning className="w-3" />
         {date.toDateString()}
       </p>
       <h3
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        className="mb-2 text-primary-600 dark:text-primary-100 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
+        className="text-primary-600 dark:text-primary-100 mb-2 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
       ></h3>
 
       <div
@@ -89,7 +88,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
               return (
                 <li key={index}>
                   <Link
-                    className="px-2 py-1 bg-primary-200 w-fit text-sm"
+                    className="bg-primary-200 w-fit px-2 py-1 text-sm"
                     href="/"
                   >
                     {tag?.name}

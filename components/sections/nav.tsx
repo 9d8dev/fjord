@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import NavLink from "../global/elements/nav-link";
+import Image from "next/image";
 import ButtonLink from "../global/elements/button-link";
 import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
