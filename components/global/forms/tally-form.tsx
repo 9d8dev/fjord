@@ -54,11 +54,9 @@ const TallyForm: React.FC<TallyFormProps> = ({
   return (
     <Section>
       <Container>
-        <div className="m-auto flex flex-col gap-4 max-w-xl">
-          <h3 className="text-2xl">{formTitle}</h3>
-          <p>{formDescription}</p>
+        <div className="flex max-w-xl flex-col gap-4">
           {isLoading ? (
-            <div className="p-6 w-full h-[720px] flex items-center justify-center">
+            <div className="flex h-[720px] w-full items-center justify-center p-6">
               <ReloadIcon className="animate-spin" />
             </div>
           ) : (

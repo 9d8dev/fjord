@@ -23,11 +23,7 @@ export default function Page() {
         prop.
       </SecondaryHero>
 
-      <TallyForm
-        formTitle="contact us form"
-        formDescription="fill out this form to get in touch"
-        formId="mVP2d6"
-      />
+      <TallyForm formId="mVP2d6" />
     </Main>
   );
 }
