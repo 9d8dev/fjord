@@ -13,19 +13,22 @@ type FeatureText = {
 
 const featureText: FeatureText[] = [
   {
-    icon: <TokensIcon />,
-    title: "Feature 1",
-    description: "This is the first feature",
+    icon: <TokensIcon className="w-6 h-6" />,
+    title: "One-click Deploy",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    icon: <TokensIcon />,
-    title: "Feature 2",
-    description: "This is the second feature",
+    icon: <TokensIcon className="w-6 h-6" />,
+    title: "Simple Config File",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    icon: <TokensIcon />,
-    title: "Feature 3",
-    description: "This is the third feature",
+    icon: <TokensIcon className="w-6 h-6" />,
+    title: "Design with Ease",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
 
@@ -40,11 +43,12 @@ const Feature = () => {
           <h4 className="text-2xl opacity-70">
             Fjord was designed with the developer experience in mind.
           </h4>
-          <div className="grid grid-cols-3">
+
+          <div className="grid md:grid-cols-3 mt-6 gap-6 md:mt-12">
             {featureText.map(({ icon, title, description }, index) => (
-              <div key={index}>
+              <div className="grid gap-4" key={index}>
                 {icon}
-                <h5>{title}</h5>
+                <h4 className="text-xl text-primary-500">{title}</h4>
                 <p>{description}</p>
               </div>
             ))}

@@ -17,11 +17,11 @@ const ContentGrid = ({
     Object.assign(
       {
         id,
-        className: `grid max-w-6xl m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 my-8 ${className}`,
+        className: `grid max-w-4xl m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ${className}`,
       },
-      rest,
+      rest
     ),
-    children,
+    children
   );
 };
 

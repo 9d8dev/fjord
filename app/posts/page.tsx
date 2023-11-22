@@ -56,7 +56,7 @@ async function getPosts(perPage: number, offset: number) {
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
     {
       next: { revalidate: 600 },
-    },
+    }
   );
 
   if (!res.ok) {
@@ -69,7 +69,7 @@ async function getPosts(perPage: number, offset: number) {
   // Sort posts by date
   data.sort(
     (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime(),
+      new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   return { data, totalPosts };
 }
@@ -95,7 +95,7 @@ export default async function Posts({
         WordPress.
       </SecondaryHero>
 
-      <ContentGrid className="p-6" id="posts">
+      <ContentGrid id="posts">
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} tags={tags} />
         ))}
