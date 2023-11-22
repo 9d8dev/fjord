@@ -14,7 +14,7 @@ export default function SecondaryHero({
   className?: string;
 }) {
   return (
-    <Section isAlt={true}>
+    <Section>
       <Container>
         <div className="mx-auto max-w-xl lg:mx-0">
           <p className="mx-1 flex items-center gap-1 opacity-75">

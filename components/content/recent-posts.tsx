@@ -34,7 +34,7 @@ type Tag = {
 
 async function getPosts() {
   const res = await fetch(
-    `${settings.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=3`
+    `${settings.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=3`,
   );
 
   if (!res.ok) {
@@ -45,7 +45,7 @@ async function getPosts() {
   // Sort posts by date
   posts.sort(
     (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+      new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return posts;
 }

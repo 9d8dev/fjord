@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({
   lastPage,
 }) => {
   return (
-    <Section className="w-full flex justify-between items-center">
+    <Section className="flex w-full items-center justify-between">
       <p className="text-sm">
         Showing <span>{(page - 1) * fjord.posts_per_page + 1}</span> to{" "}
         <span>{Math.min(page * fjord.posts_per_page, totalPosts)}</span> of{" "}
@@ -22,13 +22,13 @@ const Pagination: React.FC<PaginationProps> = ({
       </p>
       <div className="space-x-2">
         {page === 1 ? (
-          <button className="hover:opacity-75 border-secondary-300 text-secondary-900 dark:text-secondary-100 pointer-events-none inline-flex items-center justify-center text-sm opacity-50">
+          <button className="border-secondary-300 text-secondary-900 dark:text-secondary-100 pointer-events-none inline-flex items-center justify-center text-sm opacity-50 hover:opacity-75">
             {"<"} Previous
           </button>
         ) : (
           <Link
             href={page > 2 ? `/posts/?page=${page - 1}#posts` : "/posts#posts"}
-            className="hover:opacity-75 border-secondary-300 text-secondary-900 dark:text-secondary-100 inline-flex items-center justify-center text-sm"
+            className="border-secondary-300 text-secondary-900 dark:text-secondary-100 inline-flex items-center justify-center text-sm hover:opacity-75"
           >
             {"<"} Previous
           </Link>
@@ -40,12 +40,12 @@ const Pagination: React.FC<PaginationProps> = ({
                 ? `/posts/?page=${page + 1}#posts`
                 : `/posts/?page=${page}#posts`
             }
-            className="hover:opacity-75 border-secondary-300 text-secondary-900 dark:text-secondary-100 inline-flex items-center justify-center text-sm"
+            className="border-secondary-300 text-secondary-900 dark:text-secondary-100 inline-flex items-center justify-center text-sm hover:opacity-75"
           >
             Next {">"}
           </Link>
         ) : (
-          <button className="hover:opacity-75 border-secondary-300 text-secondary-900 dark:text-secondary-100 pointer-events-none inline-flex items-center justify-center text-sm opacity-50">
+          <button className="border-secondary-300 text-secondary-900 dark:text-secondary-100 pointer-events-none inline-flex items-center justify-center text-sm opacity-50 hover:opacity-75">
             Next {">"}
           </button>
         )}

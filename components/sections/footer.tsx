@@ -29,7 +29,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Section isAlt={true}>
+      <Section>
         <Container className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0">
           <div>
             <Link href="/">
