@@ -12,7 +12,7 @@ const InlineLink = ({ href, children, className }: InlineLinkProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${className} hover:opacity-75 underline underline-offset-4 transition-all`}
+      className={`${className} text-primary-500 underline-offset-4 transition-all hover:-mt-1 hover:mb-1 hover:opacity-75`}
     >
       {children}
     </Link>

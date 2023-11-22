@@ -42,11 +42,11 @@ const fjord: fjordTypes = {
     main_cta_text: "use fjord",
     // You can edit the Markdown for these pages in hte `@/content/...` directory.
     privacy_policy: "/privacy-policy",
-    privacy_policy_text: "privacy policy",
+    privacy_policy_text: "Privacy Policy",
     terms_of_service: "/terms-of-service",
-    terms_of_service_text: "terms of service",
+    terms_of_service_text: "Terms of Service",
     cookie_policy: "/cookie-policy",
-    cookie_policy_text: "cookie policy",
+    cookie_policy_text: "Cookie Policy",
   },
 
   theme: {

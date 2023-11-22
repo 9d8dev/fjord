@@ -17,11 +17,13 @@ export default function SecondaryHero({
     <Section>
       <Container>
         <div className="mx-auto max-w-xl lg:mx-0">
-          <p className="mx-1 flex items-center gap-1 opacity-75">
+          <p className="mx-1 flex w-fit items-center gap-1 opacity-70">
             <InfoCircledIcon />
             {subtitle}
           </p>
-          <h2 className="mt-2 text-4xl tracking-tight sm:text-6xl">{title}</h2>
+          <h2 className="text-primary-500 mt-2 text-4xl tracking-tight sm:text-6xl">
+            {title}
+          </h2>
           <p className="mt-6 text-lg leading-8">{children}</p>
         </div>
       </Container>

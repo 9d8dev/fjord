@@ -90,9 +90,9 @@ export default async function Posts({
 
   return (
     <Main>
-      <SecondaryHero title="all posts" subtitle={`${fjord.site_name} blog`}>
-        all posts from {fjord.site_name}. these are all the posts from your
-        WordPress site.
+      <SecondaryHero title="All Posts" subtitle={`${fjord.site_name} blog`}>
+        All posts from {fjord.site_name}. These are all the posts from your
+        WordPress.
       </SecondaryHero>
 
       <ContentGrid className="p-6" id="posts">

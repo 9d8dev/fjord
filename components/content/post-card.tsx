@@ -55,7 +55,6 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
           <img
             src={featuredMedia}
             alt="Post image"
-            placeholder="blur"
             className="absolute left-0 top-0 h-full w-full object-cover"
           />
           <div className="bg-primary-200 absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex">
@@ -64,13 +63,13 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
           </div>
         </div>
       )}
-      <p className="text-primary-500 dark:text-primary-300 flex items-center gap-1 text-xs">
+      <p className="text-secondary-500 flex items-center gap-1 text-xs">
         <Calendar suppressHydrationWarning className="w-3" />
         {date.toDateString()}
       </p>
       <h3
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        className="text-secondary-600 dark:text-secondary-100 mb-2 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
+        className="text-primary-500 mb-2 text-lg font-semibold group-hover:underline group-hover:underline-offset-4"
       ></h3>
 
       <div

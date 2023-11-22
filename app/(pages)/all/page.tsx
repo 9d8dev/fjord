@@ -36,7 +36,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`,
     );
 
     if (!res.ok) {
@@ -61,7 +61,7 @@ export default async function Pages() {
     <Main>
       <SecondaryHero title="All Pages" subtitle={`${fjord.site_name} blog`}>
         All pages from {fjord.site_name}. These are all the pages from your
-        WordPress site.
+        WordPress.
       </SecondaryHero>
 
       <div className="m-auto grid max-w-6xl gap-6 p-6">

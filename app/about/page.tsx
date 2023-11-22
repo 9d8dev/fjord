@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <Main>
-      <SecondaryHero title="about us" subtitle="Learn More about Fjord">
-        welcome to the about page. this is where you can tell your users about
+      <SecondaryHero title="About us" subtitle="Learn More about Fjord">
+        Welcome to the about page. this is where you can tell your users about
         your project.
       </SecondaryHero>
       <About />

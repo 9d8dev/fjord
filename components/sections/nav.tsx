@@ -59,7 +59,7 @@ const Nav = () => {
 
   return (
     <nav className="sticky top-0 z-50">
-      <Section className="bg-secondary-100 bg-opacity-50 !py-6 backdrop-blur-md">
+      <Section className="bg-secondary-100 dark:bg-secondary-900 bg-opacity-50 !py-6 backdrop-blur-md">
         <div className="m-auto flex max-w-6xl justify-between">
           <Link
             className="flex items-center gap-2 transition-all hover:opacity-75"

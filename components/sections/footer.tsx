@@ -7,12 +7,18 @@ import Section from "../global/layout/section";
 import Container from "../global/layout/container";
 
 const Footer = () => {
-  const links = [
+  const generalLinks = [
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
-    { href: "/posts", text: "Blog" },
     { href: "/contact", text: "Contact" },
     { href: "/all", text: "All Pages" },
+  ];
+
+  const contentLinks = [
+    { href: "/posts", text: "Blog" },
+    { href: "/posts/authors", text: "Authors" },
+    { href: "/posts/categories", text: "Categories" },
+    { href: "/posts/tags", text: "Tags" },
   ];
 
   const otherLinks = [
@@ -28,9 +34,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
+    <footer className="bg-secondary-200 dark:bg-secondary-800">
       <Section>
-        <Container className="m-auto grid w-full max-w-6xl justify-between gap-6 md:grid-cols-3 xl:px-0">
+        <Container className="m-auto w-full max-w-6xl grid md:grid-cols-2 justify-between gap-6">
+          {/* Logo and Description */}
           <div>
             <Link href="/">
               <Image
@@ -54,16 +61,38 @@ const Footer = () => {
               {fjord.site_description}
             </p>
           </div>
-          <ul className="space-y-1">
-            {links.map((link, index) => (
-              <li
-                className="w-fit underline-offset-4 transition-all hover:underline"
-                key={index}
-              >
-                <Link href={link.href}>{link.text}</Link>
-              </li>
-            ))}
-          </ul>
+
+          {/* Links Section */}
+          <div className="flex gap-10 md:justify-end">
+            {/* Links */}
+            <div>
+              <p className="text-xs opacity-70 mb-4">General</p>
+              <ul className="space-y-1">
+                {generalLinks.map((link, index) => (
+                  <li
+                    className="w-fit underline-offset-4 transition-all hover:underline"
+                    key={index}
+                  >
+                    <Link href={link.href}>{link.text}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Content Links */}
+            <div>
+              <p className="text-xs opacity-70 mb-4">Content</p>
+              <ul className="space-y-1">
+                {contentLinks.map((link, index) => (
+                  <li
+                    className="w-fit underline-offset-4 transition-all hover:underline"
+                    key={index}
+                  >
+                    <Link href={link.href}>{link.text}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </Container>
       </Section>
       <Section>
@@ -75,6 +104,7 @@ const Footer = () => {
               <a href="https://bridger.to">by</a>{" "}
               <a href="https://alpinecodex.com">Alpine Codex</a>
             </p>
+
             <ul className="flex gap-4">
               {otherLinks.map((link, index) => (
                 <li className="w-fit" key={index}>

@@ -14,8 +14,8 @@ export default function Page() {
   return (
     <Main>
       <SecondaryHero
-        title="contact us"
-        subtitle="fill out the form to contact us"
+        title="Contact us"
+        subtitle="Fill out the form to contact us"
       >
         This is the contact page! it uses{" "}
         <InlineLink href="https://tally.so">tally.so</InlineLink> to pull the

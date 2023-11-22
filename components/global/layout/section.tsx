@@ -19,7 +19,7 @@ const Section = ({
 
   return (
     <section
-      className={`${className} m-auto items-center p-6 text-sm md:p-12 ${backgroundColor}`}
+      className={`${className} m-auto items-center px-6 py-12 text-sm md:px-12 md:py-24 ${backgroundColor}`}
     >
       {children}
     </section>

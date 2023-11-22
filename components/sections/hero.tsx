@@ -1,18 +1,69 @@
 import Section from "@/components/global/layout/section";
 import Container from "@/components/global/layout/container";
-import InlineLink from "../global/elements/inline-link";
 import Placeholder from "@/public/placeholder.jpg";
 import Image from "next/image";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const Hero = () => {
   return (
     <Section>
       <Container>
         <div className="flex flex-col gap-6">
-          <h1 className="text-6xl">welcome to fjord</h1>
-          <h2 className="text-3xl">
-            fjord is an opinionated Next JS and Wordpress starter. It&apos;s
-            built to be a solid foundation for your next project.
+          <a
+            href="https://fjord.dev"
+            className="flex gap-1 text-xs items-center border w-fit rounded-lg px-2 py-1 opacity-70 hover:opacity-100 transition-all"
+          >
+            Discover the future of WordPress <ArrowRightIcon />
+          </a>
+          <h1 className="text-primary-500 text-7xl">
+            Fjord is a headless WordPress template built with Next JS and
+            Tailwind CSS.
+          </h1>
+          <h2 className="text-3xl font-light">
+            Fjord was created by{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="https://bridger.to"
+            >
+              Bridger Tower
+            </a>{" "}
+            and{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="https://cameronyoungblood.com"
+            >
+              Cameron Youngblood
+            </a>{" "}
+            to be used by{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="https://alpinecodex.com"
+            >
+              Alpine Codex
+            </a>
+            ,{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="https://ampry.com"
+            >
+              Ampry
+            </a>
+            , and{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="https://9d8.dev"
+            >
+              9d8
+            </a>
+            . If you are interested in obtaining the template please reach out
+            at{" "}
+            <a
+              className="hover:opacity-70 transition-all"
+              href="mailto:9d8dev@gmail.com"
+            >
+              9d8dev@gmail.com
+            </a>
+            .
           </h2>
           <div className="my-8 h-96 w-full overflow-hidden md:h-[480px]">
             <Image
@@ -22,12 +73,6 @@ const Hero = () => {
               placeholder="blur"
             />
           </div>
-          <p>
-            You can learn more about fjord by visiting{" "}
-            <InlineLink href="https://fjord.dev">fjord.dev</InlineLink>. fjord
-            pairs nicely with{" "}
-            <InlineLink href="https://craftui.org">craft ui</InlineLink>.
-          </p>
         </div>
       </Container>
     </Section>
