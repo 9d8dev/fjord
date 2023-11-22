@@ -7,8 +7,8 @@ import Image from "next/image";
 import ButtonLink from "../global/elements/button-link";
 import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import Section from "../global/layout/section";
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -71,7 +71,7 @@ const Nav = () => {
           </Link>
           <div className="flex items-center gap-4 lg:hidden">
             <button onClick={handleMobileMenuToggle}>
-              <Menu />
+              <HamburgerMenuIcon />
             </button>
           </div>
           <div className="hidden items-center gap-4 lg:flex">
@@ -96,7 +96,7 @@ const Nav = () => {
               className="absolute right-4 top-4"
               onClick={handleMobileMenuToggle}
             >
-              <X />
+              <Cross1Icon />
             </button>
             <ul className="mt-12 flex flex-col space-y-4">
               {renderLinks(true)}

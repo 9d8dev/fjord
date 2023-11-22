@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 
 const BackButton = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const BackButton = () => {
       className="text-sm flex gap-1 items-center my-6"
       onClick={handleBackButtonClick}
     >
-      <ArrowLeft className="w-4" />
+      <ArrowLeftIcon className="w-4" />
       <span className="border-b">Go Back</span>
     </button>
   );

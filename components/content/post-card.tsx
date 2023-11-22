@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Calendar, ArrowUpRight } from "lucide-react";
+import { ArrowUpIcon, CalendarIcon } from "@radix-ui/react-icons";
 
 type Post = {
   id: number;
@@ -59,12 +59,12 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
           />
           <div className="bg-primary-200 absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex">
             <p className="sr-only">Read More</p>{" "}
-            <ArrowUpRight className="dark:text-secondary-800" />
+            <ArrowUpIcon className="dark:text-secondary-800" />
           </div>
         </div>
       )}
       <p className="text-secondary-500 flex items-center gap-1 text-xs">
-        <Calendar suppressHydrationWarning className="w-3" />
+        <CalendarIcon suppressHydrationWarning className="w-3" />
         {date.toDateString()}
       </p>
       <h3
