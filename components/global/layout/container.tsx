@@ -7,7 +7,7 @@ type SectionProps = {
 
 const Container = ({ children, className }: SectionProps) => {
   return (
-    <div id="container" className={`${className} max-w-6xl m-auto`}>
+    <div id="container" className={`${className} max-w-4xl m-auto`}>
       {children}
     </div>
   );
