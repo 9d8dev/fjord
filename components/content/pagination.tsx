@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({
   lastPage,
 }) => {
   return (
-    <Section className="flex w-full items-center justify-between">
+    <Section className="flex w-full max-w-5xl items-center justify-between">
       <p className="text-sm">
         Showing <span>{(page - 1) * fjord.posts_per_page + 1}</span> to{" "}
         <span>{Math.min(page * fjord.posts_per_page, totalPosts)}</span> of{" "}

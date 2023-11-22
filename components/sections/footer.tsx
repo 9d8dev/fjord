@@ -70,7 +70,7 @@ const Footer = () => {
               <ul className="space-y-1">
                 {generalLinks.map((link, index) => (
                   <li
-                    className="w-fit underline-offset-4 transition-all hover:underline"
+                    className="w-fit transition-all hover:opacity-70"
                     key={index}
                   >
                     <Link href={link.href}>{link.text}</Link>
@@ -84,7 +84,7 @@ const Footer = () => {
               <ul className="space-y-1">
                 {contentLinks.map((link, index) => (
                   <li
-                    className="w-fit underline-offset-4 transition-all hover:underline"
+                    className="w-fit transition-all hover:opacity-70"
                     key={index}
                   >
                     <Link href={link.href}>{link.text}</Link>
