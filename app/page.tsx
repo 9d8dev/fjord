@@ -4,6 +4,7 @@ import FAQ from "@/components/sections/faq";
 import CTA from "@/components/sections/cta";
 import RecentPosts from "@/components/content/recent-posts";
 import Main from "@/components/global/layout/main";
+import Testimonials from "@/components/sections/testimonials";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Feature />
       <RecentPosts />
+      <Testimonials />
       <FAQ />
       <CTA />
     </Main>
