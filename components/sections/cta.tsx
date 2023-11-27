@@ -3,15 +3,16 @@ import Section from "@/components/global/layout/section";
 import Container from "@/components/global/layout/container";
 import ButtonLink from "@/components/global/elements/button-link";
 
+// Change the content here by editing `@/fjord.config.ts`
+
 const CTA = () => {
   return (
     <Section>
-      <Container>
+      <Container className="bg-primary-50 dark:bg-primary-950 rounded-lg md:rounded-xl p-12">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl">this is an example cta section</h3>
-          <h4 className="text-2xl">
-            here is some more example text. you can use this section to call out
-            a specific action you want the user to take.
+          <h3 className="text-4xl">{fjord.content.main_cta}</h3>
+          <h4 className="text-2xl font-thin opacity-70">
+            {fjord.content.cta_summary}
           </h4>
           <ButtonLink href={fjord.links.main_cta}>
             {fjord.links.main_cta_text}

@@ -24,6 +24,10 @@ type fjordTypes = {
     primary_logo: string;
     dark_mode_logo: string;
   };
+  content: {
+    main_cta: string;
+    cta_summary: string;
+  };
 };
 
 const fjord: fjordTypes = {
@@ -39,7 +43,7 @@ const fjord: fjordTypes = {
 
   links: {
     main_cta: "#",
-    main_cta_text: "use fjord",
+    main_cta_text: "Get Started",
     // You can edit the Markdown for these pages in hte `@/content/...` directory.
     privacy_policy: "/privacy-policy",
     privacy_policy_text: "Privacy Policy",
@@ -57,6 +61,12 @@ const fjord: fjordTypes = {
     dark_mode_logo: "./light_logo.svg",
     // change the font using `next/font` in `layout.tsx` in the app directory.
     // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
+  },
+
+  content: {
+    main_cta: "Get Started with Fjord Today!",
+    cta_summary:
+      "See why the future of WordPress is headless using Next JS and Tailwind CSS.",
   },
 };
 

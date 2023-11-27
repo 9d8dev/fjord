@@ -65,7 +65,7 @@ const Hero = () => {
             </a>
             .
           </h2>
-          <div className="my-8 h-96 w-full overflow-hidden md:h-[480px]">
+          <div className="my-8 h-96 w-full overflow-hidden rounded-lg md:rounded-xl md:h-[480px]">
             <Image
               className="h-full w-full object-cover object-bottom"
               src={Placeholder}
