@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary-200 dark:bg-secondary-800">
       <Section>
-        <Container className="m-auto w-full max-w-6xl grid md:grid-cols-2 justify-between gap-6">
+        <Container className="m-auto w-full grid md:grid-cols-2 justify-between gap-6">
           {/* Logo and Description */}
           <div>
             <Link href="/">

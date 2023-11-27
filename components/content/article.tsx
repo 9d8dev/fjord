@@ -1,5 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
-import RecentPosts from "@/components/content/recent-posts";
+import RecentPosts from "@/components/sections/recent-posts";
 interface ArticleProps {
   post: {
     title: {
@@ -15,7 +15,7 @@ interface ArticleProps {
               };
             };
           };
-        },
+        }
       ];
     };
     content: {

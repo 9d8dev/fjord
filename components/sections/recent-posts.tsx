@@ -70,7 +70,7 @@ export default async function RecentPosts({
           <h4 className="text-2xl font-thin opacity-70">
             Read the latest from our blog.
           </h4>
-          <div className="m-auto grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="m-auto grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3 mt-6 md:mt-12">
             {data.map((post: Post) => (
               <PostCard key={post.id} post={post} />
             ))}
