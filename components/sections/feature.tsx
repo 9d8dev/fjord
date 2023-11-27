@@ -38,9 +38,9 @@ const Feature = () => {
       <Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            What if Headless WordPress was as easy as 1, 2, 3?{" "}
+            What if Headless WordPress was as easy as 1, 2, 3?
           </h3>
-          <h4 className="text-2xl opacity-70">
+          <h4 className="text-2xl font-thin opacity-70">
             Fjord was designed with the developer experience in mind.
           </h4>
 
