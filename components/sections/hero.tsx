@@ -15,11 +15,11 @@ const Hero = () => {
           >
             Discover the future of WordPress <ArrowRightIcon />
           </a>
-          <h1 className="text-primary-500 text-6xl">
+          <h1 className="text-primary-500 text-4xl md:text-6xl">
             Fjord is a headless WordPress template built with NextJS 14 and
             Tailwind CSS.
           </h1>
-          <h2 className="text-3xl font-light">
+          <h2 className="text-xl md:text-3xl font-light">
             Fjord was created by{" "}
             <a
               className="hover:opacity-70 transition-all"

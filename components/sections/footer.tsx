@@ -97,7 +97,7 @@ const Footer = () => {
       </Section>
       <Section>
         <Container>
-          <div className="flex gap-6 md:justify-between">
+          <div className="flex md:flex-row flex-col-reverse gap-6 md:justify-between">
             <p suppressHydrationWarning>
               © {new Date().getFullYear()} | {fjord.site_name} |{" "}
               <a href="https://cameronyoungblood.com">Created</a>{" "}

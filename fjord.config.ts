@@ -66,7 +66,7 @@ const fjord: fjordTypes = {
   content: {
     main_cta: "Get Started with Fjord Today!",
     cta_summary:
-      "See why the future of WordPress is headless using Next JS and Tailwind CSS.",
+      "See why the future of WordPress is headless using Next JS and Tailwind.",
   },
 };
 

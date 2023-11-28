@@ -6,10 +6,10 @@ const About = () => {
     <Section>
       <Container>
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl">this is an example about section</h3>
-          <h4 className="text-2xl">
-            here is some more example text. you can use this section to explain
-            who you are and what you do.
+          <h3 className="text-4xl">Fjord is a headless WordPress template</h3>
+          <h4 className="text-2xl font-thin opacity-70">
+            This is an example about section. What do you want to say about your
+            company?
           </h4>
           <p className="font-light opacity-70 md:w-3/5 mt-6 md:mt-12">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

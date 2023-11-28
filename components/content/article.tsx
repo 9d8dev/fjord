@@ -48,7 +48,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   placeholder="blur"
-                  className="absolute left-0 top-0 h-full w-full object-cover"
+                  className="absolute left-0 top-0 h-full w-full object-cover rounded-lg"
                   src={
                     post._embedded["wp:featuredmedia"][0].media_details.sizes
                       .full.source_url

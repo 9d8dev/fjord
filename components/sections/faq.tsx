@@ -49,7 +49,7 @@ const FAQ = () => {
                   <QuestionMarkCircledIcon className="w-4" />
                   {item.question}
                 </h4>
-                <div className="flex ml-6 gap-1 items-baseline">
+                <div className="flex flex-col md:flex-row ml-6 gap-1 items-baseline">
                   <p>{item.answer}</p>
                   {item.link && (
                     <a
