@@ -57,9 +57,9 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
             alt="Post image"
             className="absolute left-0 top-0 h-full w-full object-cover rounded-md"
           />
-          <div className="bg-primary-200 absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex">
+          <div className="bg-primary-200 absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex rounded-sm">
             <p className="sr-only">Read More</p>{" "}
-            <ArrowTopRightIcon className="dark:text-secondary-800" />
+            <ArrowTopRightIcon className="dark:text-secondary-800 w-5 h-5" />
           </div>
         </div>
       )}

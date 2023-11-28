@@ -19,8 +19,7 @@ export default function Page() {
       >
         This is the contact page! it uses{" "}
         <InlineLink href="https://tally.so">tally.so</InlineLink> to pull the
-        embedded form. to change this ro your form simply change the `formId`
-        prop.
+        embedded form. To change this form simply change the `formId` prop.
       </SecondaryHero>
 
       <TallyForm formId="mVP2d6" />
