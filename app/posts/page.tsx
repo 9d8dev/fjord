@@ -3,6 +3,7 @@ import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import Main from "@/components/global/layout/main";
+import CTA from "@/components/sections/cta";
 import Pagination from "@/components/content/pagination";
 import type { Metadata } from "next";
 
@@ -102,6 +103,8 @@ export default async function Posts({
       </ContentGrid>
 
       <Pagination page={page} totalPosts={totalPosts} lastPage={lastPage} />
+
+      <CTA />
     </Main>
   );
 }
