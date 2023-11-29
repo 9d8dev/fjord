@@ -1,5 +1,9 @@
 import fjord from "@/fjord.config";
 import Link from "next/link";
+import SecondaryHero from "@/components/sections/secondary-hero";
+import Section from "@/components/global/layout/section";
+import Container from "@/components/global/layout/container";
+import ContentGrid from "@/components/content/content-grid";
 
 export default async function AuthorPosts() {
   async function getAuthorPosts() {
@@ -33,18 +37,33 @@ export default async function AuthorPosts() {
 
   return (
     <main className="p-12">
-      <h1 className="mb-12">Author Posts</h1>
-      <ul>
+      <SecondaryHero
+        title={`${fjord.site_name} Authors`}
+        subtitle="Our Writers and Authors"
+      >
+        Select an Author below to see a list of their posts.
+      </SecondaryHero>
+
+      <ContentGrid className="lg:grid-cols-2">
         {data.map((author: Author) => (
-          <li key={author.id}>
-            <Link href={`./authors/${author.slug}`}>
-              <img src={author.avatar_urls["96"]} alt={author.name} />
-              <p>{author.name}</p>
-              <p>{author.description}</p>
+          <div key={author.id}>
+            <Link
+              className="flex items-center gap-4 rounded-lg md:rounded-xl border bg-secondary-100 dark:bg-secondary-900 transition-all hover:bg-secondary-200 dark:hover:bg-secondary-800 p-6"
+              href={`./authors/${author.slug}`}
+            >
+              <img
+                className="rounded-full"
+                src={author.avatar_urls["96"]}
+                alt={author.name}
+              />
+              <div className="grid gap-2">
+                <p className="text-2xl text-primary-500">{author.name}</p>
+                <p className="opacity-70">{author.description}</p>
+              </div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </ContentGrid>
     </main>
   );
 }
