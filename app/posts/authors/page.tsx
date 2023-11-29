@@ -42,7 +42,7 @@ export default async function AuthorPosts() {
         Select an Author below to see a list of their posts.
       </SecondaryHero>
 
-      <ContentGrid className="lg:grid-cols-2">
+      <ContentGrid className="md:!grid-cols-2">
         {data.map((author: Author) => (
           <div key={author.id}>
             <Link
