@@ -4,35 +4,6 @@ import PostCard from "@/components/content/post-card";
 import Container from "../global/layout/container";
 import fjord from "@/fjord.config";
 
-type Post = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          full: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
-  };
-  tags: Array<number>;
-};
-
-type Tag = {
-  id: number;
-  name: string;
-};
-
 async function getPosts() {
   const res = await fetch(
     `${settings.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=3`

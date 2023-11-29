@@ -1,8 +1,6 @@
 import fjord from "@/fjord.config";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
 import ContentGrid from "@/components/content/content-grid";
 
 export default async function AuthorPosts() {

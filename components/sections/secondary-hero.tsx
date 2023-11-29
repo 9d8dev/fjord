@@ -16,7 +16,7 @@ export default function SecondaryHero({
   return (
     <Section>
       <Container>
-        <div className="mx-auto max-w-xl lg:mx-0">
+        <div className="mx-auto max-w-4xl lg:mx-0">
           <p className="mx-1 flex w-fit items-center gap-1 opacity-70">
             <InfoCircledIcon />
             {subtitle}

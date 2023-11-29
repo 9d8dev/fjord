@@ -19,15 +19,14 @@ async function getAuthorPosts(slug: string, page: number = 1) {
 
   const data: Post[] = await res.json();
   const totalPosts = Number(res.headers.get("X-WP-Total"));
-  return { data, totalPosts };
+  const author = data[0]._embedded?.author[0];
+  return { data, totalPosts, author };
 }
 
 export async function generateStaticParams() {
   const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`);
 
   const data: Author[] = await res.json();
-
-  console.log(data);
 
   return data.map((author) => ({
     slug: author?.slug,
@@ -41,7 +40,11 @@ export default async function Page({
   params: { slug: string; name: string; page: string };
 }) {
   const page = parseInt(params?.page, 10) || 1;
-  const { data: posts, totalPosts } = await getAuthorPosts(params?.slug, page);
+  const {
+    data: posts,
+    totalPosts,
+    author,
+  } = await getAuthorPosts(params?.slug, page);
   if (!posts) {
     return notFound();
   }
@@ -49,10 +52,10 @@ export default async function Page({
 
   return (
     <Main>
-      <SecondaryHero title="Author Posts" subtitle={`Posts by ${params.name}`}>
-        All posts by {params.name} from {fjord.site_name}. These are all the
-        posts from your WordPress.
-      </SecondaryHero>
+      <SecondaryHero
+        title={`All Articles by ${author.name}`}
+        subtitle={`The latest from ${fjord.site_name}`}
+      ></SecondaryHero>
 
       <ContentGrid id="posts">
         {posts.map((post: Post) => (
