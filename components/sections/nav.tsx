@@ -26,6 +26,13 @@ const Nav = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleLinkClick = (event: any) => {
+    event.preventDefault();
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   const renderLogo = (mode: any) => (
     <Image
       priority
@@ -51,6 +58,7 @@ const Nav = () => {
               : ""
           }`}
           href={link.href}
+          onClick={handleLinkClick}
         >
           {link.text}
         </NavLink>

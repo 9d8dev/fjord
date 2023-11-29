@@ -21,7 +21,6 @@ export default function Page() {
         <InlineLink href="https://tally.so">tally.so</InlineLink> to pull the
         embedded form. To change this form simply change the `formId` prop.
       </SecondaryHero>
-
       <TallyForm formId="mVP2d6" />
     </Main>
   );

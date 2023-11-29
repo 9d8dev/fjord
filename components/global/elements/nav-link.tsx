@@ -4,16 +4,19 @@ type NavLinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: (event: React.MouseEvent) => void;
 };
 
-const NavLink = ({ href, children, className }: NavLinkProps) => {
+const NavLink = ({ href, children, className, onClick }: NavLinkProps) => {
   return (
-    <Link
-      href={href}
-      className={`${className} hover:opacity-75 transition-all`}
-    >
-      {children}
-    </Link>
+    <div onClick={onClick}>
+      <Link
+        href={href}
+        className={`${className} hover:opacity-75 transition-all`}
+      >
+        {children}
+      </Link>
+    </div>
   );
 };
 
