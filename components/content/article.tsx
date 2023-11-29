@@ -2,6 +2,7 @@ import BackButton from "@/components/global/elements/back-button";
 import RecentPosts from "@/components/sections/recent-posts";
 import Section from "@/components/global/layout/section";
 import CTA from "../sections/cta";
+import Link from "next/link";
 
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
@@ -17,12 +18,12 @@ const Article = ({ post, date, author }: ArticleProps) => {
             <div className="flex gap-2">
               <p>{date.toDateString()}</p> |
               {author && (
-                <a
+                <Link
                   className="transition-all hover:opacity-70"
                   href={`/posts/authors/${author.slug}`}
                 >
                   {author.name}
-                </a>
+                </Link>
               )}
             </div>
             {post._embedded?.["wp:featuredmedia"] &&
