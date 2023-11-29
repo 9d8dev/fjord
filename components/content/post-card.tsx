@@ -2,40 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { ArrowTopRightIcon, CalendarIcon } from "@radix-ui/react-icons";
 
-type Post = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          full: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
-  };
-  tags: Array<number>;
-};
-
-type Tag = {
-  id: number;
-  name: string;
-};
-
-interface PostCardProps {
-  post: Post;
-  tags?: Tag[];
-}
-
 const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
   const date = new Date(post.date);
   const featuredMedia =
@@ -78,26 +44,6 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
           __html: firstSentenceOfExcerpt,
         }}
       />
-
-      {post.tags && post.tags.length > 0 && (
-        <div>
-          <ul>
-            {post.tags.map((tagId, index) => {
-              const tag = tags.find((t) => t.id === tagId);
-              return (
-                <li key={index}>
-                  <Link
-                    className="bg-primary-200 w-fit px-2 py-1 text-sm"
-                    href="/"
-                  >
-                    {tag?.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
     </Link>
   );
 };

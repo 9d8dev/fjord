@@ -1,16 +1,31 @@
 type Post = {
   id: number;
+  date: string;
+  slug: string;
+  status: string;
+  type: string;
+  link: string;
   title: {
     rendered: string;
   };
   content: {
+    protected: boolean;
     rendered: string;
   };
-  date: string;
-  slug: string;
   excerpt: {
+    protected: boolean;
     rendered: string;
   };
+  author: number;
+  featured_media: number;
+  comment_status: string;
+  ping_status: string;
+  sticky: boolean;
+  template: string;
+  format: string;
+  meta: any[];
+  categories: number[];
+  tags: number[];
   _embedded: {
     "wp:featuredmedia"?: [
       {
@@ -24,13 +39,12 @@ type Post = {
       }
     ];
     author: Array<{
+      id: number;
       name: string;
+      url: string;
+      description: string;
+      link: string;
+      slug: string;
     }>;
   };
-  tags: Array<number>;
-};
-
-type Tag = {
-  id: number;
-  name: string;
 };

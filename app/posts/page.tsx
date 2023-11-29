@@ -12,35 +12,6 @@ export const metadata: Metadata = {
   description: `Read the ${fjord.site_name} blog. ${fjord.site_description}`,
 };
 
-type Post = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          full: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
-  };
-  tags: Array<number>;
-};
-
-type Tag = {
-  id: number;
-  name: string;
-};
-
 async function getTags() {
   const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`);
 

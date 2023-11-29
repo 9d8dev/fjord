@@ -1,20 +1,10 @@
 import fjord from "@/fjord.config";
 import Link from "next/link";
 
-type Author = {
-  id: number;
-  name: string;
-  slug: string;
-  description: string;
-  avatar_urls: {
-    [key: string]: string;
-  };
-};
-
 export default async function AuthorPosts() {
   async function getAuthorPosts() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`,
+      `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`
     );
 
     if (!res.ok) {
@@ -47,10 +37,10 @@ export default async function AuthorPosts() {
       <ul>
         {data.map((author: Author) => (
           <li key={author.id}>
-            <Link href={`/authors/${author.slug}`}>
+            <Link href={`./authors/${author.slug}`}>
+              <img src={author.avatar_urls["96"]} alt={author.name} />
               <p>{author.name}</p>
               <p>{author.description}</p>
-              <img src={author.avatar_urls["96"]} alt={author.name} />
             </Link>
           </li>
         ))}

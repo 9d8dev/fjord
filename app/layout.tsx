@@ -1,7 +1,7 @@
 // Styles
 import "./globals.css";
 
-// Site fjorduration
+// Site Configuration
 import fjord from "@/fjord.config";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
@@ -28,14 +28,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="bg-secondary-100 dark:bg-secondary-950">
       <head>
-        <meta property="og:image" content="<generated>" />
-        <meta property="og:image:type" content="<generated>" />
-        <meta property="og:image:width" content="<generated>" />
-        <meta property="og:image:height" content="<generated>" />
-        <meta name="twitter:image" content="<generated>" />
-        <meta name="twitter:image:type" content="<generated>" />
-        <meta name="twitter:image:width" content="<generated>" />
-        <meta name="twitter:image:height" content="<generated>" />
+        <meta property="og:image" content="/opengraph-image.jpg" />
+        <meta property="og:image:type" content="/opengraph-image.jpg" />
+        <meta property="og:image:width" content="/opengraph-image.jpg" />
+        <meta property="og:image:height" content="/opengraph-image.jpg" />
+        <meta name="twitter:image" content="/twitter-image.jpg" />
+        <meta name="twitter:image:type" content="/twitter-image.jpg" />
+        <meta name="twitter:image:width" content="/twitter-image.jpg" />
+        <meta name="twitter:image:height" content="/twitter-image.jpg" />
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${fjord.google_analytics_id}`}

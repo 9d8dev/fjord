@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return notFound();
   }
   const date = new Date(post.date);
-  const author = post._embedded?.author[0];
+  const author = post._embedded?.author[0].name;
 
   const metadata: Metadata = {
     title: `${post.title.rendered} | ${fjord.site_name}`,
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div>
-      <Article post={post} date={date} author={author} />
+      <Article post={post} date={date} author={{ name: author }} />
     </div>
   );
 }
