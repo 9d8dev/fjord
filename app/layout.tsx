@@ -15,7 +15,7 @@ import Script from "next/script";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: fjord.site_name,
+  title: fjord.site_title,
   description: fjord.site_description,
 };
 
