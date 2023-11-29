@@ -56,7 +56,7 @@ const TallyForm: React.FC<TallyFormProps> = ({
       <Container>
         <div className="flex max-w-xl flex-col gap-4">
           {isLoading ? (
-            <div className="flex w-full items-center justify-center p-6">
+            <div className="flex w-full h-[720px] items-center justify-center p-6">
               <ReloadIcon className="animate-spin" />
             </div>
           ) : (
@@ -64,7 +64,7 @@ const TallyForm: React.FC<TallyFormProps> = ({
               url={`https://tally.so/embed/${formId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
               loading="lazy"
               width="100%"
-              height="auto"
+              height="720"
               title="Your Title Here"
               className="p-0"
             />
