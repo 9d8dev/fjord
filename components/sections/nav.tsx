@@ -36,7 +36,7 @@ const Nav = () => {
   const renderLogo = (mode: any) => (
     <Image
       priority
-      className={`w-16 ${
+      className={`h-6 w-fit ${
         mode === "dark" ? "hidden dark:block" : "dark:hidden"
       }`}
       width={200}

@@ -42,7 +42,7 @@ const Footer = () => {
             <Link href="/">
               <Image
                 priority
-                className="mb-4 w-16 dark:hidden"
+                className="mb-4 h-6 w-fit dark:hidden"
                 width={200}
                 height={200}
                 src={fjord.theme.primary_logo}
@@ -50,7 +50,7 @@ const Footer = () => {
               ></Image>
               <Image
                 priority
-                className="mb-4 hidden w-16 dark:block"
+                className="mb-4 hidden h-6 w-fit dark:block"
                 width={200}
                 height={200}
                 src={fjord.theme.dark_mode_logo}
