@@ -55,7 +55,9 @@ export default async function Page({
       <SecondaryHero
         title={`All Articles by ${author.name}`}
         subtitle={`The latest from ${fjord.site_name}`}
-      ></SecondaryHero>
+      >
+        {author.description}
+      </SecondaryHero>
 
       <ContentGrid id="posts">
         {posts.map((post: Post) => (
