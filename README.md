@@ -9,7 +9,7 @@
 3. Configure the Wordpress REST API in your Wordpress instance
 4. Edit `fjord.config.ts` to customize the configuration:
 
-    ```json
+    ```ts
     const fjord: fjordTypes = {
       site_name: "All Veteran", // site name: used in the header and footer
       site_domain: "https://allveteran.com", // site domain: used in the sitemap
