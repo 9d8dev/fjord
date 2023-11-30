@@ -10,20 +10,44 @@
 4. Edit `fjord.config.ts` to customize the configuration:
 
     ```json
-    {
-      "site_name": "fjord.dev",
-      "site_title": "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
-      "site_description": "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
-      "posts_per_page": 6,
-      "wordpress_url": "https://wp.yoursite.com",
-      "google_analytics_id": "G-XXXXXXXXXX",
-      "theme": {
-        "primary": "slate",
-        "secondary": "gray",
-        "logo": "/logo.svg",
-        "font": "change the font using next/font in `layout.tsx` in the app directory."
-      }
-    }
+    const fjord: fjordTypes = {
+      site_name: "All Veteran", // site name: used in the header and footer
+      site_domain: "https://allveteran.com", // site domain: used in the sitemap
+      site_title: "All Veteran | The Premier Resource for Veterans",
+      site_description:
+        "All Veteran is the premier resource for veterans. We provide information on benefits, jobs, education, and more.",
+      posts_per_page: 6,
+      wordpress_url: "http://allveteran.wpenginepowered.com",
+      google_analytics_id: "G-7VM8KZENP7",
+
+      links: {
+        main_cta: "#",
+        main_cta_text: "Get Started",
+        // You can edit the Markdown for these pages in hte `@/content/...` directory.
+        privacy_policy: "/privacy-policy",
+        privacy_policy_text: "Privacy Policy",
+        terms_of_service: "/terms-of-service",
+        terms_of_service_text: "Terms of Service",
+        cookie_policy: "/cookie-policy",
+        cookie_policy_text: "Cookie Policy",
+      },
+
+      theme: {
+        primary: "blue",
+        secondary: "neutral",
+        logo: "./logo.svg",
+        primary_logo: "./dark_logo.svg",
+        dark_mode_logo: "./light_logo.svg",
+        // change the font using `next/font` in `layout.tsx` in the app directory.
+        // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
+      },
+
+      content: {
+        main_cta: "Get Started with Fjord Today!",
+        cta_summary:
+          "See why the future of WordPress is headless using Next JS and Tailwind.",
+      },
+    };
     ```
 
    - `site_name`: The meta name for your site
