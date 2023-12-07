@@ -38,7 +38,7 @@ async function getPage(slug: string) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
     {
-      next: { revalidate: 60 },
+      next: { revalidate: fjord.revalidate },
     }
   );
 

@@ -13,7 +13,7 @@ async function getAuthorPosts(slug: string, page: number = 1) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?author_name=${slug}&_embed&per_page=${fjord.posts_per_page}&offset=${offset}`,
     {
-      next: { revalidate: 60 },
+      next: { revalidate: fjord.revalidate },
     }
   );
 

@@ -9,7 +9,7 @@ async function getPost(slug: string) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`,
     {
-      next: { revalidate: 60 },
+      next: { revalidate: fjord.revalidate },
     }
   );
 
