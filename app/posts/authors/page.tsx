@@ -2,6 +2,12 @@ import fjord from "@/fjord.config";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Authors | ${fjord.site_name}`,
+  description: `Meet the authors of ${fjord.site_name}. ${fjord.site_description}`,
+};
 
 export default async function AuthorPosts() {
   async function getAuthorPosts() {

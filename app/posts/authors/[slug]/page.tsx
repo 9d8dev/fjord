@@ -6,6 +6,7 @@ import SecondaryHero from "@/components/sections/secondary-hero";
 import Pagination from "@/components/content/pagination";
 import Main from "@/components/global/layout/main";
 import CTA from "@/components/sections/cta";
+import type { Metadata } from "next";
 
 async function getAuthorPosts(slug: string, page: number = 1) {
   const offset = (page - 1) * fjord.posts_per_page;
@@ -49,6 +50,11 @@ export default async function Page({
     return notFound();
   }
   const lastPage = Math.ceil(totalPosts / fjord.posts_per_page);
+
+  const metadata: Metadata = {
+    title: `All Articles by ${author.name} | ${fjord.site_name}`,
+    description: `The latest articles from ${author.name} on ${fjord.site_name}.`,
+  };
 
   return (
     <Main>
