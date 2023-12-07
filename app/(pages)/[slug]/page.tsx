@@ -36,7 +36,10 @@ type Page = {
 
 async function getPage(slug: string) {
   const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`
+    `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
+    {
+      next: { revalidate: 60 },
+    }
   );
 
   if (!res.ok) {
@@ -48,7 +51,9 @@ async function getPage(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed`, {
+    next: { revalidate: 60 },
+  });
 
   const data: Page[] = await res.json();
 

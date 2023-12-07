@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 export default async function AuthorPosts() {
   async function getAuthorPosts() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`
+      `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`,
+      {
+        next: { revalidate: 60 },
+      }
     );
 
     if (!res.ok) {

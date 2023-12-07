@@ -11,7 +11,10 @@ import type { Metadata } from "next";
 async function getAuthorPosts(slug: string, page: number = 1) {
   const offset = (page - 1) * fjord.posts_per_page;
   const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/posts?author_name=${slug}&_embed&per_page=${fjord.posts_per_page}&offset=${offset}`
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?author_name=${slug}&_embed&per_page=${fjord.posts_per_page}&offset=${offset}`,
+    {
+      next: { revalidate: 60 },
+    }
   );
 
   if (!res.ok) {
@@ -25,7 +28,9 @@ async function getAuthorPosts(slug: string, page: number = 1) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`, {
+    next: { revalidate: 60 },
+  });
 
   const data: Author[] = await res.json();
 

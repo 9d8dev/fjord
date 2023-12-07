@@ -37,7 +37,10 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page},
+    {
+      next: { revalidate: 60 },
+    }`
     );
 
     if (!res.ok) {

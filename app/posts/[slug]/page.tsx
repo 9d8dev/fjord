@@ -7,7 +7,10 @@ import CTA from "@/components/sections/cta";
 
 async function getPost(slug: string) {
   const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    {
+      next: { revalidate: 60 },
+    }
   );
 
   if (!res.ok) {
@@ -19,7 +22,9 @@ async function getPost(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed`, {
+    next: { revalidate: 60 },
+  });
 
   const data: Post[] = await res.json();
 

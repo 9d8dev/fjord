@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 };
 
 async function getTags() {
-  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`);
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`, {
+    next: { revalidate: 60 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch tags");
