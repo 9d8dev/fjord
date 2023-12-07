@@ -17,8 +17,6 @@ const Footer = () => {
   const contentLinks = [
     { href: "/posts", text: "Blog" },
     { href: "/posts/authors", text: "Authors" },
-    { href: "/posts/categories", text: "Categories" },
-    { href: "/posts/tags", text: "Tags" },
   ];
 
   const otherLinks = [
