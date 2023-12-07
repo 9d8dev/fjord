@@ -45,56 +45,24 @@ const Article = ({ post, date, author }: ArticleProps) => {
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
         </article>
-        <div>
-          <p>
-            About the Author:{" "}
-            <Link href={`/posts/authors/${author.slug}`}>{author.name}</Link>{" "}
-          </p>
-          <p>{author.description}</p>
+
+        {/* About the Author Section */}
+        <div className="flex gap-6 md:max-w-lg items-center p-6 bg-secondary-200 dark:bg-secondary-800 rounded-lg mt-12">
           <img
+            className="w-24 h-24 rounded-full"
             src={author.avatar_urls?.[96]}
             alt={`profile icon of ${author.name}`}
           />
-          {author.social_links && (
-            <div className="flex gap-2">
-              {author.social_links.linkedin && (
-                <a
-                  href={author.social_links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              )}
-              {author.social_links.facebook && (
-                <a
-                  href={author.social_links.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Facebook
-                </a>
-              )}
-              {author.social_links.twitter && (
-                <a
-                  href={author.social_links.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Twitter
-                </a>
-              )}
-              {author.social_links.instagram && (
-                <a
-                  href={author.social_links.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              )}
-            </div>
-          )}
+          <div className="grid gap-2 py-4">
+            <p className="text-xs opacity-70">About the Author</p>
+            <Link
+              className="block text-2xl hover:opacity-70 transition-all"
+              href={`/posts/authors/${author.slug}`}
+            >
+              {author.name}
+            </Link>{" "}
+            <p>{author.description}</p>
+          </div>
         </div>
       </Container>
     </Section>
