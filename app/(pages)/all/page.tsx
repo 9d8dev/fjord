@@ -3,6 +3,7 @@ import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import CTA from "@/components/sections/cta";
 import Main from "@/components/global/layout/main";
+import Container from "@/components/global/layout/container";
 import { Metadata } from "next";
 
 const metadata: Metadata = {
@@ -36,7 +37,7 @@ type Page = {
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`,
+      `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`
     );
 
     if (!res.ok) {
@@ -64,7 +65,7 @@ export default async function Pages() {
         WordPress.
       </SecondaryHero>
 
-      <div className="m-auto grid max-w-6xl gap-6 p-6">
+      <Container>
         {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}
@@ -89,7 +90,7 @@ export default async function Pages() {
             />
           </Link>
         ))}
-      </div>
+      </Container>
 
       <CTA />
     </Main>

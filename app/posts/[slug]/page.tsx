@@ -2,6 +2,8 @@ import Article from "@/components/content/article";
 import fjord from "@/fjord.config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import RecentPosts from "@/components/sections/recent-posts";
+import CTA from "@/components/sections/cta";
 
 async function getPost(slug: string) {
   const res = await fetch(
@@ -42,6 +44,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <Article post={post} date={date} author={author} />
+      <RecentPosts />
+      <CTA />
     </div>
   );
 }
