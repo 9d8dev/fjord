@@ -8,7 +8,7 @@ const fjord: fjordTypes = {
   posts_per_page: 6,
   wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
-  revalidate: 3600, // revalidate time in seconds
+  revalidate: 3600, // revalidate the wordpressse time in seconds
 
   links: {
     main_cta: "#",
