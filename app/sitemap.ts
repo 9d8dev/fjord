@@ -29,7 +29,7 @@ async function getPosts() {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&orderby=date`,
     {
-      next: { revalidate: fjord.revalidate },
+      next: { revalidate: 3600 },
     }
   );
 

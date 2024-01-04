@@ -8,7 +8,7 @@ async function getPosts() {
   const res = await fetch(
     `${settings.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=3`,
     {
-      next: { revalidate: fjord.revalidate },
+      next: { revalidate: 3600 },
     }
   );
 

@@ -14,7 +14,7 @@ export default async function AuthorPosts() {
     const res = await fetch(
       `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`,
       {
-        next: { revalidate: 60 },
+        next: { revalidate: 3600 },
       }
     );
 

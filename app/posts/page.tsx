@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 async function getTags() {
   const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 3600 },
   });
 
   if (!res.ok) {
@@ -29,7 +29,7 @@ async function getPosts(perPage: number, offset: number) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
     {
-      next: { revalidate: fjord.revalidate },
+      next: { revalidate: 3600 },
     }
   );
 

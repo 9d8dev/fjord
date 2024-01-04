@@ -39,7 +39,7 @@ export default async function Pages() {
     const res = await fetch(
       `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page},
     {
-      next: { revalidate: fjord.revalidate },
+      next: { revalidate: 3600 },
     }`
     );
 
