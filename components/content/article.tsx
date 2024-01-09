@@ -1,12 +1,11 @@
-import BackButton from "@/components/global/elements/back-button";
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 import Link from "next/link";
+import BackButton from "../global/elements/back-button";
 
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
-    <Section className="!pt-0">
-      <Container>
+    <Craft.Section className="!pt-0">
+      <Craft.Container>
         <article className="grid gap-6">
           <BackButton />
           <h1
@@ -46,7 +45,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
           ></div>
         </article>
 
-        {/* About the Author Section */}
+        {/* About the Author Craft.Section */}
         <div className="flex gap-6 md:max-w-lg items-center p-6 bg-secondary-200 dark:bg-secondary-800 rounded-lg mt-12">
           <img
             className="w-24 h-24 rounded-full"
@@ -64,8 +63,8 @@ const Article = ({ post, date, author }: ArticleProps) => {
             <p>{author.description}</p>
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

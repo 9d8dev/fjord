@@ -1,7 +1,5 @@
 // Layout
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
-import Image from "next/image";
+import * as Craft from "@/components/craft/layout";
 import Logo from "@/public/logo.svg";
 import fjord from "@/fjord.config";
 
@@ -31,8 +29,8 @@ const testimonialsText: TestimonialsText[] = [
 
 const Testimonials = () => {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">Don&apos;t just take our word for it.</h3>
           <h4 className="text-2xl font-thin opacity-70">
@@ -52,8 +50,8 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

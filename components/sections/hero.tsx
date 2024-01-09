@@ -1,13 +1,12 @@
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 import Placeholder from "@/public/placeholder.jpg";
 import Image from "next/image";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const Hero = () => {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <a
             href="https://fjord.dev"
@@ -68,8 +67,8 @@ const Hero = () => {
             />
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

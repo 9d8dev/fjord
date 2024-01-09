@@ -1,6 +1,5 @@
 // Layout
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 
 // Icons
 import { TokensIcon } from "@radix-ui/react-icons";
@@ -34,8 +33,8 @@ const featureText: FeatureText[] = [
 
 const Feature = () => {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
             What if Headless WordPress was as easy as 1, 2, 3?
@@ -54,8 +53,8 @@ const Feature = () => {
             ))}
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

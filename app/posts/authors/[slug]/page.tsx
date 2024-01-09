@@ -4,7 +4,7 @@ import ContentGrid from "@/components/content/content-grid";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import Pagination from "@/components/content/pagination";
-import Main from "@/components/global/layout/main";
+import * as Craft from "@/components/craft/layout";
 import CTA from "@/components/sections/cta";
 import type { Metadata } from "next";
 
@@ -62,7 +62,7 @@ export default async function Page({
   };
 
   return (
-    <Main>
+    <Craft.Main>
       <SecondaryHero
         title={`All Articles by ${author.name}`}
         subtitle={`The latest from ${fjord.site_name}`}
@@ -79,6 +79,6 @@ export default async function Page({
       <Pagination page={page} totalPosts={totalPosts} lastPage={lastPage} />
 
       <CTA />
-    </Main>
+    </Craft.Main>
   );
 }
