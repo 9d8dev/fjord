@@ -1,8 +1,8 @@
 import fjord from "@/fjord.config";
+import * as Craft from "@/components/craft/layout";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
-import Main from "@/components/global/layout/main";
 import CTA from "@/components/sections/cta";
 import Pagination from "@/components/content/pagination";
 import type { Metadata } from "next";
@@ -63,7 +63,7 @@ export default async function Posts({
   const tags = await getTags();
 
   return (
-    <Main>
+    <Craft.Main>
       <SecondaryHero title="All Posts" subtitle={`${fjord.site_name} blog`}>
         All posts from {fjord.site_name}. These are all the posts from your
         WordPress.
@@ -78,6 +78,6 @@ export default async function Posts({
       <Pagination page={page} totalPosts={totalPosts} lastPage={lastPage} />
 
       <CTA />
-    </Main>
+    </Craft.Main>
   );
 }

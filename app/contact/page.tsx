@@ -1,7 +1,6 @@
 import SecondaryHero from "@/components/sections/secondary-hero";
-import Main from "@/components/global/layout/main";
+import * as Craft from "@/components/craft/layout";
 import TallyForm from "@/components/global/forms/tally-form";
-import InlineLink from "@/components/global/elements/inline-link";
 import type { Metadata } from "next";
 import fjord from "@/fjord.config";
 
@@ -12,16 +11,16 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Main>
+    <Craft.Main>
       <SecondaryHero
         title="Contact us"
         subtitle="Fill out the form to contact us"
       >
         This is the contact page! it uses{" "}
-        <InlineLink href="https://tally.so">tally.so</InlineLink> to pull the
-        embedded form. To change this form simply change the `formId` prop.
+        <a href="https://tally.so">tally.so</a> to pull the embedded form. To
+        change this form simply change the `formId` prop.
       </SecondaryHero>
       <TallyForm formId="mVP2d6" />
-    </Main>
+    </Craft.Main>
   );
 }

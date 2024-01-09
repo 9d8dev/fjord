@@ -1,6 +1,6 @@
 import fjord from "@/fjord.config";
 import Link from "next/link";
-import Craft.Section from "@/components/global/layout/section";
+import * as Craft from "@/components/craft/layout";
 
 type PaginationProps = {
   page: number;

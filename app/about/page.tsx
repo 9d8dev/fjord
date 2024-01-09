@@ -2,7 +2,7 @@ import About from "@/components/sections/about";
 import CTA from "@/components/sections/cta";
 import FAQ from "@/components/sections/faq";
 import SecondaryHero from "@/components/sections/secondary-hero";
-import Main from "@/components/global/layout/main";
+import * as Craft from "@/components/craft/layout";
 import type { Metadata } from "next";
 import fjord from "@/fjord.config";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Main>
+    <Craft.Main>
       <SecondaryHero title="About us" subtitle="Learn More about Fjord">
         Welcome to the about page. this is where you can tell your users about
         your project.
@@ -21,6 +21,6 @@ export default function Page() {
       <About />
       <FAQ />
       <CTA />
-    </Main>
+    </Craft.Main>
   );
 }
