@@ -1,17 +1,15 @@
 "use client";
 
-import Prose from "@/components/global/elements/prose";
-import Craft.Container from "@/components/global/layout/container";
-import Craft.Section from "@/components/global/layout/section";
+import * as Craft from "@/components/craft/layout";
 import Content from "@/content/terms-of-service.mdx";
 
 const Privacy = () => {
   return (
     <Craft.Section>
       <Craft.Container>
-        <Prose>
+        <Craft.Article>
           <Content />
-        </Prose>
+        </Craft.Article>
       </Craft.Container>
     </Craft.Section>
   );
