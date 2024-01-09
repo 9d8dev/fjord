@@ -55,14 +55,6 @@ const Hero = () => {
             >
               9d8
             </a>
-            . If you are interested in obtaining the template please reach out
-            at{" "}
-            <a
-              className="hover:opacity-70 transition-all"
-              href="mailto:9d8dev@gmail.com"
-            >
-              9d8dev@gmail.com
-            </a>
             .
           </h2>
           <div className="my-8 h-96 w-full overflow-hidden rounded-lg md:rounded-xl md:h-[480px]">
