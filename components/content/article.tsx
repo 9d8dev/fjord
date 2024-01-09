@@ -1,6 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
-import Craft.Section from "@/components/global/layout/section";
-import Craft.Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 import Link from "next/link";
 
 const Article = ({ post, date, author }: ArticleProps) => {

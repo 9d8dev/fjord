@@ -15,7 +15,7 @@ interface PageBodyProps {
               };
             };
           };
-        },
+        }
       ];
     };
     content: {
