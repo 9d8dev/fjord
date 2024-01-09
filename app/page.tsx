@@ -21,7 +21,7 @@ export default function Home() {
             <Image
               src={Photo}
               alt="homepage image for craft ui"
-              className="not-prose object-cover object-center max-w-full h-full"
+              className="not-prose object-cover object-bottom max-w-full h-full"
               placeholder="blur"
             />
           </div>

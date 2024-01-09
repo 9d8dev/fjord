@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Iframe from "react-iframe";
-import Craft.Section from "../layout/section";
-import Craft.Container from "../layout/container";
+import * as Craft from "@/components/craft/layout";
 import { ReloadIcon } from "@radix-ui/react-icons";
 
 type TallyFormProps = {
