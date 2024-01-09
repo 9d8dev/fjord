@@ -8,13 +8,13 @@ export default function Home() {
     <Craft.Main>
       <Craft.Section className="border-b">
         <Craft.Container>
-          <h1 className="font-serif text-5xl lg:text-8xl">
-            <Balancer>Welcome to Craft UI</Balancer>
+          <h1 className="lg:text-7xl">
+            <Balancer>Next JS App Router Meets Headless WordPress</Balancer>
           </h1>
           <h2>
             <Balancer>
-              Craft UI is a design system for NextJS Websites. It is built using
-              shadcn/ui, radix ui, and tailwindcss.
+              Fjord is a NextJS template with a WordPress backend. It&apos;s a
+              great starting point for your next headless WordPress project.
             </Balancer>
           </h2>
           <div className="relative border shadow-sm w-full lg:h-96 md:h-72 h-48 rounded-xl overflow-hidden">
@@ -28,56 +28,50 @@ export default function Home() {
         </Craft.Container>
       </Craft.Section>
 
-      <Craft.Section className="border-b">
-        <Craft.Container>
-          <h3 className="mt-0">This is an example of an H3</h3>
-          <h4>This is an example of an H4</h4>
-          <h5>This is an example of an H5</h5>
-          <h6>This is an example of an H6</h6>
-          <p className="mb-0">
-            This is a paragraph with an <a href="/">inline link</a>. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Nulla nec justo eget
-            justo cursus ornare. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Nulla nec justo eget justo cursus ornare. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec justo
-            eget justo cursus ornare.
-          </p>
-        </Craft.Container>
-      </Craft.Section>
-
       <Craft.Section>
         <Craft.Container>
           <Craft.Article>
             <h2 className="mt-0">
               <Balancer>
-                This is an example of the {"<Craft.Article/>"} Component
+                Craft was created by{" "}
+                <a className="not-prose" href="https://bridger.to">
+                  Bridger
+                </a>{" "}
+                and{" "}
+                <a className="not-prose" href="https://cameronyoungblood.com">
+                  {" "}
+                  Cameron
+                </a>{" "}
+                at <a href="https://9d8.dev">9d8</a> and{" "}
+                <a href="https://alpine.dev">Alpine Codex</a>.
               </Balancer>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              justo eget justo cursus ornare.
+              Fjord is built around the idea of a headless WordPress backend
+              with a NextJS frontend. It makes use of the WordPress REST API to
+              fetch data and NextJS to render the frontend.
             </p>
-            <h4>This is an Unordered List</h4>
+            <h4>Key Features</h4>
             <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
+              <li>
+                Automatic Typographic styling use a modified version of{" "}
+                <a href="https://tailwindcss.com/docs/typography-plugin">
+                  Tailwind Typography
+                </a>
+              </li>
+              <li>
+                Components and design system by{" "}
+                <a href="https://craftui.com">Craft UI</a> and{" "}
+                <a href="https://ui.shadcn.com">shadcn/ui</a>
+              </li>
+              <li>Cached articles and revalidation via Next JS</li>
             </ul>
-            <h4>This is an Ordered List</h4>
-            <ol>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ol>
             <blockquote>
               <p>
-                Prose is a Tailwind CSS utility that styles your content to make
-                it look beautiful and readable by default.
+                Fjord has been a game changer for our team. We&apos;ve been able
+                to build sites faster than ever before.
               </p>
             </blockquote>
-            <p>
-              Here&apos;s a link: <a href="#">Visit Tailwind CSS</a>
-            </p>
           </Craft.Article>
         </Craft.Container>
       </Craft.Section>
