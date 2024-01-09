@@ -31,12 +31,6 @@ const fjord: fjordTypes = {
     // change the font using `next/font` in `layout.tsx` in the app directory.
     // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
   },
-
-  content: {
-    main_cta: "Get Started with Fjord Today!",
-    cta_summary:
-      "See why the future of WordPress is headless using Next JS and Tailwind.",
-  },
 };
 
 export default fjord;

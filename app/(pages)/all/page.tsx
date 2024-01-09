@@ -11,29 +11,6 @@ const metadata: Metadata = {
   description: `All pages from ${fjord.site_name}. ${fjord.site_description}`,
 };
 
-type Page = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          medium: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
-  };
-};
-
 export default async function Pages() {
   async function getPages() {
     const res = await fetch(

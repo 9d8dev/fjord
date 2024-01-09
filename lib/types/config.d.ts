@@ -25,8 +25,4 @@ type fjordTypes = {
     primary_logo: string;
     dark_mode_logo: string;
   };
-  content: {
-    main_cta: string;
-    cta_summary: string;
-  };
 };
