@@ -42,7 +42,7 @@ const Main = ({ children, className, id }: MainProps) => {
         // General Prose
         "prose prose:font-sans dark:prose-invert md:prose-lg lg:prose-xl max-w-none",
         // Prose Headings
-        "prose-headings:font-medium",
+        "prose-headings:font-normal",
         // Inline Links
         "prose-a:border-b prose-a:border-b-primary dark:prose-a:border-b-primary prose-a:font-normal prose-a:text-primary dark:prose-a:text-primary hover:prose-a:border-b-primary hover:prose-a:opacity-75 dark:hover:prose-a:border-b-primary prose-a:no-underline prose-a:transition-all",
         // Blockquotes
