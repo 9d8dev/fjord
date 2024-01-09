@@ -12,12 +12,6 @@ const manrope = Manrope({
   variable: "--font-sans",
 });
 
-const instrument_serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-serif",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(fjord.site_domain),
   title: fjord.site_title,
@@ -30,9 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Craft.Layout
-      className={`${manrope.variable} ${instrument_serif.variable}`}
-    >
+    <Craft.Layout className={`${manrope.variable}`}>
       <Nav />
       {children}
       <Footer />
