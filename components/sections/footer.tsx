@@ -2,7 +2,6 @@ import SubscribeForm from "@/components/global/forms/subscribe-form";
 import fjord from "@/fjord.config";
 import Link from "next/link";
 import Image from "next/image";
-import NavLink from "../global/elements/nav-link";
 import * as Craft from "@/components/craft/layout";
 
 const Footer = () => {
@@ -105,7 +104,7 @@ const Footer = () => {
             <ul className="flex gap-4">
               {otherLinks.map((link, index) => (
                 <li className="w-fit" key={index}>
-                  <NavLink href={link.href}>{link.text}</NavLink>
+                  <Link href={link.href}>{link.text}</Link>
                 </li>
               ))}
             </ul>
