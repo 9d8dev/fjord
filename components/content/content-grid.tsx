@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "../global/layout/section";
-import Container from "../global/layout/container";
+import Craft.Section from "../global/layout/section";
+import Craft.Container from "../global/layout/container";
 
 const ContentGrid: React.FC<ContentGridProps> = ({
   children,
@@ -9,8 +9,8 @@ const ContentGrid: React.FC<ContentGridProps> = ({
   ...rest
 }) => {
   return (
-    <Section className="!pt-0">
-      <Container>
+    <Craft.Section className="!pt-0">
+      <Craft.Container>
         <div
           id={id}
           className={`grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ${className}`}
@@ -18,8 +18,8 @@ const ContentGrid: React.FC<ContentGridProps> = ({
         >
           {children}
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

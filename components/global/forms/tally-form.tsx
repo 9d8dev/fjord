@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Iframe from "react-iframe";
-import Section from "../layout/section";
-import Container from "../layout/container";
+import Craft.Section from "../layout/section";
+import Craft.Container from "../layout/container";
 import { ReloadIcon } from "@radix-ui/react-icons";
 
 type TallyFormProps = {
@@ -52,8 +52,8 @@ const TallyForm: React.FC<TallyFormProps> = ({
   }, []);
 
   return (
-    <Section className="!pt-0">
-      <Container>
+    <Craft.Section className="!pt-0">
+      <Craft.Container>
         <div className="flex max-w-xl flex-col gap-4">
           {isLoading ? (
             <div className="flex w-full h-[720px] items-center justify-center p-6">
@@ -70,8 +70,8 @@ const TallyForm: React.FC<TallyFormProps> = ({
             />
           )}
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

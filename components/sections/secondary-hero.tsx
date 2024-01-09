@@ -1,5 +1,4 @@
-import Section from "../global/layout/section";
-import Container from "../global/layout/container";
+import * as Craft from "@/components/craft/layout";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 
 export default function SecondaryHero({
@@ -14,8 +13,8 @@ export default function SecondaryHero({
   className?: string;
 }) {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="mx-auto max-w-4xl lg:mx-0">
           <p className="mx-1 flex w-fit items-center gap-1 opacity-70">
             <InfoCircledIcon />
@@ -26,7 +25,7 @@ export default function SecondaryHero({
           </h2>
           <p className="mt-6 text-lg leading-8">{children}</p>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 }

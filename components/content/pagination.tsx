@@ -1,6 +1,6 @@
 import fjord from "@/fjord.config";
 import Link from "next/link";
-import Section from "@/components/global/layout/section";
+import Craft.Section from "@/components/global/layout/section";
 
 type PaginationProps = {
   page: number;
@@ -14,7 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({
   lastPage,
 }) => {
   return (
-    <Section className="flex w-full max-w-5xl items-center justify-between">
+    <Craft.Section className="flex w-full max-w-5xl items-center justify-between">
       <p className="text-sm">
         Showing <span>{(page - 1) * fjord.posts_per_page + 1}</span> to{" "}
         <span>{Math.min(page * fjord.posts_per_page, totalPosts)}</span> of{" "}
@@ -50,7 +50,7 @@ const Pagination: React.FC<PaginationProps> = ({
           </button>
         )}
       </div>
-    </Section>
+    </Craft.Section>
   );
 };
 

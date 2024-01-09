@@ -7,7 +7,7 @@ import Image from "next/image";
 import ButtonLink from "../global/elements/button-link";
 import fjord from "@/fjord.config";
 import { usePathname } from "next/navigation";
-import Section from "../global/layout/section";
+import * as Craft from "@/components/craft/layout";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 const Nav = () => {
@@ -36,9 +36,8 @@ const Nav = () => {
   const renderLogo = (mode: any) => (
     <Image
       priority
-      className={`h-6 w-fit ${
-        mode === "dark" ? "hidden dark:block" : "dark:hidden"
-      }`}
+      className={`h-6 w-fit ${mode === "dark" ? "hidden dark:block" : "dark:hidden"
+        }`}
       width={200}
       height={200}
       src={
@@ -52,11 +51,10 @@ const Nav = () => {
     links.map((link, index) => (
       <li key={index}>
         <NavLink
-          className={`${
-            pathname === link.href
-              ? "cursor-default opacity-75 hover:no-underline"
-              : ""
-          }`}
+          className={`${pathname === link.href
+            ? "cursor-default opacity-75 hover:no-underline"
+            : ""
+            }`}
           href={link.href}
           onClick={handleLinkClick}
         >
@@ -67,7 +65,7 @@ const Nav = () => {
 
   return (
     <nav className="sticky top-0 z-50">
-      <Section className="bg-secondary-100 dark:bg-secondary-900 bg-opacity-50 !py-6 backdrop-blur-md">
+      <Craft.Section className="bg-secondary-100 dark:bg-secondary-900 bg-opacity-50 !py-6 backdrop-blur-md">
         <div className="m-auto flex max-w-6xl justify-between">
           <Link
             className="flex items-center gap-2 transition-all hover:opacity-75"
@@ -94,11 +92,10 @@ const Nav = () => {
         {isMobileMenuOpen && (
           <div
             className={`bg-secondary-100 dark:bg-secondary-900 fixed inset-0 top-0 z-40 flex h-screen w-screen transform flex-col bg-opacity-95 p-6 text-lg backdrop-blur-md
-          lg:hidden ${
-            isMobileMenuOpen
-              ? "translate-x-0 ease-out"
-              : "-translate-x-full ease-in"
-          } transition-all duration-300`}
+          lg:hidden ${isMobileMenuOpen
+                ? "translate-x-0 ease-out"
+                : "-translate-x-full ease-in"
+              } transition-all duration-300`}
           >
             <button
               className="absolute right-4 top-4"
@@ -111,7 +108,7 @@ const Nav = () => {
             </ul>
           </div>
         )}
-      </Section>
+      </Craft.Section>
     </nav>
   );
 };

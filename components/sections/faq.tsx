@@ -1,5 +1,5 @@
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
+
 import {
   QuestionMarkCircledIcon,
   ArrowTopRightIcon,
@@ -35,8 +35,8 @@ const content: contentType[] = [
 
 const FAQ = () => {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">Frequently Asked Questions</h3>
           <h4 className="text-2xl font-thin opacity-70">
@@ -64,8 +64,8 @@ const FAQ = () => {
             ))}
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

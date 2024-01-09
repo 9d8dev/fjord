@@ -2,8 +2,7 @@ import fjord from "@/fjord.config";
 import Link from "next/link";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import CTA from "@/components/sections/cta";
-import Main from "@/components/global/layout/main";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 import { Metadata } from "next";
 
 const metadata: Metadata = {
@@ -39,14 +38,14 @@ export default async function Pages() {
   }
 
   return (
-    <Main>
+    <Craft.Main>
       <SecondaryHero title="All Pages" subtitle={`${fjord.site_name} blog`}>
         All pages from {fjord.site_name}. These are all the pages from your
         WordPress.
       </SecondaryHero>
 
-      <Container>
-        {data.map((page: Page) => (
+      <Craft.Container>
+      {data.map((page: Page) => (
           <Link
             href={`/${page.slug}`}
             className="hover:bg-primary-50 hover:dark:bg-primary-800 flex flex-col gap-2 rounded-r-md border-l-2 p-4 transition-all"
@@ -70,9 +69,9 @@ export default async function Pages() {
             />
           </Link>
         ))}
-      </Container>
+      </Craft.Container>
 
       <CTA />
-    </Main>
+    </Craft.Main>
   );
 }

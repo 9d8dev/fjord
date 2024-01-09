@@ -3,8 +3,7 @@ import fjord from "@/fjord.config";
 import Link from "next/link";
 import Image from "next/image";
 import NavLink from "../global/elements/nav-link";
-import Section from "../global/layout/section";
-import Container from "../global/layout/container";
+import * as Craft from "@/components/craft/layout";
 
 const Footer = () => {
   const generalLinks = [
@@ -33,8 +32,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary-200 dark:bg-secondary-800">
-      <Section>
-        <Container className="m-auto w-full grid md:grid-cols-2 justify-between gap-6">
+      <Craft.Section>
+        <Craft.Container className="m-auto w-full grid md:grid-cols-2 justify-between gap-6">
           {/* Logo and Description */}
           <div>
             <Link href="/">
@@ -60,7 +59,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links Section */}
+          {/* Links Craft.Section */}
           <div className="flex gap-10 md:justify-end">
             {/* Links */}
             <div>
@@ -91,10 +90,10 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
+        </Craft.Container>
+      </Craft.Section>
+      <Craft.Section>
+        <Craft.Container>
           <div className="flex md:flex-row flex-col-reverse gap-6 md:justify-between">
             <p suppressHydrationWarning>
               © {new Date().getFullYear()} | {fjord.site_name} |{" "}
@@ -111,8 +110,8 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-        </Container>
-      </Section>
+        </Craft.Container>
+      </Craft.Section>
     </footer>
   );
 };

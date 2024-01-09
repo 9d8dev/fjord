@@ -1,10 +1,9 @@
-import Section from "@/components/global/layout/section";
-import Container from "@/components/global/layout/container";
+import * as Craft from "@/components/craft/layout";
 
 const About = () => {
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">Fjord is a headless WordPress template</h3>
           <h4 className="text-2xl font-thin opacity-70">
@@ -18,8 +17,8 @@ const About = () => {
             aliquip ex ea commodo consequat.
           </p>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

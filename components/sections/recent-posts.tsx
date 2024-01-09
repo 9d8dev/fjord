@@ -1,7 +1,6 @@
 import settings from "@/fjord.config";
-import Section from "../global/layout/section";
+import * as Craft from "@/components/craft/layout";
 import PostCard from "@/components/content/post-card";
-import Container from "../global/layout/container";
 import fjord from "@/fjord.config";
 
 async function getPosts() {
@@ -37,8 +36,8 @@ export default async function RecentPosts({
   }
 
   return (
-    <Section>
-      <Container>
+    <Craft.Section>
+      <Craft.Container>
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">Latest posts from {fjord.site_name}</h3>
           <h4 className="text-2xl font-thin opacity-70">
@@ -50,7 +49,7 @@ export default async function RecentPosts({
             ))}
           </div>
         </div>
-      </Container>
-    </Section>
+      </Craft.Container>
+    </Craft.Section>
   );
 }
