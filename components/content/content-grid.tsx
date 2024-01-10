@@ -8,11 +8,11 @@ const ContentGrid: React.FC<ContentGridProps> = ({
   ...rest
 }) => {
   return (
-    <Craft.Section className="!pt-0">
+    <Craft.Section>
       <Craft.Container>
         <div
           id={id}
-          className={`grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ${className}`}
+          className={`grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-y-8 ${className}`}
           {...rest}
         >
           {children}

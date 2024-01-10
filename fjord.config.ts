@@ -5,10 +5,9 @@ const fjord: fjordTypes = {
     "fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
   site_description:
     "fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
-  posts_per_page: 6,
+  posts_per_page: 9,
   wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
-  revalidate: 3600, // revalidate the wordpressse time in seconds
 
   links: {
     main_cta: "#",
@@ -34,4 +33,3 @@ const fjord: fjordTypes = {
 };
 
 export default fjord;
-

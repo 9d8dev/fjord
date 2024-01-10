@@ -7,7 +7,7 @@ import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import CTA from "@/components/sections/cta";
-import Pagination from "@/components/content/pagination";
+import Pagination from "@/components/content/pagination-wrapper";
 
 // Next Imports
 import type { Metadata } from "next";
@@ -41,16 +41,12 @@ export default async function Posts({
         All posts from {fjord.site_name}. These are all the posts from your
         WordPress.
       </SecondaryHero>
-
       <ContentGrid id="posts">
         {data.map((post: Post) => (
           <PostCard key={post.id} post={post} tags={tags} />
         ))}
       </ContentGrid>
-
-      <Pagination page={page} totalPosts={totalPosts} lastPage={lastPage} />
-
-      <CTA />
+      <Pagination page={page} lastPage={lastPage} /> <CTA />
     </Craft.Main>
   );
 }

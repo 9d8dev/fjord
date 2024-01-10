@@ -2,7 +2,7 @@
 import fjord from "@/fjord.config";
 
 // Component Imports
-import Article from "@/components/content/article";
+import Article from "@/components/content/article-wrapper";
 import RecentPosts from "@/components/sections/recent-posts";
 import CTA from "@/components/sections/cta";
 

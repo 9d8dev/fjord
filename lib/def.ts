@@ -25,6 +25,11 @@ type StaticUrl = {
   priority?: number | undefined;
 };
 
+type PaginationProps = {
+  page: number;
+  lastPage: number;
+};
+
 type Post = {
   id: number;
   date: string;
@@ -119,7 +124,6 @@ type fjordTypes = {
   posts_per_page: number;
   wordpress_url: string;
   google_analytics_id: string;
-  revalidate: number;
   links: {
     main_cta: string;
     main_cta_text: string;

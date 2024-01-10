@@ -6,7 +6,7 @@ import * as Craft from "@/components/craft/layout";
 import ContentGrid from "@/components/content/content-grid";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
-import Pagination from "@/components/content/pagination";
+import Pagination from "@/components/content/pagination-wrapper";
 import CTA from "@/components/sections/cta";
 
 // Next Imports
