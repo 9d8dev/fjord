@@ -1,52 +1,25 @@
+// Fjord Config
 import fjord from "@/fjord.config";
+
+// Component Imports
 import * as Craft from "@/components/craft/layout";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import CTA from "@/components/sections/cta";
 import Pagination from "@/components/content/pagination";
+
+// Next Imports
 import type { Metadata } from "next";
 
+// Data Imports
+import { fetchTags, fetchPosts } from "@/lib/data";
+
+// Meta Data
 export const metadata: Metadata = {
   title: `Blog | ${fjord.site_name}`,
   description: `Read the ${fjord.site_name} blog. ${fjord.site_description}`,
 };
-
-async function getTags() {
-  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`, {
-    next: { revalidate: 3600 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch tags");
-  }
-
-  const tags: Tag[] = await res.json();
-  return tags;
-}
-
-async function getPosts(perPage: number, offset: number) {
-  const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  const data: Post[] = await res.json();
-  const totalPosts = Number(res.headers.get("X-WP-Total"));
-
-  // Sort posts by date
-  data.sort(
-    (a: Post, b: Post) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-  return { data, totalPosts };
-}
 
 export default async function Posts({
   searchParams,
@@ -58,9 +31,9 @@ export default async function Posts({
       ? +searchParams.page
       : 1;
   const offset = (page - 1) * fjord.posts_per_page;
-  const { data, totalPosts } = await getPosts(fjord.posts_per_page, offset);
+  const { data, totalPosts } = await fetchPosts(fjord.posts_per_page, offset);
   const lastPage = Math.ceil(totalPosts / fjord.posts_per_page);
-  const tags = await getTags();
+  const tags = await fetchTags();
 
   return (
     <Craft.Main>
