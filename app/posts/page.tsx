@@ -7,7 +7,7 @@ import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import CTA from "@/components/sections/cta";
-import Pagination from "@/components/content/pagination-wrapper";
+import PaginationWrapper from "@/components/content/pagination-wrapper";
 import { Separator } from "@/components/ui/separator";
 
 // Next Imports
@@ -50,7 +50,7 @@ export default async function Posts({
             ))}
           </ContentGrid>
           <Separator className="my-6 md:my-12" />
-          <Pagination page={page} lastPage={lastPage} />
+          <PaginationWrapper page={page} lastPage={lastPage} />
         </Craft.Container>
       </Craft.Section>
       <CTA />
