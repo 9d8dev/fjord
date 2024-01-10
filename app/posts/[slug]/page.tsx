@@ -1,9 +1,16 @@
-import Article from "@/components/content/article";
+// Fjord Config
 import fjord from "@/fjord.config";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+
+// Component Imports
+import Article from "@/components/content/article";
 import RecentPosts from "@/components/sections/recent-posts";
 import CTA from "@/components/sections/cta";
+
+// Next Imports
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+// Data Imports
 import { fetchPostBySlug } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -23,6 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   if (!post) {
     return notFound();
   }
+
   const date = new Date(post.date);
   const author = post._embedded?.author[0];
 
