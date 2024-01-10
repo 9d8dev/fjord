@@ -47,6 +47,8 @@ const Main = ({ children, className, id }: MainProps) => {
         "prose-a:border-b prose-a:border-b-primary dark:prose-a:border-b-primary prose-a:font-normal prose-a:text-primary dark:prose-a:text-primary hover:prose-a:border-b-primary hover:prose-a:opacity-75 dark:hover:prose-a:border-b-primary prose-a:no-underline prose-a:transition-all",
         // Blockquotes
         "prose-blockquote:not-italic",
+        // Images
+        "prose-img:rounded-lg prose-img:shadow-lg prose-img:border",
         className
       )}
       id={id}
