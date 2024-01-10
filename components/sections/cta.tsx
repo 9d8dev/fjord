@@ -1,8 +1,6 @@
 import fjord from "@/fjord.config";
 import * as Craft from "@/components/craft/layout";
 
-// Change the content here by editing `@/fjord.config.ts`
-
 const CTA = () => {
   return (
     <Craft.Section>
