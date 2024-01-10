@@ -1,6 +1,6 @@
 import fjord from "@/fjord.config";
 
-// Fetch the Wordpress Posts
+// Fetch Posts
 export async function fetchPosts(perPage: number, offset: number) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&per_page=${perPage}&offset=${offset}&orderby=date`,
@@ -24,7 +24,7 @@ export async function fetchPosts(perPage: number, offset: number) {
   return { data, totalPosts };
 }
 
-// Fetch the Wordpress Tags
+// Fetch Tags
 export async function fetchTags() {
   const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/tags`, {
     next: { revalidate: 3600 },
