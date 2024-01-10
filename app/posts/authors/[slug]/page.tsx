@@ -8,6 +8,7 @@ import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import PaginationWrapper from "@/components/content/pagination-wrapper";
 import CTA from "@/components/sections/cta";
+import { Separator } from "@/components/ui/separator";
 
 // Next Imports
 import type { Metadata } from "next";
@@ -59,14 +60,17 @@ export default async function Page({
         {author.description}
       </SecondaryHero>
 
-      <ContentGrid id="posts">
-        {posts.map((post: Post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </ContentGrid>
-
-      <PaginationWrapper page={page} lastPage={lastPage} />
-
+      <Craft.Section>
+        <Craft.Container>
+          <ContentGrid id="posts">
+            {posts.map((post: Post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </ContentGrid>
+          <Separator className="my-6 md:my-12" />
+          <PaginationWrapper page={page} lastPage={lastPage} />
+        </Craft.Container>
+      </Craft.Section>
       <CTA />
     </Craft.Main>
   );
