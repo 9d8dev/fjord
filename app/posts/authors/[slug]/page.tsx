@@ -1,31 +1,20 @@
+// Fjord Config
 import fjord from "@/fjord.config";
-import { notFound } from "next/navigation";
+
+// Component Imports
+import * as Craft from "@/components/craft/layout";
 import ContentGrid from "@/components/content/content-grid";
 import PostCard from "@/components/content/post-card";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import Pagination from "@/components/content/pagination";
-import * as Craft from "@/components/craft/layout";
 import CTA from "@/components/sections/cta";
+
+// Next Imports
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-async function getAuthorPosts(slug: string, page: number = 1) {
-  const offset = (page - 1) * fjord.posts_per_page;
-  const res = await fetch(
-    `${fjord.wordpress_url}/wp-json/wp/v2/posts?author_name=${slug}&_embed&per_page=${fjord.posts_per_page}&offset=${offset}`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  const data: Post[] = await res.json();
-  const totalPosts = Number(res.headers.get("X-WP-Total"));
-  const author = data[0]._embedded?.author[0];
-  return { data, totalPosts, author };
-}
+// Data Imports
+import { fetchPostsByAuthor } from "@/lib/data";
 
 export async function generateStaticParams() {
   const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`, {
@@ -36,7 +25,7 @@ export async function generateStaticParams() {
 
   return data.map((author) => ({
     slug: author?.slug,
-    name: author?.name,
+    name: author?.name.replace(/\s+/g, "-").toLowerCase(),
   }));
 }
 
@@ -50,7 +39,7 @@ export default async function Page({
     data: posts,
     totalPosts,
     author,
-  } = await getAuthorPosts(params?.slug, page);
+  } = await fetchPostsByAuthor(params?.slug, page);
   if (!posts) {
     return notFound();
   }

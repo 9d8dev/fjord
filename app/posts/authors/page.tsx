@@ -1,8 +1,16 @@
+// Fjord Config
 import fjord from "@/fjord.config";
-import Link from "next/link";
+
+// Component Imports
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
+
+// Next Imports
 import { Metadata } from "next";
+import Link from "next/link";
+
+// Data Imports
+import { fetchAuthors } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: `Authors | ${fjord.site_name}`,
@@ -10,37 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AuthorPosts() {
-  async function getAuthorPosts() {
-    const res = await fetch(
-      `${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`,
-      {
-        next: { revalidate: 3600 },
-      }
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    return res.json();
-  }
-
-  let data;
-  try {
-    data = await getAuthorPosts();
-  } catch (error) {
-    console.error(error);
-    return <div>Error: Failed to fetch data</div>;
-  }
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
-  if (!Array.isArray(data)) {
-    console.error("Invalid data format");
-    return <div>Error: Invalid data format</div>;
-  }
+  let data = await fetchAuthors();
 
   return (
     <main className="p-12">

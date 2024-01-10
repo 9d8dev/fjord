@@ -54,3 +54,37 @@ export async function fetchPostBySlug(slug: string) {
   const data = await res.json();
   return data?.[0];
 }
+
+// Fetch posts by Author
+export async function fetchPostsByAuthor(slug: string, page: number = 1) {
+  const offset = (page - 1) * fjord.posts_per_page;
+  const res = await fetch(
+    `${fjord.wordpress_url}/wp-json/wp/v2/posts?author_name=${slug}&_embed&per_page=${fjord.posts_per_page}&offset=${offset}`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data: Post[] = await res.json();
+  const totalPosts = Number(res.headers.get("X-WP-Total"));
+  const author = data[0]._embedded?.author[0];
+  return { data, totalPosts, author };
+}
+
+// Fetch Authors
+export async function fetchAuthors() {
+  const res = await fetch(`${fjord.wordpress_url}/wp-json/wp/v2/users?_embed`, {
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch authors");
+  }
+
+  const authors: Author[] = await res.json();
+  return authors;
+}
