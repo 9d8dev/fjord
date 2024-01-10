@@ -2,8 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-const BackButton = () => {
+const BackButton = (className?: string) => {
   const router = useRouter();
 
   const handleBackButtonClick = () => {
@@ -11,13 +13,14 @@ const BackButton = () => {
   };
 
   return (
-    <button
-      className="text-sm flex gap-1 items-center my-6"
+    <Button
+      variant="outline"
+      className={cn("not-prose text-sm", className)}
       onClick={handleBackButtonClick}
     >
-      <ArrowLeftIcon className="w-4" />
-      <span className="border-b">Go Back</span>
-    </button>
+      <ArrowLeftIcon className="w-4 mr-2" />
+      <span>Go Back</span>
+    </Button>
   );
 };
 

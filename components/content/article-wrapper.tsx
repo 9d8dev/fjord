@@ -8,12 +8,12 @@ import AboutAuthor from "./about-author";
 
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
-    <Craft.Section className="!pt-0">
+    <Craft.Section>
       <Craft.Container>
         <Craft.Article>
           <BackButton />
           <h1
-            className="max-w-none"
+            className="max-w-none mt-6"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           ></h1>
           <div className="flex not-prose gap-2">
