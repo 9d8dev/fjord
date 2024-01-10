@@ -36,8 +36,6 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
         className="text-primary-500 mb-2 text-xl"
       ></h3>
 
-      <Separator />
-
       <div
         className="opacity-75 text-sm"
         dangerouslySetInnerHTML={{

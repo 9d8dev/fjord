@@ -170,6 +170,9 @@ type ArticleProps = {
     title: {
       rendered: string;
     };
+    excerpt: {
+      rendered: string;
+    };
     _embedded?: {
       "wp:featuredmedia"?: [
         {

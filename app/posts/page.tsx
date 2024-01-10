@@ -8,6 +8,7 @@ import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 import CTA from "@/components/sections/cta";
 import Pagination from "@/components/content/pagination-wrapper";
+import { Separator } from "@/components/ui/separator";
 
 // Next Imports
 import type { Metadata } from "next";
@@ -41,12 +42,18 @@ export default async function Posts({
         All posts from {fjord.site_name}. These are all the posts from your
         WordPress.
       </SecondaryHero>
-      <ContentGrid id="posts">
-        {data.map((post: Post) => (
-          <PostCard key={post.id} post={post} tags={tags} />
-        ))}
-      </ContentGrid>
-      <Pagination page={page} lastPage={lastPage} /> <CTA />
+      <Craft.Section>
+        <Craft.Container>
+          <ContentGrid id="posts">
+            {data.map((post: Post) => (
+              <PostCard key={post.id} post={post} tags={tags} />
+            ))}
+          </ContentGrid>
+          <Separator className="my-6 md:my-12" />
+          <Pagination page={page} lastPage={lastPage} />
+        </Craft.Container>
+      </Craft.Section>
+      <CTA />
     </Craft.Main>
   );
 }

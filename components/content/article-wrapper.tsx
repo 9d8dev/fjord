@@ -11,12 +11,12 @@ const Article = ({ post, date, author }: ArticleProps) => {
     <Craft.Section>
       <Craft.Container>
         <Craft.Article>
-          <BackButton />
           <h1
-            className="max-w-none mt-6"
+            className="max-w-none"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           ></h1>
-          <div className="flex not-prose gap-2">
+
+          <div className="flex not-prose gap-2 mb-6">
             <p>{date.toDateString()}</p> |
             {author && (
               <Link
@@ -27,6 +27,16 @@ const Article = ({ post, date, author }: ArticleProps) => {
               </Link>
             )}
           </div>
+
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                post.excerpt.rendered.split(". ").slice(0, 2).join(". ") + ".",
+            }}
+          ></p>
+
+          <BackButton />
+
           {post._embedded?.["wp:featuredmedia"] &&
             post._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
               ?.source_url && (
@@ -48,6 +58,7 @@ const Article = ({ post, date, author }: ArticleProps) => {
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
         </Craft.Article>
+
         <AboutAuthor {...{ post, date, author }} />
       </Craft.Container>
     </Craft.Section>

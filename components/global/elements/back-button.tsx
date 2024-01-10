@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const BackButton = (className?: string) => {
+const BackButton = (className?: any) => {
   const router = useRouter();
 
   const handleBackButtonClick = () => {

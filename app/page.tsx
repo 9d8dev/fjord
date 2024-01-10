@@ -30,7 +30,7 @@ export default function Home() {
 
       <Craft.Section>
         <Craft.Container>
-          <h2 className="mt-0">
+          <h2 className="!mt-0">
             <Balancer>
               Craft was created by{" "}
               <a className="not-prose" href="https://bridger.to">
