@@ -1,18 +1,22 @@
-import * as Craft from "@/components/craft/layout";
+// Next Imports
 import Link from "next/link";
+
+// Component Imports
+import * as Craft from "@/components/craft/layout";
 import BackButton from "../global/elements/back-button";
+import AboutAuthor from "./about-author";
 
 const Article = ({ post, date, author }: ArticleProps) => {
   return (
     <Craft.Section className="!pt-0">
       <Craft.Container>
-        <article className="grid gap-6">
+        <Craft.Article>
           <BackButton />
           <h1
-            className="mb-6 text-4xl"
+            className="max-w-none"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           ></h1>
-          <div className="flex gap-2">
+          <div className="flex not-prose gap-2">
             <p>{date.toDateString()}</p> |
             {author && (
               <Link
@@ -40,29 +44,11 @@ const Article = ({ post, date, author }: ArticleProps) => {
               </div>
             )}
           <div
-            className="prose prose-p:font-light prose-headings:font-normal prose-strong:font-normal lg:prose-lg dark:prose-invert"
+            className="pt-6 md:pt-12"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           ></div>
-        </article>
-
-        {/* About the Author Craft.Section */}
-        <div className="flex gap-6 md:max-w-lg items-center p-6 bg-secondary-200 dark:bg-secondary-800 rounded-lg mt-12">
-          <img
-            className="w-24 h-24 rounded-full"
-            src={author.avatar_urls?.[96]}
-            alt={`profile icon of ${author.name}`}
-          />
-          <div className="grid gap-2 py-4">
-            <p className="text-xs opacity-70">About the Author</p>
-            <Link
-              className="block text-2xl hover:opacity-70 transition-all"
-              href={`/posts/authors/${author.slug}`}
-            >
-              {author.name}
-            </Link>{" "}
-            <p>{author.description}</p>
-          </div>
-        </div>
+        </Craft.Article>
+        <AboutAuthor {...{ post, date, author }} />
       </Craft.Container>
     </Craft.Section>
   );
