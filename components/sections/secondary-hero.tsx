@@ -15,7 +15,7 @@ export default function SecondaryHero({
 	return (
 		<Craft.Section className="border-b">
 			<Craft.Container>
-				<div className="mx-auto max-w-4xl not-prose">
+				<div className="not-prose">
 					<Badge variant="outline">{subtitle}</Badge>
 					<h2 className="text-4xl mt-4 mb-6">{title}</h2>
 					<p>{children}</p>
