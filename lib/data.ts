@@ -88,3 +88,36 @@ export async function fetchAuthors() {
   const authors: AuthorProps[] = await res.json();
   return authors;
 }
+
+// Fetch a single page by its slug
+export async function fetchPage(slug: string) {
+  const res = await fetch(
+    `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch page");
+  }
+
+  const data = await res.json();
+  return data?.[0];
+}
+
+// Fetch All Pages
+export async function fetchPages() {
+  const res = await fetch(
+    `${fjord.wordpress_url}/wp-json/wp/v2/pages?_embed&per_page=${fjord.posts_per_page}`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}

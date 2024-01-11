@@ -1,17 +1,18 @@
 import BackButton from "@/components/global/elements/back-button";
 import Image from "next/image";
+import * as Craft from "@/components/craft/layout";
 
 const PageBody = ({ page, date, author }: PageProps) => {
   return (
-    <section className="m-auto grid max-w-6xl gap-6 pb-24">
-      <div className="p-6 md:p-8">
+    <Craft.Section>
+      <Craft.Container>
         <BackButton />
         <h1
           className="mb-6 text-4xl"
           dangerouslySetInnerHTML={{ __html: page.title.rendered }}
         ></h1>
         <div className="flex gap-2">
-          <p suppressHydrationWarning>{new Date(date).toDateString()}</p> |
+          <p>{new Date(date).toDateString()}</p> |
           {author && <p>{author.name}</p>}
         </div>
         {page._embedded?.["wp:featuredmedia"] &&
@@ -26,14 +27,15 @@ const PageBody = ({ page, date, author }: PageProps) => {
               width={500}
               height={500}
               alt="page image"
+              layout="responsive"
             />
           )}
         <div
           className="prose prose-p:font-light prose-headings:font-normal prose-strong:font-normal lg:prose-lg dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: page.content.rendered }}
         ></div>
-      </div>
-    </section>
+      </Craft.Container>
+    </Craft.Section>
   );
 };
 

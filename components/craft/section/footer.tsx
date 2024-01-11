@@ -63,13 +63,7 @@ const Footer = () => {
           <div className="grid gap-6">
             <Link href="/">
               <h3 className="sr-only">Craft UI</h3>
-              <Image
-                className="dark:invert"
-                src={Logo}
-                alt="Logo"
-                width={100}
-                height={50}
-              ></Image>
+              <Image src={Logo} alt="Logo" width={100} height={50}></Image>
             </Link>
             <p>
               <Balancer>
