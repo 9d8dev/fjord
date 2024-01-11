@@ -1,6 +1,6 @@
 # **Fjord**
 
-## **Next.js App Router Template for Headless Wordpress using the REST API**
+## **Next.js 14 App Router Template for Headless CMS using the WordPress REST API**
 
 > See the Wiki For Detailed Documentation
 
