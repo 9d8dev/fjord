@@ -1,34 +1,6 @@
 import BackButton from "@/components/global/elements/back-button";
 
-interface PageBodyProps {
-  page: {
-    title: {
-      rendered: string;
-    };
-    _embedded?: {
-      "wp:featuredmedia"?: [
-        {
-          media_details: {
-            sizes: {
-              full: {
-                source_url: string;
-              };
-            };
-          };
-        }
-      ];
-    };
-    content: {
-      rendered: string;
-    };
-  };
-  date: Date;
-  author: {
-    name: string;
-  };
-}
-
-const PageBody = ({ page, date, author }: PageBodyProps) => {
+const PageBody = ({ page, date, author }: PageProps) => {
   return (
     <section className="m-auto grid max-w-6xl gap-6 pb-24">
       <div className="p-6 md:p-8">
@@ -38,7 +10,7 @@ const PageBody = ({ page, date, author }: PageBodyProps) => {
           dangerouslySetInnerHTML={{ __html: page.title.rendered }}
         ></h1>
         <div className="flex gap-2">
-          <p suppressHydrationWarning>{date.toDateString()}</p> |
+          <p suppressHydrationWarning>{new Date(date).toDateString()}</p> |
           {author && <p>{author.name}</p>}
         </div>
         {page._embedded?.["wp:featuredmedia"] &&

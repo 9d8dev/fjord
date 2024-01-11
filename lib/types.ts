@@ -1,33 +1,29 @@
-type TagProps = {
+type RenderedContent = {
+  rendered: string;
+};
+
+type MediaDetails = {
+  sizes: {
+    [size: string]: {
+      source_url: string;
+    };
+  };
+};
+
+type AuthorDetails = {
   id: number;
-  count: number;
+  name: string;
+  url: string;
   description: string;
   link: string;
-  name: string;
   slug: string;
-  taxonomy: string;
-  meta: any[];
-  _links: any;
 };
 
-type StaticUrlProps = {
-  url: string;
-  lastModified?: string | Date | undefined;
-  changeFrequency?:
-    | "yearly"
-    | "monthly"
-    | "weekly"
-    | "always"
-    | "hourly"
-    | "daily"
-    | "never"
-    | undefined;
-  priority?: number | undefined;
-};
-
-type PaginationProps = {
-  page: number;
-  lastPage: number;
+type EmbeddedMedia = {
+  "wp:featuredmedia"?: {
+    media_details: MediaDetails;
+  }[];
+  author?: AuthorDetails[];
 };
 
 type PostProps = {
@@ -37,17 +33,12 @@ type PostProps = {
   status: string;
   type: string;
   link: string;
-  title: {
-    rendered: string;
-  };
+  title: RenderedContent;
   content: {
     protected: boolean;
     rendered: string;
   };
-  excerpt?: {
-    protected: boolean;
-    rendered: string;
-  };
+  excerpt?: RenderedContent;
   author: number;
   featured_media: number;
   comment_status: string;
@@ -55,30 +46,41 @@ type PostProps = {
   sticky: boolean;
   template: string;
   format: string;
-  meta: any[];
+  meta: Record<string, unknown>[];
   categories: number[];
   tags: number[];
-  _embedded: {
-    "wp:featuredmedia"?: [
-      {
-        media_details: {
-          sizes: {
-            full: {
-              source_url: string;
-            };
-          };
-        };
-      }
-    ];
-    author: Array<{
-      id: number;
-      name: string;
-      url: string;
-      description: string;
-      link: string;
-      slug: string;
-    }>;
-  };
+  _embedded: EmbeddedMedia;
+};
+
+type TagProps = {
+  id: number;
+  count: number;
+  description: string;
+  link: string;
+  name: string;
+  slug: string;
+  taxonomy: string;
+  meta: Record<string, unknown>[];
+  _links: Record<string, unknown>;
+};
+
+type StaticUrlProps = {
+  url: string;
+  lastModified?: string | Date;
+  changeFrequency?:
+    | "yearly"
+    | "monthly"
+    | "weekly"
+    | "always"
+    | "hourly"
+    | "daily"
+    | "never";
+  priority?: number;
+};
+
+type PaginationProps = {
+  page: number;
+  lastPage: number;
 };
 
 type PostCardProps = {
@@ -88,24 +90,13 @@ type PostCardProps = {
 
 type PageProps = {
   id: number;
-  title: {
-    rendered: string;
-  };
+  title: RenderedContent;
   date: string;
   slug: string;
-  excerpt: {
-    rendered: string;
-  };
+  excerpt: RenderedContent;
   _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          medium: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
+    "wp:featuredmedia": MediaDetails[];
+    author?: AuthorDetails;
   };
 };
 
@@ -161,40 +152,16 @@ type AuthorProps = {
     "48": string;
     "96": string;
   };
-  meta?: any[];
-  _links?: {
-    self?: { href: string }[];
-    collection?: { href: string }[];
-    about?: { href: string }[];
-    author?: { embeddable: boolean; href: string }[];
-    replies?: { embeddable: boolean; href: string }[];
-  };
+  meta?: Record<string, unknown>[];
+  _links?: Record<string, { href: string }[]>;
 };
 
 type ArticleProps = {
   post: {
-    title: {
-      rendered: string;
-    };
-    excerpt: {
-      rendered: string;
-    };
-    _embedded?: {
-      "wp:featuredmedia"?: [
-        {
-          media_details: {
-            sizes: {
-              full: {
-                source_url: string;
-              };
-            };
-          };
-        }
-      ];
-    };
-    content: {
-      rendered: string;
-    };
+    title: RenderedContent;
+    excerpt: RenderedContent;
+    _embedded?: EmbeddedMedia;
+    content: RenderedContent;
   };
   date: Date;
   author: {
