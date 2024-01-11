@@ -61,10 +61,8 @@ const Footer = () => {
 							<h4 className="text-muted-foreground">{fjord.site_name}</h4>
 							<ul>
 								{Object.entries(fjord.menu.main).map(([key, href]) => (
-									<li>
-										<Link key={key} href={href}>
-											{key.charAt(0).toUpperCase() + key.slice(1)}
-										</Link>
+									<li key={key}>
+										<Link href={href}>{key.charAt(0).toUpperCase() + key.slice(1)}</Link>
 									</li>
 								))}
 							</ul>
@@ -73,10 +71,8 @@ const Footer = () => {
 							<h4 className="text-muted-foreground">Blog</h4>
 							<ul>
 								{Object.entries(fjord.menu.content).map(([key, href]) => (
-									<li>
-										<Link key={key} href={href}>
-											{key.charAt(0).toUpperCase() + key.slice(1)}
-										</Link>
+									<li key={key}>
+										<Link href={href}>{key.charAt(0).toUpperCase() + key.slice(1)}</Link>
 									</li>
 								))}
 							</ul>
