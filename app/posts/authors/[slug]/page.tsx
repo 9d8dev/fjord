@@ -22,7 +22,7 @@ export async function generateStaticParams() {
     next: { revalidate: 3600 },
   });
 
-  const data: Author[] = await res.json();
+  const data: AuthorProps[] = await res.json();
 
   return data.map((author) => ({
     slug: author?.slug,
@@ -47,23 +47,23 @@ export default async function Page({
   const lastPage = Math.ceil(totalPosts / fjord.posts_per_page);
 
   const metadata: Metadata = {
-    title: `All Articles by ${author.name} | ${fjord.site_name}`,
-    description: `The latest articles from ${author.name} on ${fjord.site_name}.`,
+    title: `All Articles by ${author?.name} | ${fjord.site_name}`,
+    description: `The latest articles from ${author?.name} on ${fjord.site_name}.`,
   };
 
   return (
     <Craft.Main>
       <SecondaryHero
-        title={`All Articles by ${author.name}`}
+        title={`All Articles by ${author?.name}`}
         subtitle={`The latest from ${fjord.site_name}`}
       >
-        {author.description}
+        {author?.description}
       </SecondaryHero>
 
       <Craft.Section>
         <Craft.Container>
           <ContentGrid id="posts">
-            {posts.map((post: Post) => (
+            {posts.map((post: PostProps) => (
               <PostCard key={post.id} post={post} />
             ))}
           </ContentGrid>

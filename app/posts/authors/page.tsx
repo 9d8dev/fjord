@@ -8,6 +8,7 @@ import ContentGrid from "@/components/content/content-grid";
 // Next Imports
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 // Data Imports
 import { fetchAuthors } from "@/lib/data";
@@ -30,16 +31,18 @@ export default async function AuthorPosts() {
       </SecondaryHero>
 
       <ContentGrid className="md:!grid-cols-2">
-        {data.map((author: Author) => (
+        {data.map((author: AuthorProps) => (
           <div key={author.id}>
             <Link
               className="flex items-center gap-4 rounded-lg md:rounded-xl border bg-secondary-100 dark:bg-secondary-900 transition-all hover:bg-secondary-200 dark:hover:bg-secondary-800 p-6"
               href={`./authors/${author.slug}`}
             >
-              <img
-                className="rounded-full"
+              <Image
                 src={author.avatar_urls["96"]}
                 alt={author.name}
+                width={96}
+                height={96}
+                className="rounded-full"
               />
               <div className="grid gap-2">
                 <p className="text-2xl text-primary-500">{author.name}</p>

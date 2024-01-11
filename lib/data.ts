@@ -13,12 +13,12 @@ export async function fetchPosts(perPage: number, offset: number) {
     throw new Error("Failed to fetch data");
   }
 
-  const data: Post[] = await res.json();
+  const data: PostProps[] = await res.json();
   const totalPosts = Number(res.headers.get("X-WP-Total"));
 
   // Sort posts by date
   data.sort(
-    (a: Post, b: Post) =>
+    (a: PostProps, b: PostProps) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   return { data, totalPosts };
@@ -34,7 +34,7 @@ export async function fetchTags() {
     throw new Error("Failed to fetch tags");
   }
 
-  const tags: Tag[] = await res.json();
+  const tags: TagProps[] = await res.json();
   return tags;
 }
 
@@ -69,9 +69,9 @@ export async function fetchPostsByAuthor(slug: string, page: number = 1) {
     throw new Error("Failed to fetch data");
   }
 
-  const data: Post[] = await res.json();
+  const data: PostProps[] = await res.json();
   const totalPosts = Number(res.headers.get("X-WP-Total"));
-  const author = data[0]._embedded?.author[0];
+  const author = data[0]._embedded?.author?.[0];
   return { data, totalPosts, author };
 }
 
@@ -85,6 +85,6 @@ export async function fetchAuthors() {
     throw new Error("Failed to fetch authors");
   }
 
-  const authors: Author[] = await res.json();
+  const authors: AuthorProps[] = await res.json();
   return authors;
 }

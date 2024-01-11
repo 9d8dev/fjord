@@ -20,7 +20,7 @@ export default async function RecentPosts({
             Read the latest from our blog.
           </h4>
           <div className="m-auto grid max-w-6xl gap-6 sm:grid-cols-2 md:grid-cols-3 mt-6 md:mt-12">
-            {posts.data.map((post: Post) => (
+            {posts.data.map((post: PostProps) => (
               <PostCard key={post.id} post={post} />
             ))}
           </div>

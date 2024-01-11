@@ -44,7 +44,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="p-6">
-      <PageBody page={page} date={date} />
+      <PageBody {...page} date={date.toISOString()} />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import BackButton from "@/components/global/elements/back-button";
+import Image from "next/image";
 
 const PageBody = ({ page, date, author }: PageProps) => {
   return (
@@ -16,12 +17,14 @@ const PageBody = ({ page, date, author }: PageProps) => {
         {page._embedded?.["wp:featuredmedia"] &&
           page._embedded["wp:featuredmedia"][0]?.media_details?.sizes?.full
             ?.source_url && (
-            <img
+            <Image
               placeholder="blur"
               src={
                 page._embedded["wp:featuredmedia"][0].media_details.sizes.full
                   .source_url
               }
+              width={500}
+              height={500}
               alt="page image"
             />
           )}

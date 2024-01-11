@@ -88,18 +88,6 @@ type PostCardProps = {
   tags?: TagProps[];
 };
 
-type PageProps = {
-  id: number;
-  title: RenderedContent;
-  date: string;
-  slug: string;
-  excerpt: RenderedContent;
-  _embedded: {
-    "wp:featuredmedia": MediaDetails[];
-    author?: AuthorDetails;
-  };
-};
-
 type ContentGridProps = {
   children: React.ReactNode;
   className?: string;
@@ -187,4 +175,22 @@ type NavProps = {
   className?: string;
   children?: React.ReactNode;
   id?: string;
+};
+
+type PageProps = {
+  id: number;
+  title: RenderedContent;
+  date: string;
+  slug: string;
+  excerpt: RenderedContent;
+  _embedded: {
+    "wp:featuredmedia": MediaDetails[];
+    author?: AuthorDetails;
+  };
+  page: {
+    title: RenderedContent;
+    content: RenderedContent;
+    _embedded?: EmbeddedMedia;
+  };
+  author: AuthorProps;
 };

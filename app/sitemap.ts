@@ -1,30 +1,6 @@
 import { MetadataRoute } from "next";
 import fjord from "@/fjord.config";
 
-type Post = {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  slug: string;
-  excerpt: {
-    rendered: string;
-  };
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          full: {
-            source_url: string;
-          };
-        };
-      };
-    }>;
-  };
-  tags: Array<number>;
-};
-
 async function getPosts() {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/posts?_embed&orderby=date`,
@@ -37,7 +13,7 @@ async function getPosts() {
     throw new Error("Failed to fetch data");
   }
 
-  const data: Post[] = await res.json();
+  const data: PostProps[] = await res.json();
 
   return { data };
 }
