@@ -45,7 +45,7 @@ async function getPosts() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data } = await getPosts();
 
-  const staticUrls: StaticUrl[] = [
+  const staticUrls: StaticUrlProps[] = [
     {
       url: `${fjord.site_domain}`,
       lastModified: new Date(),
@@ -81,7 +81,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticUrls,
     ...data.map(
-      (post): StaticUrl => ({
+      (post): StaticUrlProps => ({
         url: `${fjord.site_domain}/posts/${post.slug}`,
         lastModified: new Date(),
         changeFrequency: "weekly",

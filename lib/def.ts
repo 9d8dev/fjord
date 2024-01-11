@@ -115,7 +115,6 @@ type ContentGridProps = {
   id?: string;
 };
 
-// fjord type definition
 type FjordProps = {
   site_name: string;
   site_domain: string;
@@ -124,19 +123,9 @@ type FjordProps = {
   posts_per_page: number;
   wordpress_url: string;
   google_analytics_id: string;
-  links: {
-    main_cta: string;
-    main_cta_text: string;
-    privacy_policy: string;
-    privacy_policy_text: string;
-    terms_of_service: string;
-    terms_of_service_text: string;
-    cookie_policy: string;
-    cookie_policy_text: string;
-  };
   logo: string;
-  primary_logo: string;
-  dark_mode_logo: string;
+  primary_logo?: string;
+  dark_mode_logo?: string;
   menu: {
     main: {
       home: string;
@@ -149,6 +138,12 @@ type FjordProps = {
       categories?: string;
       tags?: string;
       pages: string;
+    };
+    legal: {
+      privacy_policy?: string;
+      privacy_policy_text?: string;
+      terms_of_service?: string;
+      terms_of_service_text?: string;
     };
     cta: string;
   };

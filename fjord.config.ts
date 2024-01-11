@@ -9,21 +9,8 @@ const fjord: FjordProps = {
   wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
 
-  links: {
-    main_cta: "#",
-    main_cta_text: "Get Started",
-    // You can edit the Markdown for these pages in hte `@/content/...` directory.
-    privacy_policy: "/privacy-policy",
-    privacy_policy_text: "Privacy Policy",
-    terms_of_service: "/terms-of-service",
-    terms_of_service_text: "Terms of Service",
-    cookie_policy: "/cookie-policy",
-    cookie_policy_text: "Cookie Policy",
-  },
-
   logo: "../logo.svg",
-  primary_logo: "../dark_logo.svg",
-  dark_mode_logo: "../light_logo.svg",
+
   // change the font using `next/font` in `layout.tsx` in the app directory.
   // check out the docs here: https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts
 
@@ -39,6 +26,12 @@ const fjord: FjordProps = {
       categories: "/posts/categories", // default is `/posts/categories`
       tags: "/posts/tags", // default is `/posts/tags`
       pages: "/all", // default is `/all`
+    },
+    legal: {
+      privacy_policy: "/privacy-policy", // default is `/privacy-policy`
+      privacy_policy_text: "Privacy Policy", // default is `Privacy Policy`
+      terms_of_service: "/terms-of-service", // default is `/terms-of-service`
+      terms_of_service_text: "Terms of Service", // default is `Terms of Service`
     },
     cta: "/posts", // Link to CTA
   },
