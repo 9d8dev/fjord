@@ -119,6 +119,22 @@ type FjordProps = {
 		};
 		cta: string;
 	};
+	nav_menu: {
+		title: string;
+		items: {
+			title: string;
+			href: string;
+			description: string;
+		}[];
+	};
+	directory_menu: {
+		title: string;
+		items: {
+			title: string;
+			href: string;
+			description: string;
+		}[];
+	};
 };
 
 type AuthorProps = {

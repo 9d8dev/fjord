@@ -1,12 +1,24 @@
 import * as Craft from '@/components/craft/layout';
+import Image from 'next/image';
+import Placeholder from '@/public/placeholder-2.jpg';
 
 const About = () => {
 	return (
-		<Craft.Section>
+		<Craft.Section className="border-b">
 			<Craft.Container>
-				<div className="flex flex-col gap-6">
-					<h3 className="text-4xl">Fjord is a headless WordPress template</h3>
-					<h4 className="text-2xl font-thin opacity-70">
+				<div className="not-prose flex flex-col gap-6">
+					<div className="my-8 h-96 w-full overflow-hidden rounded-lg border md:rounded-xl md:h-[480px]">
+						<Image
+							className="h-full w-full object-cover object-center"
+							src={Placeholder}
+							width={1920}
+							height={1080}
+							alt="hero image"
+							placeholder="blur"
+						/>
+					</div>
+					<h3 className="text-3xl">Fjord is a headless WordPress template</h3>
+					<h4 className="text-xl opacity-70">
 						This is an example about section. What do you want to say about your company?
 					</h4>
 					<p className="font-light opacity-70 md:w-3/5 mt-6 md:mt-12">
