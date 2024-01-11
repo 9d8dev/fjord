@@ -45,7 +45,7 @@ export default async function Posts({
       <Craft.Section>
         <Craft.Container>
           <ContentGrid id="posts">
-            {data.map((post: Post) => (
+            {data.map((post: PostProps) => (
               <PostCard key={post.id} post={post} tags={tags} />
             ))}
           </ContentGrid>

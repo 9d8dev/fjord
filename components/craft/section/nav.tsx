@@ -1,16 +1,17 @@
+// Fjord Config
+import fjord from "@/fjord.config";
+
+// Next Imports
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "@/public/logo.svg";
+
+// Utility Imports
 import { cn } from "@/lib/utils";
+
+// Component Imports
 import { Button } from "../../ui/button";
 import { NavMenu } from "./nav-menu";
 import { MobileNav } from "./mobile-nav";
-
-type NavProps = {
-  className?: string;
-  children?: React.ReactNode;
-  id?: string;
-};
 
 const Nav = ({ className, children, id }: NavProps) => {
   return (
@@ -28,19 +29,13 @@ const Nav = ({ className, children, id }: NavProps) => {
       >
         <Link className="hover:opacity-75 transition-all" href="/">
           <h2 className="sr-only">Craft UI</h2>
-          <Image
-            className="dark:invert"
-            src={Logo}
-            alt="Logo"
-            width={72}
-            height={48}
-          ></Image>
+          <Image src={fjord.logo} alt="Logo" width={72} height={48}></Image>
         </Link>
         {children}
         <div className="flex items-center gap-2">
           <NavMenu />
           <Button asChild>
-            <Link href="https://github.com/9d8dev/craft">Get Started</Link>
+            <Link href={fjord.menu.cta}>Get Started</Link>
           </Button>
           <MobileNav />
         </div>

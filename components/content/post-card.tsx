@@ -1,13 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowTopRightIcon, CalendarIcon } from "@radix-ui/react-icons";
-import { Separator } from "@/components/ui/separator";
 
-const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
+const PostCard = ({ post, tags = [] }: PostCardProps) => {
   const featuredMedia =
     post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full
       ?.source_url;
-  const firstSentenceOfExcerpt = post.excerpt.rendered.split(".")[0] + ".";
+  const firstSentenceOfExcerpt = post.excerpt?.rendered.split(".")[0] + ".";
 
   return (
     <Link
@@ -47,3 +46,4 @@ const PostCard: React.FC<PostCardProps> = ({ post, tags = [] }) => {
 };
 
 export default PostCard;
+//

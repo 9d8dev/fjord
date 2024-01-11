@@ -1,13 +1,23 @@
 "use client";
 
+// Fjord Config
+import fjord from "@/fjord.config";
+
+// React and Next Imports
 import * as React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import { Menu, CircleDotIcon } from "lucide-react";
+
+// Utility Imports
+import { Menu, ArrowRightSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+// Component Imports
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
+import { Arrow } from "@radix-ui/react-dropdown-menu";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -29,23 +39,25 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <CircleDotIcon className="mr-2 h-4 w-4" />
-          <span className="text-muted-foreground">Craft UI</span>
+          <ArrowRightSquare className="mr-2 h-4 w-4" />
+          <span className="text-muted-foreground">{fjord.site_name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-3">
-            <MobileLink
-              href="https://github.com/9d8dev/craft/"
-              onOpenChange={setOpen}
-            >
-              Github Repository
-            </MobileLink>
-            <MobileLink
-              href="https://github.com/9d8dev/craft/wiki"
-              onOpenChange={setOpen}
-            >
-              Documentation
-            </MobileLink>
+            <h3 className="text-small mt-6">Menu</h3>
+            <Separator />
+            {Object.entries(fjord.menu.main).map(([key, href]) => (
+              <MobileLink key={key} href={href} onOpenChange={setOpen}>
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+              </MobileLink>
+            ))}
+            <h3 className="text-small pt-6">Blog Menu</h3>
+            <Separator />
+            {Object.entries(fjord.menu.content).map(([key, href]) => (
+              <MobileLink key={key} href={href} onOpenChange={setOpen}>
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+              </MobileLink>
+            ))}
           </div>
         </ScrollArea>
       </SheetContent>
@@ -74,7 +86,7 @@ function MobileLink({
         router.push(href.toString());
         onOpenChange?.(false);
       }}
-      className={cn(className)}
+      className={cn("text-lg", className)}
       {...props}
     >
       {children}

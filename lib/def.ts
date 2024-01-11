@@ -1,4 +1,4 @@
-type Tag = {
+type TagProps = {
   id: number;
   count: number;
   description: string;
@@ -10,7 +10,7 @@ type Tag = {
   _links: any;
 };
 
-type StaticUrl = {
+type StaticUrlProps = {
   url: string;
   lastModified?: string | Date | undefined;
   changeFrequency?:
@@ -30,7 +30,7 @@ type PaginationProps = {
   lastPage: number;
 };
 
-type Post = {
+type PostProps = {
   id: number;
   date: string;
   slug: string;
@@ -44,7 +44,7 @@ type Post = {
     protected: boolean;
     rendered: string;
   };
-  excerpt: {
+  excerpt?: {
     protected: boolean;
     rendered: string;
   };
@@ -82,11 +82,11 @@ type Post = {
 };
 
 type PostCardProps = {
-  post: Post;
-  tags?: Tag[];
+  post: PostProps;
+  tags?: TagProps[];
 };
 
-type Page = {
+type PageProps = {
   id: number;
   title: {
     rendered: string;
@@ -116,7 +116,7 @@ type ContentGridProps = {
 };
 
 // fjord type definition
-type fjordTypes = {
+type FjordProps = {
   site_name: string;
   site_domain: string;
   site_title: string;
@@ -134,16 +134,27 @@ type fjordTypes = {
     cookie_policy: string;
     cookie_policy_text: string;
   };
-  theme: {
-    primary: string;
-    secondary: string;
-    logo: string;
-    primary_logo: string;
-    dark_mode_logo: string;
+  logo: string;
+  primary_logo: string;
+  dark_mode_logo: string;
+  menu: {
+    main: {
+      home: string;
+      blog: string;
+      about?: string;
+      contact?: string;
+    };
+    content: {
+      authors: string;
+      categories?: string;
+      tags?: string;
+      pages: string;
+    };
+    cta: string;
   };
 };
 
-type Author = {
+type AuthorProps = {
   id: number;
   name: string;
   url: string;
@@ -208,4 +219,10 @@ type ArticleProps = {
       instagram?: string;
     };
   };
+};
+
+type NavProps = {
+  className?: string;
+  children?: React.ReactNode;
+  id?: string;
 };
