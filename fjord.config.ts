@@ -36,28 +36,28 @@ const fjord: FjordProps = {
 	},
 
 	nav_menu: {
-		title: 'Components',
+		title: 'Pages',
 		items: [
 			{
-				title: 'Typography',
-				href: 'https://github.com/9d8dev/craft/wiki/components#typography',
-				description: 'Styles for headings, paragraphs, lists, and other inline elements.'
+				title: 'About',
+				href: '/about',
+				description: 'Learn more about Fjord and how to use it for your next project.'
 			},
 			{
-				title: 'Layout Components',
-				href: 'https://github.com/9d8dev/craft/wiki/components#layout-components',
+				title: 'Contact',
+				href: '/contact',
 				description:
-					'Components that help you lay out your content, like Main, Craft.Section, and Craft.Container.'
+					'Get in touch with us if you have any questions or feedback. We would love to hear from you.'
 			},
 			{
-				title: 'Navigation',
-				href: 'https://github.com/9d8dev/craft/wiki/components#nav-component',
-				description: 'A Navigation component that helps you build accessible navigation menus.'
+				title: 'All Pages',
+				href: '/all',
+				description: 'A list of all the pages on this site.'
 			},
 			{
-				title: 'Footer',
-				href: 'https://github.com/9d8dev/craft/wiki/components#footer-component',
-				description: 'A Footer component that helps you build footers.'
+				title: 'Authors',
+				href: '/posts/authors',
+				description: 'A list of all the authors on this site.'
 			}
 		]
 	},
