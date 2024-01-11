@@ -45,7 +45,7 @@ export default async function Pages() {
       </SecondaryHero>
 
       <Craft.Container>
-        {data.map((page: Page) => (
+        {data.map((page: PageProps) => (
           <Link
             href={`/${page.slug}`}
             className="hover:bg-primary-50 hover:dark:bg-primary-800 flex flex-col gap-2 rounded-r-md border-l-2 p-4 transition-all"
