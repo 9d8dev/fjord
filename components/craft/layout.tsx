@@ -98,6 +98,7 @@ const Article = ({ children, className, id }: ArticleProps) => {
 			className={cn(
 				'prose dark:prose-invert md:prose-lg lg:prose-xl',
 				'prose-headings:font-normal prose-main dark:prose-invert',
+				'prose-img:rounded-lg prose-img:shadow-lg prose-img:border',
 				className
 			)}
 			id={id}
