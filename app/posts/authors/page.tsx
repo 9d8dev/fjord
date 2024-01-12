@@ -2,6 +2,7 @@
 import fjord from "@/fjord.config";
 
 // Component Imports
+import * as Craft from "@/components/craft/layout";
 import SecondaryHero from "@/components/sections/secondary-hero";
 import ContentGrid from "@/components/content/content-grid";
 
@@ -30,28 +31,33 @@ export default async function AuthorPosts() {
         Select an Author below to see a list of their posts.
       </SecondaryHero>
 
-      <ContentGrid className="md:!grid-cols-2">
-        {data.map((author: AuthorProps) => (
-          <div key={author.id}>
-            <Link
-              className="flex items-center gap-4 rounded-lg md:rounded-xl border bg-secondary-100 dark:bg-secondary-900 transition-all hover:bg-secondary-200 dark:hover:bg-secondary-800 p-6"
-              href={`./authors/${author.slug}`}
-            >
-              <Image
-                src={author.avatar_urls["96"]}
-                alt={author.name}
-                width={96}
-                height={96}
-                className="rounded-full"
-              />
-              <div className="grid gap-2">
-                <p className="text-2xl text-primary-500">{author.name}</p>
-                <p className="opacity-70">{author.description}</p>
+      <Craft.Section>
+        <Craft.Container>
+          <ContentGrid className="md:!grid-cols-2">
+            {data.map((author: AuthorProps) => (
+              <div key={author.id}>
+                <Link
+                  className="flex items-center h-full gap-4 rounded-lg md:rounded-xl border bg-background hover:bg-secondary transition-all p-6"
+                  href={`./authors/${author.slug}`}
+                >
+                  {/* eslint-disable-next-line */}
+                  <img
+                    src={author.avatar_urls["96"]}
+                    alt={author.name}
+                    width={96}
+                    height={96}
+                    className="rounded-full"
+                  />
+                  <div className="grid gap-2">
+                    <p className="text-2xl text-primary-500">{author.name}</p>
+                    <p className="opacity-70">{author.description}</p>
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-        ))}
-      </ContentGrid>
+            ))}
+          </ContentGrid>
+        </Craft.Container>
+      </Craft.Section>
     </main>
   );
 }
