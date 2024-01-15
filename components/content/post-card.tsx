@@ -3,11 +3,9 @@ import React, { ReactNode } from "react";
 import { ArrowTopRightIcon, CalendarIcon } from "@radix-ui/react-icons";
 import { Badge } from "../ui/badge";
 
-const PostTag = ({ name, id, slug }: TagProps) => (
+const PostTag = ({ name, id }: TagProps) => (
   <Badge key={id} variant={"secondary"}>
-    <Link className="not-prose" href={`../posts/tags/${slug}`}>
-      {name}
-    </Link>
+    {name}
   </Badge>
 );
 
