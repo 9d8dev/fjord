@@ -1,6 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
 import { ArrowTopRightIcon, CalendarIcon } from "@radix-ui/react-icons";
+import { Badge } from "../ui/badge";
+
+const PostTag = ({ name, id, slug }: TagProps) => (
+  <Badge key={id} variant={"secondary"}>
+    <Link className="not-prose" href={`../posts/tags/${slug}`}>
+      {name}
+    </Link>
+  </Badge>
+);
 
 const PostCard = ({ post, tags = [] }: PostCardProps) => {
   const featuredMedia =
@@ -17,22 +26,22 @@ const PostCard = ({ post, tags = [] }: PostCardProps) => {
     >
       {featuredMedia && (
         <div className="relative mb-2 h-56 overflow-hidden border shadow-sm rounded-md transition-all group-hover:opacity-75">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/* eslint-disable-next-line */}
           <img
             src={featuredMedia}
-            alt="Post image"
+            alt={post.title.rendered}
             className="absolute left-0 top-0 h-full w-full object-cover"
           />
-          <div className="bg-primary absolute bottom-2 right-2 hidden items-center bg-opacity-75 text-sm backdrop-blur-md transition-all group-hover:flex rounded-sm">
-            <p className="sr-only">Read More</p>{" "}
-            <ArrowTopRightIcon className="dark:text-secondary w-5 h-5" />
+          <div className="absolute top-2 right-2 hidden items-center text-sm transition-all group-hover:flex rounded-sm">
+            <p className="sr-only">Read More</p>
+            <ArrowTopRightIcon className="w-5 h-5" />
           </div>
         </div>
       )}
 
       <h3
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        className="text-primary-500 mb-2 text-xl"
+        className="text-primary mb-2 text-xl"
       ></h3>
 
       <div
@@ -41,9 +50,14 @@ const PostCard = ({ post, tags = [] }: PostCardProps) => {
           __html: firstSentenceOfExcerpt,
         }}
       />
+
+      <div className="flex flex-wrap gap-1">
+        {tags.map((tag) => (
+          <PostTag key={tag.id} {...tag} />
+        ))}
+      </div>
     </Link>
   );
 };
 
 export default PostCard;
-//
