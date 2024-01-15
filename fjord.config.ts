@@ -5,6 +5,8 @@ const fjord: FjordProps = {
     "Fjord | Opinionated Next JS and Wordpress Starter by Alpine Codex",
   site_description:
     "Fjord is an opinionated Next JS and Wordpress starter. It's built to be a solid foundation for your next project.",
+  keywords: ["Next.js", "React", "JavaScript"],
+  authors: [{ name: "9d8", url: "https://9d8.dev" }],
   posts_per_page: 9,
   wordpress_url: "https://windpress.wpenginepowered.com",
   google_analytics_id: "G-7VM8KZENP7",
