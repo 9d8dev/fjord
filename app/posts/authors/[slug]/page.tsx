@@ -26,7 +26,6 @@ export async function generateStaticParams() {
 
   return data.map((author) => ({
     slug: author?.slug,
-    name: author?.name.replace(/\s+/g, "-").toLowerCase(),
   }));
 }
 
