@@ -4,6 +4,8 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Ffjord&project-name=fjord&repository-name=fjord)
 
+See a demo here: [fjord.dev](https://fjord.dev)
+
 ## **Next.js 14 App Directory Template for Headless CMS using the WordPress REST API**
 
 > [See the Wiki For Detailed Documentation](https://github.com/9d8dev/fjord/wiki)
