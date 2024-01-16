@@ -63,7 +63,7 @@ const Hero = () => {
               priority={true}
               loading="eager"
               width={1920}
-              height={1080}
+              height={480}
               alt="hero image"
               placeholder="blur"
             />
