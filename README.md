@@ -4,7 +4,7 @@
 
 ## **Next.js 14 App Router Template for Headless CMS using the WordPress REST API**
 
-> See the Wiki For Detailed Documentation
+> [See the Wiki For Detailed Documentation](https://github.com/9d8dev/fjord/wiki)
 
 ## Quick Start
 
