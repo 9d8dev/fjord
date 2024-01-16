@@ -1,5 +1,5 @@
 import * as Craft from "@/components/craft/layout";
-import Placeholder from "@/public/placeholder.jpg";
+import Placeholder from "@/public/placeholder.webp";
 import Image from "next/image";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
