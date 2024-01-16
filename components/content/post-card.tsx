@@ -50,9 +50,11 @@ const PostCard = ({ post, tags = [] }: PostCardProps) => {
       />
 
       <div className="flex flex-wrap gap-1">
-        {tags.map((tag) => (
-          <PostTag key={tag.id} {...tag} />
-        ))}
+        {tags
+          .filter((tag: TagProps) => tag.name.toLowerCase() !== "uncategorized")
+          .map((tag: TagProps) => (
+            <PostTag key={tag.id} {...tag} />
+          ))}
       </div>
     </Link>
   );

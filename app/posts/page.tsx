@@ -46,7 +46,11 @@ export default async function Posts({
         <Craft.Container>
           <ContentGrid id="posts">
             {data.map((post: PostProps) => (
-              <PostCard key={post.id} post={post} tags={tags} />
+              <PostCard
+                key={post.id}
+                post={post}
+                tags={post._embedded["wp:term"]?.[0] ?? []}
+              />
             ))}
           </ContentGrid>
           <Separator className="my-6 md:my-12" />

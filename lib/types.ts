@@ -1,8 +1,8 @@
-type RenderedContent = {
+type RenderedContentProps = {
   rendered: string;
 };
 
-type MediaDetails = {
+type MediaDetailsProps = {
   sizes: {
     [size: string]: {
       source_url: string;
@@ -10,7 +10,7 @@ type MediaDetails = {
   };
 };
 
-type AuthorDetails = {
+type AuthorDetailsProps = {
   id: number;
   name: string;
   url: string;
@@ -19,11 +19,15 @@ type AuthorDetails = {
   slug: string;
 };
 
-type EmbeddedMedia = {
+type EmbeddedMediaProps = {
   "wp:featuredmedia"?: {
-    media_details: MediaDetails;
+    media_details: MediaDetailsProps;
   }[];
-  author?: AuthorDetails[];
+  "wp:term"?: any[];
+  _embedded: {
+    "wp:term": [[TagProps]];
+  };
+  author?: AuthorDetailsProps[];
 };
 
 type PostProps = {
@@ -33,12 +37,12 @@ type PostProps = {
   status: string;
   type: string;
   link: string;
-  title: RenderedContent;
+  title: RenderedContentProps;
   content: {
     protected: boolean;
     rendered: string;
   };
-  excerpt?: RenderedContent;
+  excerpt?: RenderedContentProps;
   author: number;
   featured_media: number;
   comment_status: string;
@@ -49,7 +53,7 @@ type PostProps = {
   meta: Record<string, unknown>[];
   categories: number[];
   tags: number[];
-  _embedded: EmbeddedMedia;
+  _embedded: EmbeddedMediaProps;
 };
 
 type TagProps = {
@@ -85,7 +89,7 @@ type PaginationProps = {
 
 type PostCardProps = {
   post: PostProps;
-  tags?: TagProps[];
+  tags?: any;
 };
 
 type ContentGridProps = {
@@ -167,10 +171,10 @@ type AuthorProps = {
 
 type ArticleProps = {
   post: {
-    title: RenderedContent;
-    excerpt: RenderedContent;
-    _embedded?: EmbeddedMedia;
-    content: RenderedContent;
+    title: RenderedContentProps;
+    excerpt: RenderedContentProps;
+    _embedded?: EmbeddedMediaProps;
+    content: RenderedContentProps;
   };
   date: Date;
   author: {
@@ -200,18 +204,18 @@ type NavProps = {
 
 type PageProps = {
   id: number;
-  title: RenderedContent;
+  title: RenderedContentProps;
   date: string;
   slug: string;
-  excerpt: RenderedContent;
+  excerpt: RenderedContentProps;
   _embedded: {
-    "wp:featuredmedia": MediaDetails[];
-    author?: AuthorDetails;
+    "wp:featuredmedia": MediaDetailsProps[];
+    author?: AuthorDetailsProps;
   };
   page: {
-    title: RenderedContent;
-    content: RenderedContent;
-    _embedded?: EmbeddedMedia;
+    title: RenderedContentProps;
+    content: RenderedContentProps;
+    _embedded?: EmbeddedMediaProps;
   };
   author: AuthorProps;
 };
