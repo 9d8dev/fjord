@@ -13,6 +13,88 @@
 3. Configure the **Wordpress REST API** in your Wordpress instance
 4. Edit `fjord.config.ts` to map to your WordPress instance and customize the website
 
+## Directory 
+
+```bash
+fjord
+├── README.md
+├── app
+│   ├── (legal)
+│   ├── (pages)
+│   │   ├── [slug]
+│   │   └── all
+│   ├── about
+│   ├── contact
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── opengraph-image.jpg
+│   ├── page.tsx
+│   ├── posts
+│   │   ├── [slug]
+│   │   ├── authors
+│   │   │   ├── [slug]
+│   │   └── page.tsx
+│   ├── robots.txt
+│   ├── sitemap.ts
+│   └── twitter-image.jpg
+├── components
+│   ├── content
+│   │   ├── about-author.tsx
+│   │   ├── article-wrapper.tsx
+│   │   ├── content-grid.tsx
+│   │   ├── page-body.tsx
+│   │   ├── pagination-wrapper.tsx
+│   │   └── post-card.tsx
+│   ├── craft
+│   │   ├── layout.tsx
+│   │   ├── section
+│   │   │   ├── footer.tsx
+│   │   │   ├── mobile-nav.tsx
+│   │   │   ├── nav-menu.tsx
+│   │   │   └── nav.tsx
+│   │   └── theme
+│   │       ├── theme-provider.tsx
+│   │       └── theme-toggle.tsx
+│   ├── forms
+│   │   └── contact-form.tsx
+│   ├── global
+│   │   └── elements
+│   │       └── back-button.tsx
+│   ├── sections
+│   │   ├── about.tsx
+│   │   ├── cta-form.tsx
+│   │   ├── cta.tsx
+│   │   ├── faq.tsx
+│   │   ├── feature.tsx
+│   │   ├── hero.tsx
+│   │   ├── recent-posts.tsx
+│   │   ├── secondary-hero.tsx
+│   │   └── testimonials.tsx
+│   └── ui
+├── components.json
+├── content
+│   ├── cookie-policy.mdx
+│   ├── privacy-policy.mdx
+│   └── terms-of-service.mdx
+├── fjord.config.ts
+├── lib
+│   ├── data.ts
+│   ├── types.ts
+│   └── utils.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+│   ├── logo.svg
+│   ├── placeholder-2.jpg
+│   ├── placeholder.jpg
+│   └── robots.txt
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
 ## Technologies 
 
 - Next JS App Directory
