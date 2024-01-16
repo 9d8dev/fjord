@@ -18,7 +18,7 @@
 - `/`: Homepage
 - `/contact`: Contact page
 - `/about`: About page
-- `/posts`: Blog indexs
+- `/posts`: Blog index
 - `/posts/[slug]`: Blog post
 - `/all`: Wordpress pages index
 - `/[slug]`: Wordpress page
