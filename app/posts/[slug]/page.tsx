@@ -54,7 +54,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         date={date}
         author={author}
       />
-      <RecentPosts />
+      <RecentPosts excludeId={post.id} />
       <CTA />
     </div>
   );
