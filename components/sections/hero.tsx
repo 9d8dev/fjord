@@ -43,14 +43,14 @@ const Hero = () => {
 						</a>
 						.
 					</h2>
-					<div className="my-8 h-96 w-full overflow-hidden rounded-lg md:rounded-xl md:h-[480px]">
+					<div className="my-8 h-96 w-full overflow-hidden rounded-lg md:rounded-xl">
 						<Image
 							rel="preload"
 							className="h-full w-full object-cover object-bottom"
 							src={Placeholder}
 							priority={true}
-							width={1920}
-							height={480}
+							width={1080}
+							height={384}
 							alt="hero image"
 							placeholder="blur"
 						/>
