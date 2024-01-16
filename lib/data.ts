@@ -106,7 +106,7 @@ export async function fetchAuthors() {
 }
 
 // Fetch a single page by its slug
-export async function fetchPage(slug: string) {
+export async function fetchPageBySlug(slug: string) {
   const res = await fetch(
     `${fjord.wordpress_url}/wp-json/wp/v2/pages?slug=${slug}&_embed`,
     {

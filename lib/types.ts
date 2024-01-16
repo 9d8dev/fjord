@@ -207,17 +207,14 @@ type PageProps = {
   title: RenderedContentProps;
   date: string;
   slug: string;
+  content: RenderedContentProps;
   excerpt: RenderedContentProps;
-  _embedded: {
-    "wp:featuredmedia": MediaDetailsProps[];
-    author?: AuthorDetailsProps;
-  };
+  _embedded: EmbeddedMediaProps;
   page: {
     title: RenderedContentProps;
     content: RenderedContentProps;
     _embedded?: EmbeddedMediaProps;
   };
-  author: AuthorProps;
 };
 
 type faqProps = {
