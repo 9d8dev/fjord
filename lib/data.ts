@@ -137,11 +137,3 @@ export async function fetchPages() {
 
   return res.json();
 }
-
-export async function fetchPostPaths(wordpressUrl: string) {
-  const res = await fetch(`${wordpressUrl}/wp-json/wp/v2/posts?_embed`);
-  const posts: PostProps[] = await res.json();
-  return posts.map((post) => ({
-    params: { slug: post?.slug },
-  }));
-}
