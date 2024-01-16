@@ -12,7 +12,7 @@ const Hero = () => {
 				<div className="not-prose flex flex-col gap-6">
 					<Link
 						href="https://github.com/9d8dev/fjord"
-						className={badgeVariants({ variant: 'outline' })}
+						className={`${badgeVariants({ variant: 'outline' })} w-fit`}
 					>
 						Star the Github Repo
 						<ArrowRightIcon />
