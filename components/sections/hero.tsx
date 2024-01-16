@@ -60,6 +60,7 @@ const Hero = () => {
             <Image
               className="h-full w-full object-cover object-bottom"
               src={Placeholder}
+              priority={true}
               loading="eager"
               width={1920}
               height={1080}
