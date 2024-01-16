@@ -22,11 +22,7 @@
 - `/posts/[slug]`: Blog post
 - `/all`: Wordpress pages index
 - `/[slug]`: Wordpress page
-- `/categories`: Wordpress category index
-- `/categories/[slug]`: Wordpress category
-- `/tags`: Wordpress tag index
-- `/tags/[slug]`: Wordpress tag
-- `/authors`: Wordpress author index
-- `/authors/[slug]`: Wordpress author
+- `/posts/authors`: Wordpress author index
+- `/posts/authors/[slug]`: Wordpress author
 
 Built by [Bridger Tower](https://bridger.to) and [Cameron Youngblood](https://cameronyoungblood.com)
