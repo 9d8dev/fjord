@@ -1,19 +1,22 @@
 import * as Craft from '@/components/craft/layout';
 import Placeholder from '@/public/hero.webp';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { badgeVariants } from '../ui/badge';
 
 const Hero = () => {
 	return (
 		<Craft.Section className="border-b">
 			<Craft.Container>
 				<div className="not-prose flex flex-col gap-6">
-					<a
-						href="https://fjord.dev"
-						className="flex gap-1 text-xs items-center border w-fit rounded-lg px-2 py-1 opacity-70 hover:opacity-100 transition-all"
+					<Link
+						href="https://github.com/9d8dev/fjord"
+						className={badgeVariants({ variant: 'outline' })}
 					>
-						Discover the future of WordPress <ArrowRightIcon />
-					</a>
+						Star the Github Repo
+						<ArrowRightIcon />
+					</Link>
 					<h1 className="text-primary-500 text-4xl md:text-6xl">
 						Fjord is a headless WordPress template built with NextJS 14 and Tailwind CSS.
 					</h1>
