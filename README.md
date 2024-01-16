@@ -1,6 +1,6 @@
 ![logo](https://github.com/9d8dev/fjord/assets/57158102/77e69558-5bb6-44c4-92b4-4ce0a5db8a2d)
 
-# **Fjord**
+# Fjord :: Headless WordPress using Next JS 14
 
 ## **Next.js 14 App Directory Template for Headless CMS using the WordPress REST API**
 
