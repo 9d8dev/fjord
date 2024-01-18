@@ -23,7 +23,7 @@ export default async function AuthorPosts() {
   let data = await fetchAuthors();
 
   return (
-    <main className="p-12">
+    <Craft.Main>
       <SecondaryHero
         title={`${fjord.site_name} Authors`}
         subtitle="Our Writers and Authors"
@@ -33,7 +33,7 @@ export default async function AuthorPosts() {
 
       <Craft.Section>
         <Craft.Container>
-          <ContentGrid className="md:!grid-cols-2">
+          <ContentGrid className="not-prose md:!grid-cols-2">
             {data.map((author: AuthorProps) => (
               <div key={author.id}>
                 <Link
@@ -58,6 +58,6 @@ export default async function AuthorPosts() {
           </ContentGrid>
         </Craft.Container>
       </Craft.Section>
-    </main>
+    </Craft.Main>
   );
 }
