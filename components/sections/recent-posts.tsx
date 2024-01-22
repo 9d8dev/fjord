@@ -1,4 +1,3 @@
-import settings from "@/fjord.config";
 import * as Craft from "@/components/craft/layout";
 import PostCard from "@/components/content/post-card";
 import fjord from "@/fjord.config";
@@ -13,10 +12,10 @@ export default async function RecentPosts({
 }) {
   const posts = await fetchPosts(4, 0);
 
-  // Filter out the post with the given ID
-  const filteredPosts = posts.data.filter(
-    (post: PostProps) => post.id !== excludeId
-  );
+  // Filter out the post with the given ID and limit to three posts
+  const filteredPosts = posts.data
+    .filter((post: PostProps) => post.id !== excludeId)
+    .slice(0, 3);
 
   return (
     <Craft.Section>
