@@ -2,6 +2,10 @@
 
 # Fjord :: Headless WordPress using Next JS 14
 
+> Also check out
+> - [Fjord Directory](https://github.com/9d8dev/fjord-directory)
+> - [Fjord Minimal](https://github.com/9d8dev/fjord-minimal)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Ffjord&project-name=fjord&repository-name=fjord)
 
 See a demo here: [fjord.dev](https://fjord.dev)
