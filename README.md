@@ -12,8 +12,6 @@ See a demo here: [fjord.dev](https://fjord.dev)
 
 ## **Next.js 14 App Directory Template for Headless CMS using the WordPress REST API**
 
-> [See the Wiki For Detailed Documentation](https://github.com/9d8dev/fjord/wiki)
-
 ## Quick Start
 
 1. Clone this repository
