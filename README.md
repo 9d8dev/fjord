@@ -1,3 +1,5 @@
+> :warning: **This repo is deprecated**: This repo is deprecated and no longer supported. Instead, use `next-wp`. [NextWP Repo](https://github.com/9d8dev/next-wp)
+
 ![logo](https://github.com/9d8dev/fjord/assets/57158102/77e69558-5bb6-44c4-92b4-4ce0a5db8a2d)
 
 # Fjord :: Headless WordPress using Next JS 14
